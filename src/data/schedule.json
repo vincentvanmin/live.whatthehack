@@ -1,366 +1,356 @@
 {
 	"version": 1,
 	"message": "",
-	"baseTimeOffset":"-120",
-	"countdownStart":"19/10/2018 21:00",
+	"baseTimeOffset":"-60",
+	"countdownStart":"07/02/2019 16:00",
 	"days":
 	[
 		{
 			"name":"Friday",
-			"date":"19/10/2018",
+			"date":"07/02/2019",
 			"events":
 			[
 				{
 					"id":"1",
 					"title": "Registration",
-					"startHour": "15:00",
-					"endHour": "18:45",
-					"mapsLink": "/checkin",
-					"locationName": "A5-A6",
-					"description": "Register to the hackathon and get your swag! Make sure to have your ID ready"
+					"startHour": "16:30",
+					"endHour": "17:30",
+					"locationName": "Entrance Hall Max Weber",
+					"description": "Register to the hackathon and get your swag! Make sure to have your ID ready.",
+					"category": "Group Event"
 				},
 				{
 					"id":"2",
-					"title": "Baggage check-in",
-					"startHour": "15:00",
-					"endHour": "18:45",
-					"mapsLink": "/A6/1",
-					"locationName": "Lobby",
-					"description": "Bring your baggage and we will store it for you"
+					"title": "Opening Ceremony",
+					"startHour": "17:30",
+					"endHour": "18:00",
+					"locationName": "Max Weber",
+					"description": "Introduction talk. You will get all information about the next 24h.",
+					"category": "Group Event"
 				},
 				{
 					"id":"3",
-					"title": "BSC Tour",
-					"startHour": "16:00",
-					"endHour": "18:00",
-					"mapsLink": "/bsc",
-					"locationName": "BSC",
-					"description": "Discover Barcelona Supercomputing Center in three batches of 30 minutes"
+					"title": "Hacking starts",
+					"startHour": "18:00",
+					"locationName": "Alma 2",
+					"description": "Ready. Set. GO!",
+					"category": "Group Event"
 				},
 				{
 					"id":"4",
-					"title": "Opening Talk",
-					"startHour": "19:00",
-					"endHour": "21:00",
-					"mapsLink": "/vertex",
-					"locationName": "Vèrtex",
-					"description": "Introductory talk. Meet our sponsors and discover the prizes"
+					"title": "[Workshop] Manage the Panic Monster",
+					"startHour": "18:15",
+					"endHour": "19:00",
+					"locationName": "Flex Space (Agora)",
+					"description": "By Dirk Depré",
+					"category": "Technical"
 				},
 				{
 					"id":"5",
-					"title": "Hacking Starts",
-					"startHour": "21:00",
-					"description": "Ready. Set. GO!"
+					"title": "[Workshop] Lean Startup",
+					"startHour": "18:15",
+					"endHour": "19:00",
+					"locationName": "Galapagos",
+					"description": "By Dries Bovijn",
+					"category": "Entrepreneurial"
 				},
 				{
 					"id":"6",
-					"title": "Dinner",
-					"startHour": "21:00",
-					"endHour": "23:00",
-					"mapsLink": "/meal",
-					"locationName": "Meal zone",
-					"description": "Enjoy our first meal"
+					"title": "[Workshop] Gamestorming",
+					"startHour": "18:15",
+					"endHour": "19:00",
+					"locationName": "Matchu Picchu",
+					"description": "By Tom Leers & Alexander De Meersman",
+					"category": "Technical"
 				},
 				{
 					"id":"7",
-					"title": "Team Building",
-					"startHour": "22:30",
-					"endHour": "23:30",
-					"mapsLink": "/A4/0",
-					"locationName": "A4002",
-					"description": "Looking for a team or new teammates?"
+					"title": "[Workshop] Elevator Pitch",
+					"startHour": "18:15",
+					"endHour": "19:00",
+					"locationName": "Saint Petersburg",
+					"description": "By Shen Sandelé",
+					"category": "Entrepreneurial"
 				},
 				{
 					"id":"8",
-					"title": "[Talk] GitHub: Intro to Git",
-					"startHour": "22:30",
-					"endHour": "23:00",
-					"mapsLink": "/A5/0",
-					"locationName": "A5001",
-					"description": "Learn Git with Abdulhakim Ajetunmobi & Pandelis Zembashis, GitHub Campus Experts"
+					"title": "Chroques and Hot Dogs",
+					"startHour": "18:30",
+					"endHour": "19:30",
+					"locationName": "Alma 2",
+					"description": "Enjoy your meal!",
+					"category": "Food & Drinks"
 				},
 				{
 					"id":"9",
-					"title": "[Talk] InfoJobs: Kotlin, a modern language for modern times",
-					"startHour": "22:30",
-					"endHour": "23:00",
-					"mapsLink": "/A5/0",
-					"locationName": "A5002",
-					"description": "Getting started with Kotlin easily with an expert from InfoJobs"
+					"title": "[Workshop] Introduction to REST API's & Automatic API testing",
+					"startHour": "19:30",
+					"endHour": "20:15",
+					"locationName": "Machu Picchu",
+					"description": "By Domien Frederix",
+					"category": "Technical"
 				},
 				{
 					"id":"10",
-					"title": "[Talk] iThinkUPC: Getting started with iThinkUPC Challenge",
-					"startHour": "23:00",
-					"endHour": "23:30",
-					"mapsLink": "/A5/0",
-					"locationName": "A5001",
-					"description": "Some doubts with their challenge? Join us to this intro talk"
+					"title": "[Workshop] Angular",
+					"startHour": "19:30",
+					"endHour": "20:15",
+					"locationName": "Paris",
+					"description": "By Anton Kirschchok",
+					"category": "Technical"
 				},
 				{
 					"id":"11",
-					"title": "[Talk] Itequia: Let's make some music with Javascript",
-					"startHour": "23:00",
-					"endHour": "23:30",
-					"mapsLink": "/A5/0",
-					"locationName": "A5002",
-					"description": "Delight you merging the wonderful world of music with programming"
+					"title": "[Workshop] Basics of Python for Data Science",
+					"startHour": "19:30",
+					"endHour": "20:15",
+					"locationName": "Saint Petersburg",
+					"description": "By Chamberlain",
+					"category": "Technical"
 				},
 				{
 					"id":"12",
-					"title": "[Talk] Everis: Intro to Virtual Assistants",
-					"startHour": "23:30",
-					"endHour": "23:59",
-					"mapsLink": "/A5/0",
-					"locationName": "A5001",
-					"description": "Learn about Virtual Assistants with this awesome talk"
-				},
-				{
-					"id":"13",
-					"title": "[Talk] Opentrends: Chat bot with Google Assistant",
-					"startHour": "23:30",
-					"endHour": "23:59",
-					"mapsLink": "/A5/0",
-					"locationName": "A5002",
-					"description": "You will easily create a simple chat to solve some disease"
+					"title": "[Workshop] Introduction to Agile & DevOps",
+					"startHour": "19:30",
+					"endHour": "20:15",
+					"locationName": "Xi'an",
+					"description": "By Freddy Schoeters",
+					"category": "Entrepreneurial"
 				}
 			]
 		},
 		{
 			"name":"Saturday",
-			"date":"20/10/2018",
+			"date":"08/02/2019",
 			"events":
 			[
 				{
+					"id":"13",
+					"title": "Midnight Snacks",
+					"startHour": "02:00",
+					"locationName": "Alma 2",
+					"description": "Feeling hungry? Come get some extra energy!",
+					"category": "Food & Drinks"
+				},	
+				{
 					"id":"14",
-					"title": "[Talk] AWSEducate: Getting started with Serverless Architectures",
-					"startHour": "00:00",
-					"endHour": "00:30",
-					"mapsLink": "/A5/0",
-					"locationName": "A5001",
-					"description": "An expert from AWS will give a brief overview of serverless services and some examples of serverless architectures"
+					"title": "Breakfast",
+					"startHour": "07:15",
+					"endHour": "08:00",
+					"locationName": "Alma 2",
+					"description": "Come and get some extra energy!",
+					"category": "Food & Drinks"
 				},	
 				{
 					"id":"15",
-					"title": "[Talk] API 101",
-					"startHour": "00:00",
-					"endHour": "00:30",
-					"mapsLink": "/A5/0",
-					"locationName": "A5002",
-					"description": "Join Nicolas Grenié and learn whatever you need about APIs"
-				},
+					"title": "[Workshop] Angular",
+					"startHour": "08:30",
+					"endHour": "09:15",
+					"locationName": "Agra",
+					"description": "By Anton Kirschchock",
+					"category": "Technical"
+				},	
 				{
 					"id":"16",
-					"title": "Midnight Snacks",
-					"startHour": "01:30",
-					"endHour": "02:30",
-					"mapsLink": "/meal",
-					"locationName": "Meal Zone",
-					"description": "Feeling hungry? Come get some DIY yogurts"
-				},
+					"title": "[Workshop] Security",
+					"startHour": "08:30",
+					"endHour": "09:15",
+					"locationName": "Galapagos",
+					"description": "By Philippe Michiels",
+					"category": "Technical"
+				},	
 				{
 					"id":"17",
-					"title": "The Game starts",
-					"startHour": "03:14",
-					"description": "Hello dear Hacker"
-				},
+					"title": "[Workshop] Behavior Driven Development",
+					"startHour": "08:30",
+					"endHour": "09:15",
+					"locationName": "Machu Picchu",
+					"description": "By Christophe Soens",
+					"category": "Technical"
+				},	
 				{
 					"id":"18",
-					"title": "Breakfast",
-					"startHour": "08:00",
-					"endHour": "09:00",
-					"mapsLink": "/meal",
-					"locationName": "Meal Zone",
-					"description": "Come get some energizing breakfast"
-				},
+					"title": "[Workshop] Elevator Pitch",
+					"startHour": "08:30",
+					"endHour": "09:15",
+					"locationName": "Paris",
+					"description": "By Shen Sandelé",
+					"category": "Entrepreneurial"
+				},	
 				{
 					"id":"19",
-					"title": "Showers",
-					"startHour": "09:15",
-					"endHour": "11:00",
-					"mapsLink": "/showers",
-					"locationName": "Sports Center",
-					"description": "Don't forget to bring your towel"
-				},
+					"title": "[Workshop] Yoga",
+					"startHour": "08:30",
+					"endHour": "09:15",
+					"locationName": "Saint Petersburg",
+					"description": "By Valérie Heylen. Make sure to bring a Yoga Mat and wear comfortable clothes.",
+					"category": "Inspirational"
+				},	
 				{
 					"id":"20",
-					"title": "[Talk] Skyscanner: Intro to Skyscanner API",
+					"title": "[Workshop] Elevator Pitch",
 					"startHour": "10:00",
-					"endHour": "10:30",
-					"mapsLink": "/A5/0",
-					"locationName": "A5001",
-					"description": "Discover how Skyscanner API works"
+					"endHour": "10:45",
+					"locationName": "Agra",
+					"description": "By Shen Sandelé",
+					"category": "Entrepreneurial"
 				},
 				{
 					"id":"21",
-					"title": "[Talk] Vueling: Getting fast responses from massive databases",
-					"startHour": "11:00",
-					"endHour": "11:30",
-					"mapsLink": "/A5/0",
-					"locationName": "A5002",
-					"description": "Tired of databases latency? This talk will save your day!"
+					"title": "[Workshop] The importance of Optimal Customer Experience",
+					"startHour": "10:00",
+					"endHour": "10:45",
+					"locationName": "Galapagos",
+					"description": "By Johan Sevenants",
+					"category": "Entrepreneurial"
 				},
 				{
 					"id":"22",
-					"title": "[Talk] ServiZurich: In memory processing pipelines running in the cloud",
-					"startHour": "11:30",
-					"endHour": "12:00",
-					"mapsLink": "/A5/0",
-					"locationName": "A5001",
-					"description": "Get into cloud systems with Jose Luís Sánchez"
+					"title": "[Workshop] Introduction to REST API's & Automatic API testing",
+					"startHour": "10:00",
+					"endHour": "10:45",
+					"locationName": "Machu Picchu",
+					"description": "By Domien Frederix",
+					"category": "Technical"
 				},
 				{
 					"id":"23",
-					"title": "[Talk] Sopra Steria: Getting started with Natural Language Processing",
-					"startHour": "12:00",
-					"endHour": "13:00",
-					"mapsLink": "/A5/0",
-					"locationName": "A5002",
-					"description": "Join this talk and learn the first steps in NLP"
+					"title": "[Workshop] Building your Brand on Social",
+					"startHour": "10:00",
+					"endHour": "10:45",
+					"locationName": "Paris",
+					"description": "By Leen Veldeman",
+					"category": "Inspirational"
 				},
 				{
 					"id":"24",
-					"title": "Lunch",
-					"startHour": "13:00",
-					"endHour": "14:00",
-					"mapsLink": "/meal",
-					"locationName": "Meal zone",
-					"description": "Come and get some delicious paella"
+					"title": "[Workshop] Mindfulness",
+					"startHour": "10:00",
+					"endHour": "10:45",
+					"locationName": "Saint Petersburg",
+					"description": "By Valérie Heylen. Make sure to bring a Yoga Mat and wear comfortable clothes.",
+					"category": "Inspirational"
 				},
 				{
 					"id":"25",
-					"title": "[Talk] Organize your hackathon",
-					"startHour": "17:00",
-					"endHour": "18:00",
-					"mapsLink": "/A5/0",
-					"locationName": "A5001",
-					"description": "Would you like to organize a hackathon? Come listen some of our experiences and tips. Don't be shy! We are here to help you!"
+					"title": "Lunch",
+					"startHour": "11:00",
+					"locationName": "Alma 2",
+					"description": "Fresh energy available!",
+					"category": "Food & Drinks"
 				},
 				{
 					"id":"26",
-					"title": "Rubik Tournament",
-					"startHour": "19:00",
-					"endHour": "20:00",
-					"mapsLink": "/A5/0",
-					"locationName": "A5002",
-					"description": "Show your skills solving Rubik cubes!"
+					"title": "[Workshop] Visual Language Basics",
+					"startHour": "11:30",
+					"endHour": "12:15",
+					"locationName": "Flex Space (Agora)",
+					"description": "By Veerle Hendrickx",
+					"category": "Entrepreneurial"
 				},
 				{
 					"id":"27",
-					"title": "Dinner",
-					"startHour": "20:00",
-					"endHour": "21:30",
-					"mapsLink": "/meal",
-					"locationName": "Meal Zone",
-					"description": "PIZZA TIME"
+					"title": "[Workshop] Storytelling",
+					"startHour": "11:30",
+					"endHour": "12:15",
+					"locationName": "Galapagos",
+					"description": "By Tom Leers & Alexander De Meersman",
+					"category": "Entrepreneurial"
 				},
 				{
 					"id":"28",
-					"title": "Slideshow Karaoke",
-					"startHour": "22:00",
-					"endHour": "23:00",
-					"mapsLink": "/A5/0",
-					"locationName": "A5001",
-					"description": "A hackers favourite game. Are you ready to improvise?"
-				}
-			]
-		},
-		{
-			"name":"Sunday",
-			"date":"21/10/2018",
-			"events":
-			[
+					"title": "[Workshop] Pitching your Story",
+					"startHour": "11:30",
+					"endHour": "12:15",
+					"locationName": "Machu Picchu",
+					"description": "By Angelique De Clerq",
+					"category": "Entrepreneurial"
+				},
 				{
 					"id":"29",
-					"title": "Sticker Exchange",
-					"startHour": "00:00",
-					"endHour": "01:00",
-					"mapsLink": "/A6/1",
-					"locationName": "Cafeteria (A6106)",
-					"description": "You give stickers, you receive stickers. Ez pz"
+					"title": "Hacking ends",
+					"startHour": "18:00",
+					"locationName": "Alma 2",
+					"description": "STOP. STOP. STOP! Hands up and go rock for the jury!",
+					"category": "Group Activity"
 				},
 				{
 					"id":"30",
-					"title": "Midnight Snack",
-					"startHour": "01:00",
-					"endHour": "02:00",
-					"mapsLink": "/meal",
-					"locationName": "Meal Zone",
-					"description": "It's been more than 24 hours. Get some sweet waffles to keep yourself motivated"
+					"title": "Pitch HealthTech",
+					"startHour": "18:00",
+					"endHour": "19:00",
+					"locationName": "Cambridge (Agora)",
+					"description": "Jury members: Serge Haubourdin, Jean-Sébastien Struyf, Roel De Spiegelaar",
+					"category": "Pitch"
 				},
 				{
 					"id":"31",
-					"title": "EPIC NERF GUNS BATTLE",
-					"startHour": "01:00",
-					"endHour": "03:00",
-					"mapsLink": "/A4/2",
-					"locationName": "A4101/2",
-					"description": "Come and play a HackUPC classic. Nerf guns, 2 teams, a full classroom. Will you miss it?"
+					"title": "Pitch Media",
+					"startHour": "18:00",
+					"endHour": "19:00",
+					"locationName": "Agra (Agora)",
+					"description": "Jury members: Heino Schaght, Ivor Micallef, Sven Munaron, Maarten Verwaest, Marijke Celis",
+					"category": "Pitch"
 				},
 				{
 					"id":"32",
-					"title": "The Game ends",
-					"startHour": "03:14",
-					"description": "You lost"
+					"title": "Pitch Smart Cities",
+					"startHour": "18:00",
+					"endHour": "19:00",
+					"locationName": "Berlin (Agora)",
+					"description": "Jury members: Thomas Baerten, Frank Desaer, Stefan Costeur, Gregory Wuurman, Leen Tyrions, Tim Guily, An Van Peteghem",
+					"category": "Pitch"
 				},
 				{
 					"id":"33",
-					"title": "Breakfast",
-					"startHour": "08:00",
-					"endHour": "09:00",
-					"mapsLink": "/meal",
-					"locationName": "Meal Zone",
-					"description": "Come charge your energies for the last hours of hacking"
+					"title": "Pitch Retail",
+					"startHour": "18:00",
+					"endHour": "19:00",
+					"locationName": "Athens (Agora)",
+					"description": "Jury members: Ignace De Nollin, Stein Gullentops, Ides Ticket",
+					"category": "Pitch"
 				},
 				{
 					"id":"34",
-					"title": "Hack submissions",
-					"startHour": "08:00",
-					"endHour": "09:15",
-					"locationName": "Devpost",
-					"description": "Submit your project in our Devpost!"
+					"title": "Pitch Student Life",
+					"startHour": "18:00",
+					"endHour": "19:00",
+					"locationName": "Amsterdam (Agora)",
+					"description": "Jury members: Jesse Hoobergs, Guy Gelaude, Kenny Van Minsel",
+					"category": "Pitch"
 				},
 				{
 					"id":"35",
-					"title": "Hacking ends",
-					"startHour": "09:00",
-					"description": "SUBMIT YOUR PROJECT BEFORE IT'S TOO LATE"
+					"title": "Pitch Banking & Insurance",
+					"startHour": "18:00",
+					"endHour": "19:00",
+					"locationName": "Galapagos (Agora)",
+					"description": "Jury members: Peter Croughs, Pascal Cuppens, Birgitta Brys",
+					"category": "Pitch"
 				},
 				{
 					"id":"36",
-					"title": "Showers",
-					"startHour": "09:15",
-					"endHour": "11:00",
-					"mapsLink": "/showers",
-					"locationName": "Sports Center",
-					"description": "Relax a bit before the demos start"
+					"title": "Closing Ceremony",
+					"startHour": "19:00",
+					"endHour": "20:00",
+					"locationName": "Max Weber",
+					"description": "The best 6 teams will pitch their prototype or business plan.",
+					"category": "Group Activity"
 				},
 				{
 					"id":"37",
-					"title": "Hack Demos",
-					"startHour": "10:15",
-					"endHour": "13:15",
-					"mapsLink": "/A4",
-					"locationName": "A3/A4",
-					"description": "It's demo time!"
+					"title": "Dinner",
+					"startHour": "20:00",
+					"locationName": "Alma 2",
+					"description": "Have a talk with others and enjoy your meal!",
+					"category": "Food & Drinks"
 				},
 				{
 					"id":"38",
-					"title": "Lunch",
-					"startHour": "13:00",
-					"endHour": "14:00",
-					"mapsLink": "/meal",
-					"locationName": "Meal Zone",
-					"description": "Come grab some frankfurts/bratswurts made by our awesome partners Leo Boeck"
-				},
-				{
-					"id":"39",
-					"title": "Closing Ceremony",
-					"startHour": "15:30",
-					"endHour": "17:30",
-					"mapsLink": "/vertex",
-					"locationName": "Vèrtex",
-					"description": "And the winners are... Come watch the finalists and winners!"
+					"title": "End of What The Hack 2019",
+					"startHour": "20:00",
+					"description": "Thanks for joining, see you next year!",
+					"category": "Group Activity"
 				}
 			]
 		}

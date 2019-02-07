@@ -4,26 +4,17 @@ body, html, main{
 body, html{
 	padding:0;
 	margin:0;
-	background-image: url("../img/background.png");
+	background-image: url("../img/background.jpg");
 	background-position: center center;
 	background-attachment: fixed;
-	background-repeat: repeat repeat;
-	font-family: 'ProximaNovaRegular', sans-serif;
+	background-repeat: no-repeat;
+	font-family: 'Museo Sans Rounded', sans-serif;
 
 	transition: opacity $fadeTime;
 }
-
 
 main{
 	transition: opacity $fadeTime;
-}
-
-#background{
-	position:absolute;
-	height:100%;
-	/*woah, hax (centering a child larger than parent)*/
-	left:50%;
-	transform: translate(-50%,0);
 }
 
 #header-nav-bar{
@@ -41,14 +32,15 @@ main{
 		li{
 
 			flex:1 1 0;
-			border-left:thin solid rgba(30,30,30,0.2);
 			text-align:center;
-			background: white;
+			background-color: rgba(26, 11, 83, 0.8);
+			color: #fff;
 			a{
 				display:block;
-				padding:10px 0;
-				color: $textColor;
+				padding: 20px 0;
 				text-decoration:none;
+				font-size: 1,2em;
+				color: inherit;
 			}
 
 			&:first-child{
@@ -56,8 +48,12 @@ main{
 			}
 
 			&.selected{
-				box-shadow:0 3px 0 rgba(30,30,30,0.5);
+				color: #00e9e3;
 				cursor: default;
+			}
+
+			&:hover {
+				color: #00e9e3;
 			}
 
 			&#countdown-li{
@@ -67,7 +63,7 @@ main{
 				& > div{
 					position: absolute;
 					width: 100%;
-					height: 217px;
+					height: 235px;
 					margin-top: -90px;
 					border-radius: 140px;
 					cursor: pointer;
@@ -79,14 +75,14 @@ main{
 						justify-content: center;
 						font-family: 'Gotham-Medium' !important;
 						position: absolute;
-						margin-top: 100px;
+						margin-top: 120px;
 						z-index: 2;
 						width: 100%;
 
 						div.countdown-time{
 							padding: 10px 8px 0px;
 							color:white;
-							font-size:14px;
+							font-size:16px;
 						}
 						div.decimals{
 							width: 27px;
@@ -109,8 +105,8 @@ main{
 					}
 
 					img{
-						width:105%;
-						margin-left:-5px;
+						width:120%;
+						margin-left:-25px;
 						filter: drop-shadow(0px 0px 20px #3339);
 						-webkit-filter: drop-shadow(0px 0px 25px #3339);
 					}
@@ -132,7 +128,7 @@ main{
 	.bar{
 		position:relative;
 		height:50px;
-		background-color:$contrastColor;
+		background-color: rgba(26, 11, 83, 0.8);
 		color:$secondaryTextColor;
 		border-bottom: thin solid rgba(125, 125, 125, 0.3);
     	box-shadow: 0 0 10px 0px rgba(125, 125, 125, 0.6);
@@ -152,7 +148,7 @@ main{
 			display:flex;
 			position:absolute;
 			font-size:20px;
-			color:black;
+			color:#fff;
 			align-items: center;
 			width: 50px;
 			height: 100%;

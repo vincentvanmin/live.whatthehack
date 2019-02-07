@@ -1,0 +1,49 @@
+#backgroundwth {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-image: url("../img/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    #ball {
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        background-image: url("../img/ball.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 40%;
+
+        #long-logo {
+            display: block;
+            width: 50%;
+            margin: 0 auto;
+            padding-top: 42vh;
+            
+        }
+
+        #gotolive {
+            display: block;
+            width: 300px;
+            padding: 0 20px;
+            margin: 0 auto;
+            padding-top: 25px;
+
+            a {
+                display: block;
+                width: 100%;
+                padding: 10px 15px;
+                border-radius: 35px;
+                background: linear-gradient(to right, rgb(38, 215, 212), rgb(0, 136, 254)); 
+                background-size: 100%;
+                color: rgb(255, 255, 255);
+                font-size: 24px;
+                text-align: center;
+                text-transform: uppercase;
+                font-family: 'Museo Sans Rounded' sans-serif;
+            }
+        }
+    }
+}

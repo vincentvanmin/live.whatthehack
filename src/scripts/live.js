@@ -19,7 +19,7 @@
 	var views ={
 		"fullscreen" : "fullscreen",
 		"live" : "live",
-		"dayof" : "dayof",
+		"home" : "home",
 		"rules" : "rules",
 		"travel" : "travel",
 		"streaming" : "streaming",
@@ -27,7 +27,7 @@
 		"schedule" : "schedule",
 		"challenges" : "challenges",
 		"maps": "maps",
-		"mentors": "mentors"
+		"coaches": "coaches"
 	};
 
 	var icons ={
@@ -283,7 +283,7 @@
 		{
 			if(current > CONST.HACKATHON_DURATION)
 			{
-				obj.hours = 36;
+				obj.hours = 24;
 			}
 		}
 

@@ -2,21 +2,23 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Live Schedule | HackUPC</title>
+	<title>WhatTheHack | Live-Schedule</title>
+	<meta name="description" content="Join us for Tobania's hackathon. 250 hackers. 24h. Mar 1st-2nd.">
+	<link rel="icon" href="favicon.png" type="image/png" data-finger-print>
 	<link rel="stylesheet" type="text/css" href="assets/css/app.min.css" data-finger-print>
 	<script src="assets/js/app.min.js" data-finger-print></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta property="og:title" content="Live Schedule | HackUPC | Oct 19th-21st  | Barcelona | 700 Hackers"/>
-  	<meta property="og:site_name" content="Live Schedule | HackUPC"/>
-  	<meta name="description" content="Join us for BarcelonaTech's hackathon. 700 hackers. 36h. Oct 19th-21st.">
-  	<meta property="og:description" content="Join us for BarcelonaTech's hackathon. 700 hackers. 36h. Oct 19th-21st."/>
-  	<meta property="og:image" content="https://hackupc.com/assets/img/hackupc-ogimage@2x.png?v=2018"/>
-  	<meta property="og:image:secure_url" content="https://hackupc.com/assets/img/hackupc-ogimage@2x.png?v=2018"/>
-  	<meta property="og:url" content="https://hackupc.com/live"/>
-  	<meta name="theme-color" content="#03A9B5">
+	<meta property="og:title" content="WhatTheHack" />
+	<meta property="og:description" content="WhatTheHack is Belgium’s most epic student hackathon. Gather with 250 students from engineering, business and beyond to bring your ideas to life in 24 hours." />
+	<meta property="og:url" content="https://whatthehack.be/" />
+	<meta property="og:site_name" content="WhatTheHack" />
+	<meta property="og:image" content="https://whatthehack.be/wp-content/uploads/2018/11/Screen-Shot-2018-11-22-at-08.00.56.png" />
+	<meta property="og:image:secure_url" content="https://whatthehack.be/wp-content/uploads/2018/11/Screen-Shot-2018-11-22-at-08.00.56.png" />
+	<meta name="theme-color" content="#03A9B5">
+	<link rel="stylesheet" href="assets/css/app.min.css" data-finger-print>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  	<meta name="author" content="Hackers@UPC">
+  	<meta name="author" content="Tobania">
 
 	<!--Prompt-->
 	<template id="promptTemplate">
@@ -41,7 +43,7 @@
 	<template id="scheduleRow">
 		<tr data-start-timestamp="{startTmsp}" data-end-timestamp="{endTmsp}">
 			<td>
-				<a target="_blank" href="http://maps.hackupc.com/#{mapsLink}">{locationName}</a>
+				<a target="_blank" href="/live#/maps">{locationName}</a>
 			</td>
 			<td>
 				{startHour}
@@ -54,6 +56,9 @@
 			</td>
 			<td class="hide-when-small">
 				{description}
+			</td>
+			<td class="hide-when-small">
+				{category}
 			</td>
 		</tr>
 	</template>
@@ -69,6 +74,7 @@
 						<th>End</th>
 						<th>Title</th>
 						<th class="hide-when-small">Description</th>
+						<th class="hide-when-small">Category</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -125,8 +131,8 @@
 		</div>
 		<nav>
 			<ul>
-				<li data-bind-view="dayof">
-					<a href="#/dayof">Home</a>
+				<li data-bind-view="home">
+					<a href="#/home">Home</a>
 				</li>
 				<li data-bind-view="live">
 					<a href="#/live">Live</a>
@@ -138,18 +144,12 @@
 					<!--<a href="http://maps.hackupc.com/#/UPC" target="_blank">Maps</a>-->
 					<a href="#/maps">Maps</a>
 				</li>
-				<li data-bind-view="mentors"><!--<li>-->
-					<!--<a href="https://mentors.hackupc.com/" target="_blank">Mentors</a>-->
-					<a href="#/mentors">Mentors</a>
-				</li>
-				<li data-bind-view="streaming">
-					<a href="#/streaming">Streaming</a>
+				<li data-bind-view="coaches"><!--<li>-->
+					<!--<a href="https://coaches.hackupc.com/" target="_blank">Coaches</a>-->
+					<a href="#/coaches">Coaches</a>
 				</li>
 				<li data-bind-view="challenges">
 					<a href="#/challenges">Challenges</a>
-				</li>
-				<li data-bind-view="travel">
-					<a href="#/travel">Travel</a>
 				</li>
 				<li data-bind-view="rules">
 					<a href="#/rules">Rules</a>
@@ -164,8 +164,8 @@
 	<header id="header-nav-bar" class="hide-when-small">
 		<nav>
 			<ul>
-				<li data-bind-view="dayof">
-					<a href="#/dayof">Home</a>
+				<li data-bind-view="home">
+					<a href="#/home">Home</a>
 				</li>
 				<li data-bind-view="live">
 					<a href="#/live">Live</a>
@@ -177,25 +177,19 @@
 					<!--<a href="http://maps.hackupc.com/#/UPC" target="_blank">Maps</a>-->
 					<a href="#/maps">Maps</a>
 				</li>
-				<li data-bind-view="mentors"><!--<li>-->
-					<!--<a href="https://mentors.hackupc.com/" target="_blank">Mentors</a>-->
-					<a href="#/mentors">Mentors</a>
-				</li>
 				<li id="countdown-li">
 					<div>
 						<div id="countdown-time" class="countdown">
 						</div>
-						<img src="assets/img/resrborder.png"/>
+						<img src="assets/img/ball.png"/>
 					</div>
 				</li>
-				<li data-bind-view="streaming">
-					<a href="#/streaming">Streaming</a>
+				<li data-bind-view="coaches"><!--<li>-->
+					<!--<a href="https://coaches.hackupc.com/" target="_blank">Coaches</a>-->
+					<a href="#/coaches">Coaches</a>
 				</li>
 				<li data-bind-view="challenges">
 					<a href="#/challenges">Challenges</a>
-				</li>
-				<li data-bind-view="travel">
-					<a href="#/travel">Travel</a>
 				</li>
 				<li data-bind-view="rules">
 					<a href="#/rules">Rules</a>
@@ -215,7 +209,7 @@
 							<span>36:00</span>:00.00
 						</div>
 					</div>
-					<img class="bg" src="assets/img/resrborder.png"/>
+					<img class="bg" src="assets/img/ball.png"/>
 				</div>
 				<div class="events-fancy">
 					<!--To be filled by js-->
@@ -226,7 +220,7 @@
 			<div class="container-live">
 				<div class="countdown centered show-when-small">
 					<div>
-						<span>36:00</span>:00.00
+						<span>24:00</span>:00.00
 					</div>
 				</div>
 				<div class="events-fancy">
@@ -234,7 +228,7 @@
 				</div>
 			</div>
 		</article>
-		<article id="dayof" class="under-header padding-bottom">
+		<article id="home" class="under-header padding-bottom">
 			<div class="container">
 				<div class="panel">
 					<h1>Important Info</h1>
@@ -254,7 +248,7 @@
 							<a target="_blank" href="https://my.hackupc.com">MyHackUPC <div style="font-weight: 100;">Hardware / Baggage / Judging</div></a>
 						</div>
 						<div class="buttons margin-bottom">
-							<a target="_blank" href="https://mentors.hackupc.com">Mentors</a>
+							<a target="_blank" href="https://coaches.hackupc.com">Coaches</a>
 						</div>
 						<div class="buttons margin-bottom">
 							<a target="_blank" href="https://hackupc2018.devpost.com">Devpost</a>
@@ -323,7 +317,7 @@
 		<article id="schedule" class="under-header padding-bottom">
 			<div class="container"></div>
 		</article>
-		<article id="travel" class="under-header padding-bottom">
+		<!-- <article id="travel" class="under-header padding-bottom">
 			<div class="container">
 				<div class="panel">
 					<h1>Travel reimbursement</h1>
@@ -338,7 +332,7 @@
 					</div>
 				</div>
 			</div>
-		</article>
+		</article> -->
 		<article id="rules" class="under-header padding-bottom">
 			<div class="container">
 				<div class="panel">
@@ -449,7 +443,7 @@
 				</div>
 			</div>
 		</article>
-		<article id="streaming" class="under-header padding-bottom">
+		<!-- <article id="streaming" class="under-header padding-bottom">
 			<div class="container">
 				<div class="panel large">
 					<h1>Streaming</h1>
@@ -458,15 +452,15 @@
 						<p style="text-align: center;">We thank you for your patience!</p>
 					</div>
 				</div>
-				<!--<div class="panel large no-margin">
+				<div class="panel large no-margin">
 					<h1>Streaming</h1>
 					<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 					<div class='embed-container'>
 						<iframe src='https://www.youtube.com/embed//qTijleLsync' frameborder='0' allowfullscreen></iframe>
 					</div>
-				</div>-->
+				</div>
 			</div>
-		</article>
+		</article> -->
 		<article id="maps" class="under-header padding-bottom">
 			<div class="container">
 				<div class="panel large">
@@ -478,14 +472,71 @@
 				</div>
 			</div>
 		</article>
-		<article id="mentors" class="under-header padding-bottom">
+		<article id="coaches" class="under-header padding-bottom">
 			<div class="container">
-				<div class="panel large">
-					<h1>Mentors</h1>
-					<div>
-						<h2 style="text-align: center;">Mentors app will be available soon</h2>
-						<p style="text-align: center;">We thank you for your patience!</p>
-					</div>
+				<div class="coachbox">
+					<ul class="healthtech">
+						<h2>HealthTech</h2>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Serge-Haubourdin.jpg" alt="Serge Haubourdin" style="width:300px;height:300px;">
+									</div>
+									<div class="flip-card-back">
+										<h1>Serge Haubourdin</h1> 
+										<p>Associate Profession at IE University</p> 
+										<!-- <img src="assets/img/partners/" alt="Corporate Coach"> -->
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Jean-Sébastien-Struyf.jpg" alt="Serge Haubourdin" style="width:300px;height:300px;">
+									</div>
+									<div class="flip-card-back">
+										<h1>Jean-Sébastien Struyf</h1> 
+										<p>Consultant and Entrepreneur in Life Sciences</p> 
+										<p>CEO Advelox</p>
+										<img src="assets/img/partners/Advelox.svg" alt="Advelox">
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<ul class="media">
+						<h2>Media</h2>
+						<li>
+							<img src="coaches/" alt="">
+						</li>
+					</ul>
+					<ul class="smartcities">
+						<h2>Smart Cities</h2>
+						<li>
+							<img src="coaches/" alt="">
+						</li>
+					</ul>
+					<ul class="retail">
+						<h2>Retail</h2>
+						<li>
+							<img src="coaches/" alt="">
+						</li>
+					</ul>
+					<ul class="studentlife">
+						<h2>Student Life</h2>
+						<li>
+							<img src="coaches/" alt="">
+						</li>
+					</ul>
+					<ul class="banking">
+						<h2>Banking & Insurance</h2>
+						<li>
+							<img src="coaches/" alt="">
+						</li>
+					</ul>
 				</div>
 			</div>
 		</article>

@@ -5,32 +5,38 @@
 		.table-container{
 			color: $secondaryColor;
 			flex: 1 1 0;
-			margin: 0 20px 50px 20px;
+			margin: 30px 20px 50px 20px;
+			border-radius: 10px;
+
 			h1{
 				text-align: center;
-				margin-bottom: 0;
+				margin: 0;
 				padding: 10px;
-				background-color: $secondaryColor;
+				background-color: #D555F6;
 				color: #FFFFFF;
 				border-bottom: 1px solid #FFFFFF33;
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
 			}
 			table{
 				width:100%;
 				color:$textColor;
 				border-collapse: collapse;
 				background-color: $secondaryTextColor;
+				border-radius: 10px;
+
 				thead{
 					color: $contrastColor;
-					background-color: $secondaryColor;
+					background-color: #D555F6;
 				}
 
 				td,th{
 					padding:10px;
-					text-aligh: left;
+					text-align: left;
 				}
 				td{
 					border:thin solid fade($secondaryColor,20%);
-					&:last-child{
+					&:nth-child(5){
 						min-width:200px;
 					}
 					&:first-child{
