@@ -148,11 +148,11 @@
 					<!--<a href="https://coaches.hackupc.com/" target="_blank">Coaches</a>-->
 					<a href="#/coaches">Coaches</a>
 				</li>
+				<li data-bind-view="jury">
+						<a href="#/jury">Jury</a>
+					</li>
 				<li data-bind-view="challenges">
 					<a href="#/challenges">Challenges</a>
-				</li>
-				<li data-bind-view="rules">
-					<a href="#/rules">Rules</a>
 				</li>
 				<li data-bind-view="faq">
 					<a href="#/faq">FAQ</a>
@@ -185,14 +185,13 @@
 					</div>
 				</li>
 				<li data-bind-view="coaches"><!--<li>-->
-					<!--<a href="https://coaches.hackupc.com/" target="_blank">Coaches</a>-->
 					<a href="#/coaches">Coaches</a>
 				</li>
+				<li data-bind-view="jury">
+						<a href="#/jury">Jury</a>
+					</li>
 				<li data-bind-view="challenges">
 					<a href="#/challenges">Challenges</a>
-				</li>
-				<li data-bind-view="rules">
-					<a href="#/rules">Rules</a>
 				</li>
 				<li data-bind-view="faq">
 					<a href="#/faq">FAQ</a>
@@ -230,63 +229,62 @@
 		</article>
 		<article id="home" class="under-header padding-bottom">
 			<div class="container">
-				<div class="panel">
-					<h1>Important Info</h1>
-					<div>
-						<div class="panel-info margin-bottom text-centered">
-							<h4 class="label text-normal">Wifi:</h4>
-							<span>HACKUPC2018</span>
-						</div>
-						<div class="panel-info text-centered">
-							<h4 class="label text-normal">Password:</h4>
-							<span>BIENE2018</span>
-						</div>
+				<div class="panel bag">
+					<h1>What's in your bag</h1>
+					<div class="addfield">
+						<input type="text" id="myInput" placeholder="Title...">
+						<span onclick="newElement()" class="addBtn">Add</span>
 					</div>
-					<div>
-						<h3 class="text-centered margin-bottom">Links</h3>
-						<div class="buttons margin-bottom">
-							<a target="_blank" href="https://my.hackupc.com">MyHackUPC <div style="font-weight: 100;">Hardware / Baggage / Judging</div></a>
-						</div>
-						<div class="buttons margin-bottom">
-							<a target="_blank" href="https://coaches.hackupc.com">Coaches</a>
-						</div>
-						<div class="buttons margin-bottom">
-							<a target="_blank" href="https://hackupc2018.devpost.com">Devpost</a>
-						</div>
-					</div>
-					<div>
-						<p>
-							Remember that in order to get your travel reimbursement you must submit a project to Devpost before the deadline.
-						</p>
-					</div>
+					<ul id="checklist">
+						<li class="item checked">Positive mental attitude :)</li>
+						<li class="item">Laptop & Charger</li>
+						<li class="item">Entrance Ticket & ID</li>
+						<li class="item">Comfortable clothing</li>
+						<li class="item">Yoga mat</li>
+						<li class="item">Cool stuff to build with</li>
+					</ul>
 				</div>
 				<div class="panel">
-					<h1>Contact</h1>
-					<div class="text-centered">
-						<p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-						<span><a  target="_blank" href="https://hackupc2018.slack.com">hackupc2018.slack.com</a></span>
-					</div>
-					<div class="text-centered">
-						<p class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></p>
-						<span><a href="mailto:contact@hackupc.com" target="_blank">contact@hackupc.com</a></span>
-					</div>
-					<div>
-						<h3 class="text-centered margin-bottom">Emergency phone</h3>
-						<div class="text-centered">
-							<p class="icon"><i class="fa fa-phone" aria-hidden="true"></i></p>
-							<span>112</span>
-						</div>
-					</div>
-					<div>
-						<h3 class="text-centered margin-bottom">Social media</h3>
-						<div class="buttons">
-							<a class="fb" target="_blank" href="https://www.facebook.com/hackupc"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
-							<a class="tw" target="_blank" href="https://twitter.com/hackupc"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-							<a class="ig" target="_blank" href="https://instagram.com/hackupc"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-							<a class="yt" target="_blank" href="https://www.youtube.com/channel/UCiiRorGg59Xd5Sjj9bjIt-g"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-							<a class="gt" target="_blank" href="https://github.com/hackupc"><i class="fa fa-github" aria-hidden="true"></i></a>
-							<a class="me" target="_blank" href="https://medium.com/@hackupc"><i class="fa fa-medium" aria-hidden="true"></i></a>
-						</div>
+					<h1>Find us</h1>
+					<div class="books">
+						<ul class="deck">
+							<li class="deck__item deck__item--facebook">
+								<a class="deck__link" href="#">
+								<span class="deck__icon fontawesome-facebook"></span>
+								<span class="deck__label">Facebook</span>
+								</a>
+							</li>
+							<li class="deck__item deck__item--github">
+								<a class="deck__link" href="#">
+								<span class="deck__icon fontawesome-github"></span>
+								<span class="deck__label">GitHub</span>
+								</a>
+							</li>
+							<li class="deck__item deck__item--twitter">
+								<a class="deck__link" href="#">
+								<span class="deck__icon fontawesome-twitter"></span>
+								<span class="deck__label">Twitter</span>
+								</a>
+							</li>
+							<li class="deck__item deck__item--linkedin">
+								<a class="deck__link" href="#">
+								<span class="deck__icon fontawesome-linkedin"></span>
+								<span class="deck__label">LinkedIn</span>
+								</a>
+							</li>
+							<li class="deck__item deck__item--pinterest">
+								<a class="deck__link" href="#">
+								<span class="deck__icon fontawesome-pinterest"></span>
+								<span class="deck__label">Pinterest</span>
+								</a>
+							</li>
+							<li class="deck__item deck__item--googleplus">
+								<a class="deck__link" href="#">
+								<span class="deck__icon fontawesome-google-plus"></span>
+								<span class="deck__label">Google+</span>
+								</a>
+							</li>
+						</ul>
 					</div>
 				</div>
 				<div class="panel large">
@@ -333,113 +331,421 @@
 				</div>
 			</div>
 		</article> -->
-		<article id="rules" class="under-header padding-bottom">
-			<div class="container">
-				<div class="panel">
-					<h1>Hackathon Rules</h1>
-					<div>
-						<p class="margin-bottom">
-							These are the HackUPC competition rules. They are a customized version of the standard competition rules used at MLH Member Hackathons. If you have a suggestion for these rules or a question about them, please submit an issue <a href="https://github.com/hackupc/hackupc-rules/issues">here</a>.
-						</p>
-						<h2 class="margin-bottom">The spirit of the competition</h2>
-						<p class="margin-bottom">
-							Remember that hackathons are like marathons. Some people go to compete but most people take part to better themselves and have fun. Whatever the reason is you're at a hackathon, make sure you're upholding the <a href="https://medium.com/@tfogo/the-spirit-of-hackathons-a0d81a65060a#.6cx5ac9t8">hacker spirit</a> by collaborating with other teams, helping beginners, and having fun.
-						</p>
-						<h2 class="margin-bottom">The rules of the competition</h2>
-						<p class="margin-bottom">
-							<ol class="margin-bottom">
-								<li>
-									There is no minimum team size, however, the maximum size is 4 people. There will be 1 prize for each member of the team, independently of the team size.
-								</li>
-								<li>
-									Teams should be made up exclusively of students (or recent graduates within one year of having graduated) who are not organizers, judges, sponsors, or in any other privileged position at the event. Volunteers are allowed to participate in their free time, accepting the extra difficulty of hacking and volunteering at the same time, but their role won't give them any judging advantage in front of the rest of participants.
-								</li>
-								<li>
-									All team members should be present at the event. Leaving the venue for some time to hack elsewhere or sleep is fine.
-								</li>
-								<li>
-									Teams can of course gain advice and support from organizers, volunteers, sponsors, and others.
-								</li>
-								<li>
-									All work on a project should be done at the hackathon.
-								</li>
-								<li>
-									Teams can use an idea they had before the event.
-								</li>
-								<li>
-									Teams can work on ideas that have already been done. Hacks do not have to be “innovative”. If somebody wants to work on a common idea they should be allowed to do so and should be judged on the quality of their hack. These days it’s hard to find something that’s fully original and teams might not know an idea has been done before anyway.
-								</li>
-								<li>
-									Teams can work on an idea that they have worked on before (as long as they do not re-use code).
-								</li>
-								<li>
-									Teams can use libraries, frameworks, or open-source code in their projects. Working on a project before the event and open-sourcing it for the sole purpose of using the code during the event is against the spirit of the rules and is not allowed.
-								</li>
-								<li>
-									Adding new features to existing projects is allowed. Judges will only consider new functionality introduced or new features added during the hackathon in determining the winners.
-								</li>
-								<li>
-									Teams must stop hacking once the time is up. However, teams are allowed to debug and make small fixes to their programs after time is up. e.g. If during demoing your hack you find a bug that breaks your application and the fix is only a few lines of code, it's okay to fix that. Making large changes or adding new features is not allowed.
-								</li>
-								<li>
-									Participants who asked for a travel reimbursement need to post a project before the deadline in order to get the reimbursement.
-								</li>
-								<li>
-									Projects that violate the <a href="https://github.com/hackupc/rules/blob/master/CodeofConduct.md">Code of Conduct</a> are not allowed.
-								</li>
-								<li>
-									Teams can be disqualified from the competition at the organizers' discretion. Reasons might include but are not limited to breaking the Competition Rules, breaking the <a href="https://github.com/hackupc/rules/blob/master/CodeofConduct.md">Code of Conduct</a>, or other unsporting behaviour.
-								</li>
-							</ol>
-						</p>
-						<h2 class="margin-bottom">Demos</h2>
-						<p class="margin-bottom">
-							After hacking finishes, teams will show their projects to each other and to the judges.
-						</p>
-						<p class="margin-bottom">
-							You are strongly encouraged to present a demo of what you have built. Pitches or presentations are discouraged. You are not judged on the quality of your pitch or the quality of your idea. As you are judged on what you built, you'll only hurt yourself by not showing a demo.
-						</p>
-						<p class="margin-bottom">
-							You are encouraged to present what you have done even if your hack is broken or you weren’t able to finish. It's okay if you didn't finish your hack—that happens all the time! Completion is only one part of the judging criteria, so you might still do well. Also, demoing is not just about the competition. It's a chance to share with others what you learned and what you tried to build—that's what hacking's all about! For being courageous enough to demo, you'll receive a special "I Demoed" sticker—it doesn't matter how good the demo is! In the case that you don't have anything to demo, you can give a presentation about what you tried and what you learned. Hearing what other people learned is interesting and inspiring for other attendees.
-						</p>
-						<h2 class="margin-bottom">Judging Criteria</h2>
-						<p class="margin-bottom">
-							Teams will be judged on these four criteria. Judges will weigh the criteria equally. During judging, participants should try to describe what they did for each criterion in their project.
-						</p>
-						<p>
-						<ul class="margin-bottom">
-							<li><b>Technology:</b> How technically impressive was the hack? Was the technical problem the team tackled difficult? Did it use a particularly clever technique or did it use many different components? Did the technology involved make you go "Wow"?</li>
-							<li><b>Design:</b> Did the team put thought into the user experience? How well designed is the interface? For a website, this might be about how beautiful the CSS or graphics are. For a hardware project, it might be more about how good the human-computer interaction is (e.g. is it easy to use or does it use a cool interface?).</li>
-							<li><b>Completion:</b> Does the hack work? Did the team achieve everything they wanted?</li>
-							<li><b>Learning:</b> Did the team stretch themselves? Did they try to learn something new? What kind of projects have they worked on before? If a team which always does virtual reality projects decides to switch up and try doing a mobile app instead, that exploration should be rewarded.</li>
-						</ul>
-
-						<p class="margin-bottom">These criteria will guide judges but ultimately judges are free to make decisions based on their gut feeling of which projects are the most impressive and most deserving.</p>
-
-						<p class="margin-bottom">It's important to note that these judging criteria do not include:</p>
-
-						<ul class="margin-bottom">
-						<li>How good your code is. It doesn't matter if your code is messy, or not well commented, or uses inefficient algorithms. Hacking is about playing around, making mistakes, and learning new things. If your code isn't production ready, we're not going to mark you down.</li>
-						<li>How well you pitch. Hacking is about building and learning, not about selling.</li>
-						<li>How good the idea is. Again, hackathons aren't about coming up with innovative ideas. It's about building and learning.</li>
-						<li>How well the project solves a problem. You can build something totally useless and as long as you're learning and having fun, that's a good hack! Sometimes a pointless project is one of the best hacks!</li>
-						</ul>
-
-						<p class="margin-bottom">So don't worry about coming up with the next big idea or building the next Facebook. You'll have plenty of time for that outside the hackathon. just focus on learning, having fun, and making new friends. At the end of the day the skills you learn and the friends you make might lead to the next big thing—but you don't have to do that to win a hackathon.</p>
-
-						<h2 class="margin-bottom">Cheating</h2>
-						<p class="margin-bottom">
-							Any cheating allegations will be resolved according to the HackUPC Cheating Response Procedure found <a href="https://github.com/hackupc/rules/blob/master/cheating_response_procedure.md" target="_blank">here</a>.
-						</p>
-
-						<h2 class="margin-bottom">Remember</h2>
-						<p class="margin-bottom">
-							The competition is just a part of the hackathon. To make the most out of the event, try something new, teach other people, and make new friends!
-						</p>
-						<p>
-							Happy Hacking from the HackUPC team!
-						</p>
-					</div>
+		<article id="jury" class="under-header padding-bottom">				  
+			<div class="jurytitle">
+				<div class="typewriter">
+					<h1>The WhatTheHack Jury</h1>
+				</div>
+				<div class="scrollarrows">
+					<div class="chevron"></div>
+					<div class="chevron"></div>
+					<div class="chevron"></div>
+				</div>
+			</div>
+			<div class="container-small">
+				<div class="jurybox">
+					<h2>HealthTech</h2>
+					<ul class="healthtech">
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Serge-Haubourdin.jpg" alt="Serge Haubourdin">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Serge Haubourdin</h1> 
+											<p>Associate Profession at IE University</p> 
+											<img src="assets/img/partners/Corporate-Coach.svg" alt="Corporate Coach">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Jean-Sébastien-Struyf.jpg" alt="Serge Haubourdin">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Jean-Sébastien Struyf</h1> 
+											<p>Consultant and Entrepreneur in Life Sciences | CEO Advelox</p> 
+											<img src="assets/img/partners/Advelox.svg" alt="Advelox">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Roel-De-Spiegeleer.jpg" alt="Roel De Spiegelaar">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Roel De Spiegelaar</h1> 
+											<p>IT Service Delivery Manager</p> 
+											<img src="assets/img/partners/CM.svg" alt="CM">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<h2>Media</h2>
+					<ul class="media">
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Heino-Schaght.jpeg" alt="Heino Schaght">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Heino Schaght</h1> 
+											<p>Innovation Coach</p> 
+											<img src="assets/img/partners/Mediahuis.svg" alt="Mediahuis">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Ivor-Micallef.jpg" alt="Ivor Micallef">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Ivor Micallef</h1> 
+											<p>Director Entertainment Products</p> 
+											<img src="assets/img/partners/Telenet.svg" alt="Telenet">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Sven-Munaron.jpg" alt="Sven Munaron">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Sven Munaron</h1> 
+											<p>IT Delivery Manager Video</p> 
+											<img src="assets/img/partners/De-Persgroep.svg" alt="De Persgroep">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Maarten-Verwaest.png" alt="Maarten Verwaest">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Maarten Verwaest</h1> 
+											<p>Founder and CEO</p> 
+											<img src="assets/img/partners/Limecraft.svg" alt="LimeCraft">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Marijke-Celis.jpg" alt="Marijke Celis">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Marijke Celis</h1> 
+											<p>Manager Digitaal Productiecentrum</p> 
+											<img src="assets/img/partners/VRT.svg" alt="VRT">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<h2>Smart Cities</h2>
+					<ul class="smartcities">
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Thomas-Baerten.jpeg" alt="Thomas Baerten">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Thomas Baerten</h1> 
+											<p>Expert in digital communication</p> 
+											<img src="assets/img/partners/Bilzen.svg" alt="City Bilzen">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Frank-Desear.jpg" alt="Frank De Saer">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Frank De Saer</h1> 
+											<p>CEO</p> 
+											<img src="assets/img/partners/Atrias.svg" alt="Atrias">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Stefan-Costeur.jpg" alt="Stefan Costeur">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Stefan Costeur</h1> 
+											<p>Digital Sales and Marketing Manager</p> 
+											<img src="assets/img/partners/NMBS.svg" alt="NMBS">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Gregory-Wuurman.jpg" alt="Gregory Wuurman">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Gregory Wuurman</h1> 
+											<p>Digital Customer Experience Manager</p> 
+											<img src="assets/img/partners/NMBS.svg" alt="NMBS">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Leen-Tyrions.jpg" alt="Leen Tyrions">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Leen Tyrions</h1> 
+											<p>Advisor, tourism and citymarketing</p> 
+											<img src="assets/img/partners/Leuven.svg" alt="City Leuven">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Tim-Guily.jpg" alt="Tim Guily">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Tim Guily</h1> 
+											<p>Policy Advisor</p> 
+											<img src="assets/img/partners/Leuven.svg" alt="City Leuven">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/An-Van-Peteghem.jpg" alt="An Van Peteghem">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>An Van Peteghem</h1> 
+											<p>Head of Solution Delivery</p> 
+											<img src="assets/img/partners/De-Lijn.svg" alt="De Lijn">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<h2>Retail</h2>
+					<ul class="retail">
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Ignace-De-Nollin.png" alt="Ignace De Nollin">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Ignace De Nollin</h1> 
+											<p>Managing Director</p> 
+											<img src="assets/img/partners/Smart-With-Food.svg" alt="Smart with Food - Colruyt">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Stein-Gullentops.jpg" alt="Stein Gullentops">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Stein Gullentops</h1> 
+											<p>Owner of Fish digital | Marketing automation Consultant</p> 
+											<img src="assets/img/partners/Fish-Digital.svg" alt="Fish Digital">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Ides-Ticket.png" alt="Ides Ticket">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Ides Ticket</h1> 
+											<p>Founder at Business Markers</p> 
+											<img src="assets/img/partners/Business-Markers.svg" alt="Business Markers">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<h2>Student Life</h2>
+					<ul class="studentlife">
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Jesse-Hoobergs.jpeg" alt="Jesse Hoobergs">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Jesse Hoobergs</h1> 
+											<p>President</p> 
+											<img src="assets/img/partners/Quivr.svg" alt="Quivr">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Guy-Gelaude.jpeg" alt="Guy Gelaude">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Guy Gelaude</h1> 
+											<p>Partner Lead - Google Marketing Platform</p> 
+											<img src="assets/img/partners/Google.svg" alt="Google">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Kenny-Van-Minsel.jpeg" alt="Kenny Van Minsel">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Kenny Van Minsel</h1> 
+											<p>President</p> 
+											<img src="assets/img/partners/Loko.svg" alt="Student Organisation LOKO">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<h2>Banking & Insurance</h2>
+					<ul class="banking">
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Peter-Croughs.jpg" alt="Peter Croughs">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Peter Croughs</h1> 
+											<p>Business/Startup & Fintech liaison | Innovation watcher</p> 
+											<img src="assets/img/partners/KBC.svg" alt="KBC">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Pascal-Cuppens.jpg" alt="Pascal Cuppens">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Pascal Cuppens</h1> 
+											<p>Head of the Surf Studio KBC Group Innovation Ecosystem</p> 
+											<img src="assets/img/partners/KBC.svg" alt="KBC">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/coaches/Birgitta-Brys.jpeg" alt="Birgitta Brys">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Birgitta Brys</h1> 
+											<p>Chief Operating Officer Benelux</p> 
+											<img src="assets/img/partners/Worldline.svg" alt="Worldline">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</article>
@@ -473,70 +779,14 @@
 			</div>
 		</article>
 		<article id="coaches" class="under-header padding-bottom">
-			<div class="container">
-				<div class="coachbox">
-					<ul class="healthtech">
-						<h2>HealthTech</h2>
-						<li>
-							<div class="flip-card">
-								<div class="flip-card-inner">
-									<div class="flip-card-front">
-										<img src="assets/img/coaches/Serge-Haubourdin.jpg" alt="Serge Haubourdin" style="width:300px;height:300px;">
-									</div>
-									<div class="flip-card-back">
-										<h1>Serge Haubourdin</h1> 
-										<p>Associate Profession at IE University</p> 
-										<!-- <img src="assets/img/partners/" alt="Corporate Coach"> -->
-									</div>
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="flip-card">
-								<div class="flip-card-inner">
-									<div class="flip-card-front">
-										<img src="assets/img/coaches/Jean-Sébastien-Struyf.jpg" alt="Serge Haubourdin" style="width:300px;height:300px;">
-									</div>
-									<div class="flip-card-back">
-										<h1>Jean-Sébastien Struyf</h1> 
-										<p>Consultant and Entrepreneur in Life Sciences</p> 
-										<p>CEO Advelox</p>
-										<img src="assets/img/partners/Advelox.svg" alt="Advelox">
-									</div>
-								</div>
-							</div>
-						</li>
-					</ul>
-					<ul class="media">
-						<h2>Media</h2>
-						<li>
-							<img src="coaches/" alt="">
-						</li>
-					</ul>
-					<ul class="smartcities">
-						<h2>Smart Cities</h2>
-						<li>
-							<img src="coaches/" alt="">
-						</li>
-					</ul>
-					<ul class="retail">
-						<h2>Retail</h2>
-						<li>
-							<img src="coaches/" alt="">
-						</li>
-					</ul>
-					<ul class="studentlife">
-						<h2>Student Life</h2>
-						<li>
-							<img src="coaches/" alt="">
-						</li>
-					</ul>
-					<ul class="banking">
-						<h2>Banking & Insurance</h2>
-						<li>
-							<img src="coaches/" alt="">
-						</li>
-					</ul>
+			<div class="coachtitle">
+				<div class="typewriter">
+					<h1>Need coaching?</h1>
+				</div>
+				<div class="scrollarrows">
+					<div class="chevron"></div>
+					<div class="chevron"></div>
+					<div class="chevron"></div>
 				</div>
 			</div>
 		</article>
@@ -875,5 +1125,7 @@
 			</div>
 		</article>
 	</main>
+
+	<script src="assets/js/checklist.js"></script>
 </body>
 </html>

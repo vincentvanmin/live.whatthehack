@@ -2,12 +2,12 @@
 	"version": 1,
 	"message": "",
 	"baseTimeOffset":"-60",
-	"countdownStart":"07/02/2019 16:00",
+	"countdownStart":"10/02/2019 17:30",
 	"days":
 	[
 		{
 			"name":"Friday",
-			"date":"07/02/2019",
+			"date":"10/02/2019",
 			"events":
 			[
 				{
@@ -121,7 +121,7 @@
 		},
 		{
 			"name":"Saturday",
-			"date":"08/02/2019",
+			"date":"11/02/2019",
 			"events":
 			[
 				{
@@ -298,7 +298,7 @@
 					"startHour": "18:00",
 					"endHour": "19:00",
 					"locationName": "Berlin (Agora)",
-					"description": "Jury members: Thomas Baerten, Frank Desaer, Stefan Costeur, Gregory Wuurman, Leen Tyrions, Tim Guily, An Van Peteghem",
+					"description": "Jury members: Thomas Baerten, Frank De Saer, Stefan Costeur, Gregory Wuurman, Leen Tyrions, Tim Guily, An Van Peteghem",
 					"category": "Pitch"
 				},
 				{
