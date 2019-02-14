@@ -2,12 +2,12 @@
 	"version": 1,
 	"message": "",
 	"baseTimeOffset":"-60",
-	"countdownStart":"13/02/2019 10:30",
+	"countdownStart":"14/02/2019 10:30",
 	"days":
 	[
 		{
 			"name":"Friday",
-			"date":"13/02/2019",
+			"date":"14/02/2019",
 			"events":
 			[
 				{
@@ -130,7 +130,7 @@
 		},
 		{
 			"name":"Saturday",
-			"date":"14/02/2019",
+			"date":"15/02/2019",
 			"events":
 			[
 				{

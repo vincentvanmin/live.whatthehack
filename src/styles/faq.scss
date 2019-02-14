@@ -1,3 +1,108 @@
-#faq{
+.faqimage {
+    position: fixed;
+    width: 500px;
+    height: 100vh;
+    top: 50%;
+    left: 65%;
+    transform: translateY(-50%);
+    background-image: url("../img/faq.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 100%;
+    @media (max-width: 720px) { display: none; }
+}
 
+#questions {
+    margin: 30px 0;
+    padding: 0;
+    width: 60%;
+    @media (max-width: 720px) { width: 100%; }
+
+    .question {
+        width: 100%;
+
+        .question-heading {
+            width: 100%;
+            position: relative;
+            cursor: pointer;
+            position: relative;
+            min-height: 50px;
+            padding: 0px 8px 0px 40px;
+            list-style-type: none;
+            text-align: left;
+            background: #332275;
+            border: none;
+            outline: none;
+            color: #fff;
+            border-radius: 25px;
+            font-size: 18px;
+            transition: 0.2s;
+            margin: 10px 0;
+    
+            /* Darker background-color on hover */
+            &:hover {
+                background: #00ece2;
+                color: #1b0a5f;
+
+                .open-icon {
+                    background-image: url("../img/plus.svg");
+                }
+            }
+
+            .open-icon {
+                background-image: url("../img/plus-light.svg");
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                top: 50%;
+                left: 10px;
+                transform: translateY(-50%);
+            }
+
+            h2 {
+                padding: 15px 0 !important;
+                margin: 0;
+                font-size: 20px;
+                line-height: 20px;
+            }
+        }
+
+        .question-body {
+            display: none;
+            background: transparent;
+            padding: 20px 40px;
+
+            p {
+                color: #fff;
+                font-size: 16px;
+
+                a {
+                    color: #fff;
+                    text-decoration: underline;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+
+        }
+    }
+
+    /* When clicked on, add a background color and strike out text */
+    div.readmore {
+        .question-heading {
+            background: #00ece2;
+            color: #1b0a5f;
+
+            /* Add a "minus" mark when clicked on */
+            .open-icon {
+                background-image: url("../img/minus.svg");
+            }
+        }
+        
+        .question-body {
+            display: block;
+        }
+    }
 }
