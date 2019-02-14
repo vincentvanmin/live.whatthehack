@@ -85,20 +85,20 @@ main{
 							font-size:16px;
 						}
 						div.decimals{
-							width: 27px;
-							height: 13px;
+							width: 18px;
+							height: 8px;
 							margin-top: 3px;
 						}
 
 						span{
 							&.big{
-								font-size:24px;
+								font-size:35px;
 								display: block;
 								float: left;
 							}
 							&.little{
 								margin-top:4px;
-								font-size:13px;
+								font-size:16px;
 								min-width:25px;
 							}
 						}
@@ -137,11 +137,13 @@ main{
 			display:flex;
 			align-items: center;
 			text-align:center;
-			height:100%;
-			h1{
-				flex:1 1 0;
-				margin:0;
-				padding:0;
+			height: 100%;
+			padding: 5px 0;
+
+			img {
+				width: 40%;
+				margin: 0 auto;
+				@media (max-width: 480px) {width: 60%;}
 			}
 		}
 		#open-aside-btn{
@@ -165,11 +167,12 @@ main{
 #aside-small-menu{
 	height: 100%;
 	position: fixed;
-	background-color: $bgColor;
-	width: 200px;
+	background-color: #12222E;
+	color: #fff;
+	width: 250px;
 	box-shadow: 0px 0 13px 1px rgba(0,0,0,0.6);
 	z-index:150;
-	overflow:auto; /*just in case*/
+	overflow: auto; /*just in case*/
 
 	left:0;
 	&.closed{
@@ -200,20 +203,24 @@ main{
 	}
 	nav{
 		margin-top:10px;
-		background-color: darken($bgColor, 5%);
+		background-color: #12222E;
 		ul{
 			list-style:none;
 			padding:0;
 			li{
 				border-top:thin solid rgba(255,255,255,0.3);
-				&.selected{
+				&:hover, &.selected {
 					font-weight:bold;
-					background-color:darken($bgColor, 15%);
+					background-color: #00e9e3;
+
+					a {
+						color: #1b0a5f;
+					}
 				}
 				a{
 					display:block;
 					padding:10px 20px;
-					color:$textColor;
+					color: #fff;
 					text-decoration: none;
 				}
 			}

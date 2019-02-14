@@ -43,7 +43,7 @@ function newElement() {
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
-  span.className = "close";
+  span.className = "remove-button";
   span.appendChild(txt);
   li.appendChild(span);
 

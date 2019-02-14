@@ -5,6 +5,7 @@
     text-align: left;
     margin-bottom: 20px;
     line-height: 40px;
+    @media (max-width: 720px) { font-size: 30px; }
 }
 
 .bag {
@@ -103,17 +104,17 @@
         margin: 0;
         padding: 0;
         overflow: scroll;
-        max-height: 380px;
+        height: 380px;
 
         li {
             cursor: pointer;
             position: relative;
-            height: 50px;
+            min-height: 50px;
             padding: 12px 8px 12px 40px;
             list-style-type: none;
             background: #332275;
             color: #fff;
-            border-radius: 100px;
+            border-radius: 25px;
             font-size: 18px;
             transition: 0.2s;
             margin: 10px 0;
@@ -203,11 +204,11 @@
             .channel {
                 cursor: pointer;
                 position: relative;
-                height: 50px;
+                min-height: 50px;
                 padding: 12px 8px 12px 50px;
                 list-style-type: none;
                 background: #332275;
-                border-radius: 100px;
+                border-radius: 25px;
                 font-size: 18px;
                 transition: 0.2s;
                 margin: 10px 0;
@@ -278,7 +279,7 @@
                     color: #1b0a5f;
                     cursor: pointer;
                     transition: 0.3s;
-                    border-radius: 20px;
+                    border-radius: 22px;
                     border: solid 2px #00ece2;
                     outline: none;
     
@@ -320,6 +321,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 0;
     
             .socials-item {
                 flex-direction: row;

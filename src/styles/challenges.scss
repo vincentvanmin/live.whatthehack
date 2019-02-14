@@ -1,10 +1,14 @@
+body.modal-open {
+    overflow: hidden;
+}
+
 .challenges {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     list-style: none;
     padding: 30px 0 0 0;
-    @media (max-width: 720px) { padding: 0 5%; }
+    @media (max-width: 720px) { padding: 20px 5%; }
     
     li {
         flex-direction: row;
@@ -23,47 +27,98 @@
             cursor: pointer;
             outline: none;
             
-            &:hover {
+            &:hover, &.selected {
                 background: #00ece2;
                 color: #1b0a5f;
             }
         }
 
-        .modal .modal-content{
-            background: transparent;
-            
-            .modal-header {
-                position: relative;
-                border-radius: 100px;
-                padding: 12px 8px 12px 20px;
-                background: #00ece2;
-                color: #1b0a5f;
-                font-size: 18px;
-                transition: 0.2s;
-                margin: 10px 0;
-                border: none;
+        .modal {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
 
-                .close-button {
-                    position: absolute;
-                    width: 50px;
-                    height: 50px;
-                    line-height: 50px;
-                    text-align: center;
-                    right: 0;
-                    top: 0;
-                    border: none;
-                    border-radius: 50%;
+            .modal-dialog {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                margin: auto;
+                @media (max-width: 720px) { width: 90%; }
+
+                .modal-content{
                     background: transparent;
-                    color: #1b0a5f;
-                    font-size: 16px;
+                    box-shadow: none;
+                    border: none;
+        
+                    .modal-header {
+                        position: relative;
+                        border-radius: 25px;
+                        min-height: 50px;
+                        padding: 12px 8px 12px 20px;
+                        background: #00ece2;
+                        color: #1b0a5f;
+                        font-size: 18px;
+                        transition: 0.2s;
+                        margin: 10px 0;
+                        border: none;
+        
+                        .close-button {
+                            position: absolute;
+                            width: 50px;
+                            height: 50px;
+                            line-height: 50px;
+                            text-align: center;
+                            right: 0;
+                            top: 0;
+                            border: none;
+                            border-radius: 50%;
+                            background: transparent;
+                            color: #1b0a5f;
+                            font-size: 16px;
+                            cursor: pointer;
+                            outline: none;
+        
+                            &:hover {
+                                background: rgb(255, 90, 70);
+                                color: #fff;
+                            }
+                        }
+                    }
 
-                    &:hover {
-                        background: rgb(255, 90, 70);
+                    .modal-body {
+                        max-height: 60vh;
+                        @media (max-width: 720px) { max-height: 70vh; }
+                        overflow-y: scroll;
+                        background-color: #332275;
+                        border-bottom-left-radius: 25px;
+                        border-bottom-right-radius: 25px;
                         color: #fff;
+
+                        &::-webkit-scrollbar {
+                            -webkit-appearance: none;
+                            width: 7px;
+                        }
+                        &::-webkit-scrollbar-thumb {
+                            border-radius: 4px;
+                            background-color: rgba(255, 255, 255, .5);
+                            box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+                        }
+
+                        a {
+                            color: #fff;
+                            text-decoration: underline;
+                            font-size: inherit;
+                            font-weight: inherit;
+
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
                     }
                 }
             }
-        }
+        } 
     }
 
     li:nth-child(odd) {

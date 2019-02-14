@@ -21,7 +21,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<meta name="author" content="Tobania">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 	<!--Prompt-->
 	<template id="promptTemplate">
@@ -123,7 +123,7 @@
 				<span>&#9776;</span>
 			</div>
 			<div class="title-container">
-				<h1 id="title">Live</h1>
+				<img src="assets/img/long-logo.png" alt="WhatTheHack">
 			</div>
 		</div>
 	</header>
@@ -135,30 +135,28 @@
 		<nav>
 			<ul>
 				<li data-bind-view="home">
-					<a href="#/home">Home</a>
+					<a href="#/home" onclick="scrollToTop()">Home</a>
 				</li>
 				<li data-bind-view="live">
-					<a href="#/live">Live</a>
+					<a href="#/live" onclick="scrollToTop()">Live</a>
 				</li>
 				<li data-bind-view="schedule">
-					<a href="#/schedule">Schedule</a>
+					<a href="#/schedule" onclick="scrollToTop()">Schedule</a>
 				</li>
-				<li data-bind-view="maps"><!--<li>-->
-					<!--<a href="http://maps.hackupc.com/#/UPC" target="_blank">Maps</a>-->
-					<a href="#/maps">Maps</a>
+				<li data-bind-view="maps">
+					<a href="#/maps" onclick="scrollToTop()">Maps</a>
 				</li>
-				<li data-bind-view="coaches"><!--<li>-->
-					<!--<a href="https://coaches.hackupc.com/" target="_blank">Coaches</a>-->
-					<a href="#/coaches">Coaches</a>
+				<li data-bind-view="coaches">
+					<a href="#/coaches" onclick="scrollToTop()">Coaches</a>
 				</li>
 				<li data-bind-view="jury">
-						<a href="#/jury">Jury</a>
+						<a href="#/jury" onclick="scrollToTop()">Jury</a>
 					</li>
 				<li data-bind-view="challenges">
-					<a href="#/challenges">Challenges</a>
+					<a href="#/challenges" onclick="scrollToTop()">Challenges</a>
 				</li>
 				<li data-bind-view="faq">
-					<a href="#/faq">FAQ</a>
+					<a href="#/faq" onclick="scrollToTop()">FAQ</a>
 				</li>
 			</ul>
 		</nav>
@@ -168,17 +166,16 @@
 		<nav>
 			<ul>
 				<li data-bind-view="home">
-					<a href="#/home">Home</a>
+					<a href="#/home" onclick="scrollToTop()">Home</a>
 				</li>
 				<li data-bind-view="live">
-					<a href="#/live">Live</a>
+					<a href="#/live" onclick="scrollToTop()">Live</a>
 				</li>
 				<li data-bind-view="schedule">
-					<a href="#/schedule">Schedule</a>
+					<a href="#/schedule" onclick="scrollToTop()">Schedule</a>
 				</li>
-				<li data-bind-view="maps"><!--<li>-->
-					<!--<a href="http://maps.hackupc.com/#/UPC" target="_blank">Maps</a>-->
-					<a href="#/maps">Maps</a>
+				<li data-bind-view="maps">
+					<a href="#/maps" onclick="scrollToTop()">Maps</a>
 				</li>
 				<li id="countdown-li">
 					<div>
@@ -187,17 +184,17 @@
 						<img src="assets/img/ball.png"/>
 					</div>
 				</li>
-				<li data-bind-view="coaches"><!--<li>-->
-					<a href="#/coaches">Coaches</a>
+				<li data-bind-view="coaches">
+					<a href="#/coaches" onclick="scrollToTop()">Coaches</a>
 				</li>
 				<li data-bind-view="jury">
-						<a href="#/jury">Jury</a>
+						<a href="#/jury" onclick="scrollToTop()">Jury</a>
 					</li>
 				<li data-bind-view="challenges">
-					<a href="#/challenges">Challenges</a>
+					<a href="#/challenges" onclick="scrollToTop()">Challenges</a>
 				</li>
 				<li data-bind-view="faq">
-					<a href="#/faq">FAQ</a>
+					<a href="#/faq" onclick="scrollToTop()">FAQ</a>
 				</li>
 			</ul>
 		</nav>
@@ -235,7 +232,7 @@
 				<div class="bag">
 					<h1>What to bring with you?</h1>
 					<div class="listbox">
-						<form class="addfield">
+						<form class="addfield" onsubmit="return false">
 							<input type="text" id="myInput" placeholder="Title...">
 							<input type="submit" value="Add" onclick="newElement()" class="addBtn">
 						</form>
@@ -291,22 +288,6 @@
 		<article id="schedule" class="under-header padding-bottom">
 			<div class="container"></div>
 		</article>
-		<!-- <article id="travel" class="under-header padding-bottom">
-			<div class="container">
-				<div class="panel">
-					<h1>Travel reimbursement</h1>
-					<div>
-						<p class="margin-bottom">If you have been elected to receive a travel reimbursement, we will contact you after the hackathon to send it to you. You will receive a maximum that has been specified on the email, based on current travelling prices and distances. Requirements to receive travel reimbursement are as follows.</p>
-						<ul class="margin-bottom">
-							<li>Received an email with travel reimbursement amount.</li>
-							<li>Travel reimbursement receipts submitted before the date specified by HackUPC Team.</li>
-							<li>Project submitted to Devpost before due date.</li>
-						</ul>
-						<p>The processing of travel reimbursements takes some time. Our schedule depends on our sponsors' schedule. We expect to have them sent out in a 1-2 months time period. Remember that you need to post a project before the deadline in order to get the reimbursement!</p>
-					</div>
-				</div>
-			</div>
-		</article> -->
 		<article id="jury" class="under-header padding-bottom">				  
 			<div class="jurytitle">
 				<div class="typewriter">
@@ -1302,13 +1283,10 @@
 			<div class="container-small">
 				<ul class="challenges">
 					<li>
-						<!-- Trigger the modal with a button -->
 						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal1">#1 Student Life - Quivr</button>
 
-						<!-- Modal -->
 						<div class="modal fade" id="myModal1" role="dialog">
 							<div class="modal-dialog">
-								<!-- Modal content-->
 								<div class="modal-content">
 									<div class="modal-header">
 										<button type="button" class="close-button" data-dismiss="modal">X</button>
@@ -1325,13 +1303,10 @@
 						</div>
 					</li>
 					<li>
-						<!-- Trigger the modal with a button -->
 						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal2">#2 Student Life - Tobania</button>
 
-						<!-- Modal -->
 						<div class="modal fade" id="myModal2" role="dialog">
 							<div class="modal-dialog">
-								<!-- Modal content-->
 								<div class="modal-content">
 									<div class="modal-header">
 											<button type="button" class="close-button" data-dismiss="modal">X</button>
@@ -1343,6 +1318,786 @@
 												• Security: consider the user’s privacy, do not let your messages be easily intercepted. <br><br>
 												• Authentication: how will your users authenticate with your application? <br><br>
 												• Availability: on which devices will it work?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal3">#3 Student Life - Tobania</button>
+
+						<div class="modal fade" id="myModal3" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#3 Student Life - Tobania</h4>
+									</div>
+									<div class="modal-body">
+										<p>CV Platform <br><br>
+												• How can we setup a CV platform where everybody can upload it’s CV and where everybody easily can view, share and endorse on CV’s ?<br><br>
+												• Functionality: how much freedom would you give your users when building a CV website? Will you support forms? Fixed page templates? Something completely custom? Will you support end-user authentication?<br><br>
+												• How will you build your website?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal4">#4 Student Life - Tobania</button>
+
+						<div class="modal fade" id="myModal4" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#4 Student Life - Tobania</h4>
+									</div>
+									<div class="modal-body">
+										<p>Mass-communication system <br><br>
+												Do you use multiple channels (Facebook, Instagram, Twitter or email) to inform clients or potential clients (students, colleagues or community members?<br><br>
+												It might improve your performance and the reach of your message if there was a tool which optimized that process.<br><br>
+												Usage: how will the tool be used? Will there be a user interface? Will you write an API that developers can access from other applications?<br><br>
+												Storage: how will you store a client’s contact information? Do you follow the rules defined in the GDPR? How much information do you keep about the messages that were sent?<br><br>
+												Analytics: can your users see how many people they reached? How many people actually read your messages or took action because of them?<br><br>
+												How will you handle automatization and/or scheduling?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal5">#5 Student Life - LOKO</button>
+
+						<div class="modal fade" id="myModal5" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#5 Student Life - LOKO</h4>
+									</div>
+									<div class="modal-body">
+										<p>Social isolation is a major problem among students. How could we stimulate students to meet each other easily and in an accessible way? <br><br>
+												Local and international students have little contact with each other. How could we close the gap between these two groups? <br><br>
+												Being a student is not only about studying. There is a huge range of extracurricular activities that offer added value for students and the surrounding area. How could we convince more students to take additional commitments beside their studies?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal6">#6 Student Life - LOKO</button>
+
+						<div class="modal fade" id="myModal6" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#6 Student Life - LOKO</h4>
+									</div>
+									<div class="modal-body">
+										<p>How can sport and healthy food be used more efficiently for individual students to encourage better well-being? <br><br>
+												Students drink alcohol. That is a fact, but a significant group among students endure problematical drinking usage which lays the basis for later alcohol problems. How could we encourage students to have a responsible alcohol usage?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal7">#7 Smart Cities - NMBS</button>
+
+						<div class="modal fade" id="myModal7" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#7 Smart Cities - NMBS</h4>
+									</div>
+									<div class="modal-body">
+										<p>How to convince car users that other (soft) mobility solutions are possible alternatives to their needs? <br><br>
+												How can customers flows in stations be used to improve services: light, escalators, traveller information, position of information screens, ...? <br><br>
+												How can we enhance the orientation in public buildings? Using geo-localization to personalize and improve customer experience in Belgian railway stations. <br><br>
+												How can new megatrends such as IoT, Blockchain, M2M help making public transport more reliable, convenient, customer focussed, attractive,...? <br><br>
+												How would you handle the challenges of multimodal transportation in the new smart cities? <br><br>
+												What would the ideal transportation (mix) look like in the new smart and connected city?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal8">#8 Smart Cities - Leuven</button>
+
+						<div class="modal fade" id="myModal8" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#8 Smart Cities - Leuven</h4>
+									</div>
+									<div class="modal-body">
+										<p>How can you provide tourist with a unique city visit without needing thousands of tour guides and translators? Can we provide them a digital guide which enhances their experience and is tailored to their needs and available 24/7? How can we make it informative in a fun way without being insecure? <br><br>
+												We challenge you by using the tourist data management system.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal9">#9 Smart Cities - Bilzen</button>
+
+						<div class="modal fade" id="myModal9" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#9 Smart Cities - Bilzen</h4>
+									</div>
+									<div class="modal-body">
+										<p>How to tailor digital services to seniors? We noticed they sometimes have difficulties using reCaptcha or other log-in services. This results in frustrations for these people and prohibits us from transforming to a fully digital service provider. <br><br>
+												Use a creative approach to help us in this matter!</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal10">#10 Smart Cities - De Lijn</button>
+
+						<div class="modal fade" id="myModal10" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#10 Smart Cities - De Lijn</h4>
+									</div>
+									<div class="modal-body">
+										<p>Less is more and the best ideas are originating from personal experiences. This challenge is very broad and therefor very interesting: “Make transportation more accessible and flexible for everyone.” <br><br>
+												Customer satisfaction, multimodality and MaaS are important cornerstones, for instance a digital service to capture the needs of customers to enhance their satisfaction. <br><br>
+												Open Data De Lijn: <a href="https://data.delijn.be/">https://data.delijn.be/</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal11">#11 Smart Cities - Tobania</button>
+
+						<div class="modal fade" id="myModal11" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#11 Smart Cities - Tobania</h4>
+									</div>
+									<div class="modal-body">
+										<p>Cities spend huge amounts of money every year tracking down cars that are wrongly parked and cars that park without paying. Cities still want to impose proper parking to maintain order, however, the cost is growing as more city dwellers now own cars. <br><br>
+												Your task is to brainstorm how the current technology advances can help cities achieve their goal.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal12">#12 Media - De Persgroep</button>
+
+						<div class="modal fade" id="myModal12" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#12 Media - De Persgroep</h4>
+									</div>
+									<div class="modal-body">
+										<p>For any brand within media it is not only important to gain traffic towards the digital products, but most definitely gain engagement from your fans & 'spectators'. It seems easy, but it isn't. Go wild and astonish me and my colleagues. - Text, images and video are important within media, but don't forget audio. <br><br>
+												The possibilities with audio are broad, but what can help to boost the engagement and reach towards our fans?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal13">#13 Media - Limecraft</button>
+
+						<div class="modal fade" id="myModal13" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#13 Media - Limecraft</h4>
+									</div>
+									<div class="modal-body">
+										<p>We all know subtitling, but as of 2020 content producers will be obliged to provide as well versions with 'Audio Description' (describing the scene) and 'spoken subtitles' (translating non-domestic audio). To date, audio description and spoken subtitles rely on manual work, recording complementary audio in a voice booth and remixing the content, at a cost of € 2000 per hour of content. Using synthetic audio (text to speech) and artificial intelligence for mixing, it should be possible to produce Audio Description at marginal cost and thus on a much larger scale.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal14">#14 Media - Telenet</button>
+
+						<div class="modal fade" id="myModal14" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#14 Media - Telenet</h4>
+									</div>
+									<div class="modal-body">
+										<p>How should a media experience transform to a contextual & personal one in the future? <br><br>
+												With so many new devices and technology (voice-controlled, remote-management...), what should be the next-gen media controls to bring to consumers? <br><br>
+												How could we increase consumer engagement and focus of media when consumers are increasingly watching TV with a phone in their hands?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal15">#15 Media - De Mensen</button>
+
+						<div class="modal fade" id="myModal15" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#15 Media - De Mensen</h4>
+									</div>
+									<div class="modal-body">
+										<p>Video has become a successful element to build this emotional and visual connection between brands and customers. But video can be perceived easily as just an extra platform for pushing company - centric messages to users and customers. <br><br>
+												How do you think we can successfully insert interactive elements into brand communication video, to rebuild it from one-sided conversation into a true dialogue (think Q&A / hotspots /...)?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal16">#16 Media - VRT</button>
+
+						<div class="modal fade" id="myModal16" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#16 Media - VRT</h4>
+									</div>
+									<div class="modal-body">
+										<p>How can VRT engage young people in the 2019 elections? <br><br>
+												Context <br>
+												On May 26th 2019, the regional, federal and European elections are organized in Belgium. After 5 years citizens have to choose new regional, federal and European representatives. VRT NWS wants to cover all aspects of the elections (before, during and after election day). Both on their own channels as those of other VRT-related brands like Studio Brussel or MNM. <br><br>
+												Audience and purpose <br>
+												VRT NWS wants to engage young people (18-24 year) to actively participate in the voting process. In Belgium we have “compulsory voting” so we don’t need to convince young people to vote. The purpose of this challenge is to encourage debate and reflection on the reasons why your vote can make a difference. Government decisions impact the lives of all people. VRT NWS wants to create a conversation and debate between young people by suggesting possible topics.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal17">#17 Retail - Smart With Food</button>
+
+						<div class="modal fade" id="myModal17" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#17 Retail - Smart With Food</h4>
+									</div>
+									<div class="modal-body">
+										<p>Combine nutrition and healthcare to develop a preventive healthcare solution through nutrition. How can we use nutrition in a preventive approach both on an individual level as well as on a general population level. <br><br>
+												Solve this challenge through the eyes of the average consumer.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal18">#18 Retail - Fish Digital</button>
+
+						<div class="modal fade" id="myModal18" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#18 Retail - Fish Digital</h4>
+									</div>
+									<div class="modal-body">
+										<p>More than 80% of consumers searches for information online before entering a “brick & mortar” store. Sadly, the digital and physical world remain two separated entities and companies are unable to merge them into a full-fledged omnichannel approach. <br><br>
+												Even after purchase it remains a major challenge for a lot of companies to build a well founded cross-selling strategy. <br><br>
+												What does this future omnichannel model look like and how do companies succeed in delivering a seamless experience to their customers using this channel?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal19">#19 Retail - Tobania</button>
+
+						<div class="modal fade" id="myModal19" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#19 Retail - Tobania</h4>
+									</div>
+									<div class="modal-body">
+										<p>Freshness 2.0 <br><br>
+												Consumers are increasingly demanding fresher, healthier and natural tasting fruit, vegetables and meat. Therefore it’s of utmost importance for groceries to guarantee and market the freshness of their products to its customers. However, the crucial question remain: “How do I measure the freshness of my products and how do the customers experience this freshness?” <br><br>
+												An example could be a Tinder for grocery products where customers can (dis)like the freshness of products of the stores in their neighborhood.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal20">#20 Health Tech - CM</button>
+
+						<div class="modal fade" id="myModal20" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#20 Health Tech - CM</h4>
+									</div>
+									<div class="modal-body">
+										<p>How can we, CM, as a Belgian healthcare insurer interact in a digitale way with our customers, digitalize some manual processes like registrations? <br><br>
+												And what other potential is out there? <br><br>
+												What about Chatbots? Or maybe an app with the possibility to digitize documents, etc.. ? Be creative!</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal21">#21 Health Tech - The Corporate Wellbeing Coach</button>
+
+						<div class="modal fade" id="myModal21" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#21 Health Tech - The Corporate Wellbeing Coach</h4>
+									</div>
+									<div class="modal-body">
+										<p>Corporate wellbeing <br><br>
+												Most companies recognize the need for corporate wellbeing. However, how do you you capture the needs of your company, motivate your employees and create the right corporate wellbeing plan? When working on this challenge keep in mind a clear ROI and, of course, don’t forget GDPR.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal22">#22 Health Tech - The Corporate Wellbeing Coach</button>
+
+						<div class="modal fade" id="myModal22" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#22 Health Tech - The Corporate Wellbeing Coach</h4>
+									</div>
+									<div class="modal-body">
+										<p>Future learning and training in companies <br><br>
+												Due to increasing centralization and a relatively expensive job market it becomes more and more difficult to train employees in most European countries. However due to increasing digitalization and change in demand, job content is changing more rapidly than ever before. What does the future of company training look like and how is it implemented practically?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal23">#23 Health Tech - Advelox</button>
+
+						<div class="modal fade" id="myModal23" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#23 Health Tech - Advelox</h4>
+									</div>
+									<div class="modal-body">
+										<p>Caregivers are still working in a very conservative way. Most of the time they are paid in function of volume, i.e. number of patients seen. This leads to difficult situations: too tight agenda, delays, no private life, burn outs,... <br><br>
+												Imagine you would be developing a tool that could help them having a better management of their practice. What could this tool be? Ensure that the tool is showing the benefits to the healthcare provider. <br><br>
+												Imagine you have an secure app that allows you to ask questions to your own health care provider. What can we do to simplify the work of the caregiver when a question is sent to him by the patient, without of course taking away the formal responsibility of the caregiver?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal24">#24 Health Tech - Advelox</button>
+
+						<div class="modal fade" id="myModal24" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#24 Health Tech - Advelox</h4>
+									</div>
+									<div class="modal-body">
+										<p>Pharma companies are still lagging behind in terms of digital. This is mainly due to a slow internal decision taking process but also due to the fact that pharma employees were mostly born before 2000 which make them difficult to move from their comfort zones. The same with medical reps. Most of the time they are above the age of 45 and love to see their customers in a face to face setting. Digital is seen as not impactful enough or as a competitive channel. However, physicians are already into the digital world today. They consume a lot of content via various specialized digital channels. <br><br>
+												So, what can we do to get the medical reps on board of digital. What channels could they use, how could they smartly interact with physicians, without being afraid about digital ?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal25">#25 Banking & Insurance - SSB</button>
+
+						<div class="modal fade" id="myModal25" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#25 Banking & Insurance - SSB</h4>
+									</div>
+									<div class="modal-body">
+										<p>Financial Machine Learning <br><br>
+												Using only a database of XBRL files (which contain annual reports of companies) you are challenged to: <br><br>
+												• Use annual reports for classification of companies <br><br>
+												• Use annual reports for fraud detection <br><br>
+												• Use annual reports to predict financial performance of companies</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal26">#26 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal26" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#26 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Water damage under the Fire Insurance <br><br>
+												KBC offers fire insurances. This includes water damage. <br><br>
+												Water detection may be an interesting domain to respond to. More specifically, the (proactive) detection, analysis and resolution of water leaks. These leaks are often a hidden and silent problem in places that are not easily accessible. The speed of detection and repair largely determines the impact of the water damage. It is therefore important to detect and preferably prevent water leaks as soon as possible. <br><br>
+												The main focus here is on identifying water leaks and notifying actors.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal27">#27 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal27" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#27 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Contract management <br><br>
+												The central procurement office of KBC manages its purchase files in the SAP application (MDS). A purchase dossier results in one or more contracts after the award. We are looking for a driven partner who develops an intuitive tool for the management and access of these contracts. <br><br>
+												The tool <br>
+												• is integrated into (SAP) MDS so that the purchasing department employees experience the whole as intuitive and clear. The purchase file contains a lot of information that is simply reproduced in the contract (specifications/contract number, subject, starting date, topic, budget(s), supplier, etc.). The contract is therefore an integral part of the purchase file. <br><br>
+												• allows you to easily add and edit contracts. <br><br>
+												• provides access to the content of the contracts and articles (from SAP) that can be purchased for all employees of the Antwerp group via the current search screen. <br><br>
+												• gives the other employees of KBC the opportunity to score every contract for sustainability</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal28">#28 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal28" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#28 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>KBC provides 20 places for students in the KBC innovation labs on a structural base, every working day of the year. Students arrive as multi-disciplined teams to perform experiments/master theses, based on predefined new market trends. Provide a platform (for student organizations) which can be linked with our innovation labs. Additionally, what is needed to put student organizations in the lead of gathering 20 students in the labs on a structural base? Can it be part of their mission towards all students? How is cooperation between student organization possible, to support the students in constructing multi- disciplined teams. <br><br>
+												#peopleandorganisation #warfortalent</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal29">#29 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal29" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#29 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Within a few years all students will have a voice-device like Amazon Alexa in their student room. Build a financial voice assistant for students. Take all financial aspects of money into account: earn, spend, borrow, safeguard, growth, transaction (#6not4). Attention: Start from a voice centered design approach, not a traditional user menu centered approach. Interaction with these devices must feel as natural as possible. <br><br>
+												#all-in-one #voicerobotics #internetofthings #artificialintelligence <br><br>
+												What new possibilities do Voice Robotics & Augmented Reality offer for financial institutions to enter into relationship discussions (live or via skype) with the blind and/or deaf? <br><br>
+												#voicerobotics #artificialintelligence</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal30">#30 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal30" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#30 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Make a Augmented Reality based game where you touch all kind of financial aspects in a students journey. After a hard day in a students life, you provide a unique AR based visualization of the amount of money you have. Take all financial aspects of money into account: earn, spend, borrow, safeguard, growth, transaction (#6not4). Eg. ‘Earn’: scan Delhaize-logo, scan street- name, ... and you get all student job <br><br>
+												Make a Facial Recognition based entrance in a financial branch. After recognition, the customer gets an extremely warm (digital) welcome within the branch, with the most relevant, contextual & personalized news. It must be possible to integrate the solution with the CRM-tool of the bank-insurer. Design a journey for several personas. <br><br>
+												#artificialintelligence</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal31">#31 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal31" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#31 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>An RPA robot should be treated equally to a human employee. <br><br>
+												How should access rights for robots be managed? How can we avoid that fraud is implemented in deployed internal robots? <br><br>
+												#artificialintelligence #RPA <br><br>
+												Robots and Artificial Intelligence will help KBC against incoming cyber-attacks. Cyber risk is increasingly important within risk management. How could we apply new techniques to improve our defense against cyber-attacks and or hackers? <br><br>
+												#artificialintelligence</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal32">#32 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal32" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#32 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Bank & Insurance websites are build starting from their product & services, or in some cases by general needs like my mobility, my home, my pension. Create an attractive bank-insurer website for students based on their daily journeys. This website should be supported by a mobile bank & insurance app for master & bachelor students. Provide all needs in the journey of a student: before, during and after the years as student. Take all financial aspects of money into account: earn, spend, borrow, safeguard, growth, transaction (#6not4). Attention: to deliver customer-delight, search for integrated services with other companies, for e.g. in the area of health, mobility, sustainability, etc. Can your solution become the education-tool for financial literacy in schools? <br><br>
+												#all-in-one #internetofthings #privacyisthenewgreen #newdigitalintermediaries</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal33">#33 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal33" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#33 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Banks perform the housekeeping of your money, in a trusted and secure environment and where privacy is already key. This housekeeping is extended with a lot of services on top. What are the new assets and values of people in a digital world (energy-coins, passwords, photos, ...)? Propose a solution where these assets and values can have a good housekeeping, where privacy and good services on top are needed. Create a ‘New Value’ Bank-Insurer platform. <br><br>
+												#allbusinessisdatabusiness #privacyisthenewgreen #artificialintelligence <br><br>
+												How can a bank stay close to its customer as digitization increases? And be experienced as warm and personal? Is this possible in digital solutions of banks and insurers? <br><br>
+												#newdigitalintermediaries #all-in-one</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal34">#34 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal34" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#34 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>How Digital Twin Technology can be used to improve KBC processes in banking or insurance? Digital twins act as a bridge between physical and digital worlds by using sensors to collect real-time data about a physical item. This data is then used to create a digital duplicate of the item, allowing it to be understood, analyzed and optimized. As digital twins grow in complexity and move from being digital representations of single items to models of systems of interconnected things, more businesses are seeing the technology as an opportunity to optimize processes in a sophisticated way, integrating Iot, artificial intelligence and machine learning. It enables organizations to test new ideas, uncover problems before they happen, get answers to new questions and monitor items remotely. So how digital twin technology can be used to improve KBC processes in banking and insurance? <br><br>
+												#IoT #artificialintelligence</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal35">#35 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal35" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#35 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>All-in-One (#all-in-one) <br><br>
+												Customers expect a more complete solution. For financial institutions it could be very hard to meet the customer needs within the boundaries of their solid closed environment. It could be more challenging for financial institutions to reach new customers, especially in situations where financial products are only enablers. Ecosystems with a total ‘butler-service’ are to be expected in which financial services only play a secondary role. <br><br>
+												What is the relevance for banking & insurance? <br><br>
+												• Client-centricity is key: it could be increasingly difficult for financial institutions to stay relevant for customers. How to make sure that financial institutions are in the lead of ecosystems? <br><br>
+												• Banks could become white-label product factories as they typically provide secondary products. How to avoid becoming the invisible bank?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal36">#36 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal36" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#36 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Voice Robotic (#voicerobotic) <br><br>
+												Voice is the most natural way of communication and can lead to a more personalized interaction. The growing popularity of voice devices and customer- centric voice experiences in e-commerce raises expectations. Conversational interfaces are being explored as consumers increasingly look for speed, convenience and security. Voice assistants may become an important future gateway to end clients. <br><br>
+												What is the relevance for banking & insurance? <br><br>
+												Voice as new distribution channel impacts the interface with customers. Captive channels might lose impact and relevance. How long will the banks’ and insurers’ mobile app remain a differentiating access point to the customer? How to define “a voice of your brand” and trigger a sale on a voice platform.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal37">#37 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal37" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#37 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Privacy is the New Green (#privacyisthenewgreen) <br><br>
+												Customers start to realize that their “right to be forgotten’” has vanished in a digital world. Every piece of information committed to digital form is subject to instant and inevitable distribution over the internet. The concern is tilting towards frustration in clients’ minds, intensifying their expectation to get in control of their personal data disclosure and usage. <br><br>
+												What is the relevance for banking & insurance? <br><br>
+												• The rising privacy expectations of customers bring important challenges and opportunities for the banks and insurers <br><br>
+												• Will customers give consent to banks in return for receiving personalized offers? How will this affect the ability to provide personalized offers? <br><br>
+												• Protecting and securing customer data: banks and insurers sit atop a horde of digital gold, namely their customers’ personal information.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal38">#38 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal38" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#38 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>All Business is Data Business <br><br>
+												The data-explosion is exponential. Competitors and new entrants across sectors build their businesses around it turning data into the most important driver for profitability. Data has become a key asset: the new oil. A real 360° view is the new standard, making value out of it the differentiator. <br><br>
+												Banks and insurance companies sit on top of piles of data. Less than 10 % is readily accessible and less than 1 % is actually used for analytics: opportunity knocks for product and service improvement. New entrants are taking advantage of the pile of data available ‘out there’ potentially resulting in more insights into customers of traditional banks and insurers. The challenges for bank and insurance companies are two directional: <br><br>
+												OUT-IN: Fear of missing out data. Going from 180° to 360° view. IN-OUT: monetize internal data and contribute in data-sharing ecosystems to create more adding-value for customers</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal39">#39 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal39" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#39 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Internet of Things <br><br>
+												The Internet of Things (IoT) connects multiple devices to the internet which makes these devices accessible from a distance (for instance through mobile apps), and therefore makes it possible to monitor the status, behavior or performance of a property or person. Banks and insurers can use IoT and its data to offer more personalized services, for real-time monitoring of risks and risk prevention. <br><br>
+												Financial institutions will have a more vivid picture of the consumer (towards 360 degree view) allowing them to: <br><br>
+												• Make more accurate lending decisions <br><br>
+												• Deliver more real-time, personalized offers <br><br>
+												• Apply targeted insurance pricing: more risk exposure visibility. For example, connected cars can provide info regarding driving habits.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal40">#40 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal40" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#40 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Artificial Intelligence <br><br>
+												AI is the ability of a machine to perform cognitive functions associated with human minds, such as reasoning, learning, interacting with the environment and problem solving. Client-centricity: Move closer to clients’ expectations and anticipating them, by studying customer behavior. Create proactive, personalized complete offers. 24/7 client support via chatbots. <br><br>
+												• Cost savings: AI solutions to replace the repetitive cognitive tasks and decision making with machine intelligence in back- and front office. <br><br>
+												• Augmenting decision-making capabilities: building AI-based components enabling faster suggestions to employees, or automated decisions based on risk scoring and event prediction. <br><br>
+												• New workforce: integrating human intelligence with machine intelligence, to coexist in a two-way learning relationship. Will generate adding value via new products, services and/or innovations.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal41">#41 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal41" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#41 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>New Digital Intermediaries <br><br>
+												In the digital world, traditional intermediaries are marginalized. Contrary to expectations, the rise of digital did not only enable direct contact between producers and customers. It also brought new intermediaries operating different business models and disrupting the incumbents as contact with end-customers is at stake. Examples are Uber, Amazone, AirBnb, Spotify. <br><br>
+												• Value is created in keeping the contact with the end customer and bundling products from various suppliers to complete solutions. <br><br>
+												• New digital intermediaries could become the primary customer facing platform. Winning the battle for customers will be crucial. How many digital intermediaries will there be and can financial institutions compete? <br><br>
+												• Will the role of distribution and production be split in the future?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal42">#42 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal42" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#42 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Quantum Technology <br><br>
+												As modern computers reach the limits of their processing power, quantum	computing is starting to offer hope for solving more specialized problems that require immensely robust computing. There are two prerequisites to practical business applications: 1) processors with enough qubits (=quantum bits) to run quantum simulations and 2) quantum algorithms that solve the mathematical problem underlying the application. Processors are still under active development while several algorithms already exist. The result will be enormous processing power and the ability to perform algorithms that normal computers can’t do. <br><br>
+												Quantum computing could create an asymmetry in the market between those who have access to the game changing technology and those who haven’t. As with other advanced technologies the companies that position themselves early to take advantage of quantum computing will establish a significant advantage.</p>
 									</div>
 								</div>
 							</div>
@@ -1446,5 +2201,6 @@
 	</main>
 
 	<script src="assets/js/checklist.js"></script>
+	<script src="assets/js/modal.js"></script>
 </body>
 </html>
