@@ -235,10 +235,10 @@
 				<div class="bag">
 					<h1>What to bring with you?</h1>
 					<div class="listbox">
-						<div class="addfield">
+						<form class="addfield">
 							<input type="text" id="myInput" placeholder="Title...">
-							<span onclick="newElement()" class="addBtn">Add</span>
-						</div>
+							<input type="submit" value="Add" onclick="newElement()" class="addBtn">
+						</form>
 						<ul id="checklist">
 							<li class="item checked">Positive mental attitude :)</li>
 							<li class="item">Laptop & Charger</li>
@@ -272,7 +272,7 @@
 							<form method="post" name="contactform" action="assets/php/form.php">
 								<input type="text" name="name" placeholder="Name" required>
 								<input type="text" name="email" placeholder="Email" required>
-								<textarea name="message" id="message" cols="30" rows="8" placeholder="Ask us a question" required></textarea>
+								<textarea name="message" id="message" cols="30" rows="7" placeholder="Ask us a question" required></textarea>
 								<input type="submit" value="Send">
 								<input id="reset" type="reset" value="X">
 							</form>

@@ -88,7 +88,7 @@
             font-size: 16px;
             cursor: pointer;
             transition: 0.3s;
-            border-radius: 20px;
+            border-radius: 100px;
             border: solid 2px #D555F6;
             outline: none;
 
@@ -108,11 +108,12 @@
         li {
             cursor: pointer;
             position: relative;
+            height: 50px;
             padding: 12px 8px 12px 40px;
             list-style-type: none;
             background: #332275;
             color: #fff;
-            border-radius: 46px;
+            border-radius: 100px;
             font-size: 18px;
             transition: 0.2s;
             margin: 10px 0;
@@ -130,14 +131,14 @@
             }
 
             /* Style the close button */
-            .close {
+            .remove-button {
                 position: absolute;
                 right: 0;
                 top: 0;
                 border-radius: 50%;
-                width: 46px;
-                height: 46px;
-                line-height: 46px;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
                 text-align: center;
                 background-color: transparent;
 
@@ -202,10 +203,11 @@
             .channel {
                 cursor: pointer;
                 position: relative;
-                padding: 12px 8px 12px 40px;
+                height: 50px;
+                padding: 12px 8px 12px 50px;
                 list-style-type: none;
                 background: #332275;
-                border-radius: 46px;
+                border-radius: 100px;
                 font-size: 18px;
                 transition: 0.2s;
                 margin: 10px 0;
@@ -224,8 +226,8 @@
                     background-size: cover;
                     top: 15px;
                     left: 15px;
-                    height: 16px;
-                    width: 16px;
+                    height: 20px;
+                    width: 20px;
                 }
     
                 &:hover {
@@ -270,7 +272,7 @@
                     text-align: center;
                     font-size: 16px;
                     padding: 12px 20px;
-                    margin-top: 5px;
+                    margin-top: 10px;
                     margin-right: 10px;
                     background-color: #00ece2;
                     color: #1b0a5f;
@@ -291,6 +293,8 @@
                     cursor: pointer;
                     width: 44px;
                     height: 44px;
+                    line-height: 44px;
+                    margin-top: 10px;
                     font-size: 16px;
                     text-align: center;
                     background-color: rgb(255, 90, 70);

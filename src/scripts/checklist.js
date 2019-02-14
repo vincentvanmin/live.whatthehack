@@ -4,13 +4,13 @@ var i;
 for (i = 0; i < myNodelist.length; i++) {
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
-  span.className = "close";
+  span.className = "remove-button";
   span.appendChild(txt);
   myNodelist[i].appendChild(span);
 }
 
 // Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
+var close = document.getElementsByClassName("remove-button");
 var i;
 for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {

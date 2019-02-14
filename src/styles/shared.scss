@@ -116,8 +116,8 @@ a{
 	z-index: 110;
 
 	.box{
-		color:$textColor;
-		background-color:$bgColor;
+		color: #fff;
+		background-color: #332275;
 		padding:20px;
 		margin:20px;
 		h1{
@@ -126,15 +126,27 @@ a{
 		}
 		.buttons{
 			display:flex;
-			justify-content: flex-end;
+			justify-content: center;
 			flex-wrap:wrap;
+
 			div{
-				flex:1 1 auto;
+				flex-direction: row;
+				width: 30%;
+				@media (max-width: 720px) { width: 80%; margin-bottom: 0; }
+				text-align: center;
 				padding:5px 10px;
 				margin:20px;
-				color:$contrastColor;
-				background-color:$buttonColor;
-				cursor:pointer;
+				background-color: #00ece2;
+				border: solid 2px #00ece2;
+				color: #1b0a5f;
+				border-radius: 20px;
+				cursor: pointer;
+
+				&:hover {
+					background: transparent;
+					border: solid 2px #00ece2;
+					color: #00ece2;
+				}
 			}
 		}
 	}
