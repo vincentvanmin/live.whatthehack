@@ -2,12 +2,12 @@
 	"version": 1,
 	"message": "",
 	"baseTimeOffset":"-60",
-	"countdownStart":"10/02/2019 17:30",
+	"countdownStart":"13/02/2019 13:30",
 	"days":
 	[
 		{
 			"name":"Friday",
-			"date":"10/02/2019",
+			"date":"13/02/2019",
 			"events":
 			[
 				{
@@ -83,6 +83,15 @@
 				},
 				{
 					"id":"9",
+					"title": "DJ Vinavil",
+					"startHour": "19:00",
+					"endHour": "22:00",
+					"locationName": "Alma 2",
+					"description": "Lets Party!",
+					"category": "Group Event"
+				},
+				{
+					"id":"10",
 					"title": "[Workshop] Introduction to REST API's & Automatic API testing",
 					"startHour": "19:30",
 					"endHour": "20:15",
@@ -91,7 +100,7 @@
 					"category": "Technical"
 				},
 				{
-					"id":"10",
+					"id":"11",
 					"title": "[Workshop] Angular",
 					"startHour": "19:30",
 					"endHour": "20:15",
@@ -100,7 +109,7 @@
 					"category": "Technical"
 				},
 				{
-					"id":"11",
+					"id":"12",
 					"title": "[Workshop] Basics of Python for Data Science",
 					"startHour": "19:30",
 					"endHour": "20:15",
@@ -109,7 +118,7 @@
 					"category": "Technical"
 				},
 				{
-					"id":"12",
+					"id":"13",
 					"title": "[Workshop] Introduction to Agile & DevOps",
 					"startHour": "19:30",
 					"endHour": "20:15",
@@ -121,11 +130,11 @@
 		},
 		{
 			"name":"Saturday",
-			"date":"11/02/2019",
+			"date":"14/02/2019",
 			"events":
 			[
 				{
-					"id":"13",
+					"id":"14",
 					"title": "Midnight Snacks",
 					"startHour": "02:00",
 					"locationName": "Alma 2",
@@ -133,7 +142,7 @@
 					"category": "Food & Drinks"
 				},	
 				{
-					"id":"14",
+					"id":"15",
 					"title": "Breakfast",
 					"startHour": "07:15",
 					"endHour": "08:00",
@@ -142,7 +151,7 @@
 					"category": "Food & Drinks"
 				},	
 				{
-					"id":"15",
+					"id":"16",
 					"title": "[Workshop] Angular",
 					"startHour": "08:30",
 					"endHour": "09:15",
@@ -151,7 +160,7 @@
 					"category": "Technical"
 				},	
 				{
-					"id":"16",
+					"id":"17",
 					"title": "[Workshop] Security",
 					"startHour": "08:30",
 					"endHour": "09:15",
@@ -160,7 +169,7 @@
 					"category": "Technical"
 				},	
 				{
-					"id":"17",
+					"id":"18",
 					"title": "[Workshop] Behavior Driven Development",
 					"startHour": "08:30",
 					"endHour": "09:15",
@@ -169,7 +178,7 @@
 					"category": "Technical"
 				},	
 				{
-					"id":"18",
+					"id":"19",
 					"title": "[Workshop] Elevator Pitch",
 					"startHour": "08:30",
 					"endHour": "09:15",
@@ -178,7 +187,7 @@
 					"category": "Entrepreneurial"
 				},	
 				{
-					"id":"19",
+					"id":"20",
 					"title": "[Workshop] Yoga",
 					"startHour": "08:30",
 					"endHour": "09:15",
@@ -187,7 +196,7 @@
 					"category": "Inspirational"
 				},	
 				{
-					"id":"20",
+					"id":"21",
 					"title": "[Workshop] Elevator Pitch",
 					"startHour": "10:00",
 					"endHour": "10:45",
@@ -196,7 +205,7 @@
 					"category": "Entrepreneurial"
 				},
 				{
-					"id":"21",
+					"id":"22",
 					"title": "[Workshop] The importance of Optimal Customer Experience",
 					"startHour": "10:00",
 					"endHour": "10:45",
@@ -205,7 +214,7 @@
 					"category": "Entrepreneurial"
 				},
 				{
-					"id":"22",
+					"id":"23",
 					"title": "[Workshop] Introduction to REST API's & Automatic API testing",
 					"startHour": "10:00",
 					"endHour": "10:45",
@@ -214,7 +223,7 @@
 					"category": "Technical"
 				},
 				{
-					"id":"23",
+					"id":"24",
 					"title": "[Workshop] Building your Brand on Social",
 					"startHour": "10:00",
 					"endHour": "10:45",
@@ -223,7 +232,7 @@
 					"category": "Inspirational"
 				},
 				{
-					"id":"24",
+					"id":"25",
 					"title": "[Workshop] Mindfulness",
 					"startHour": "10:00",
 					"endHour": "10:45",
@@ -232,7 +241,7 @@
 					"category": "Inspirational"
 				},
 				{
-					"id":"25",
+					"id":"26",
 					"title": "Lunch",
 					"startHour": "11:00",
 					"locationName": "Alma 2",
@@ -240,7 +249,7 @@
 					"category": "Food & Drinks"
 				},
 				{
-					"id":"26",
+					"id":"27",
 					"title": "[Workshop] Visual Language Basics",
 					"startHour": "11:30",
 					"endHour": "12:15",
@@ -249,7 +258,7 @@
 					"category": "Entrepreneurial"
 				},
 				{
-					"id":"27",
+					"id":"28",
 					"title": "[Workshop] Storytelling",
 					"startHour": "11:30",
 					"endHour": "12:15",
@@ -258,7 +267,7 @@
 					"category": "Entrepreneurial"
 				},
 				{
-					"id":"28",
+					"id":"29",
 					"title": "[Workshop] Pitching your Story",
 					"startHour": "11:30",
 					"endHour": "12:15",
@@ -267,7 +276,7 @@
 					"category": "Entrepreneurial"
 				},
 				{
-					"id":"29",
+					"id":"30",
 					"title": "Hacking ends",
 					"startHour": "18:00",
 					"locationName": "Alma 2",
@@ -275,7 +284,7 @@
 					"category": "Group Activity"
 				},
 				{
-					"id":"30",
+					"id":"31",
 					"title": "Pitch HealthTech",
 					"startHour": "18:00",
 					"endHour": "19:00",
@@ -284,7 +293,7 @@
 					"category": "Pitch"
 				},
 				{
-					"id":"31",
+					"id":"32",
 					"title": "Pitch Media",
 					"startHour": "18:00",
 					"endHour": "19:00",
@@ -293,7 +302,7 @@
 					"category": "Pitch"
 				},
 				{
-					"id":"32",
+					"id":"33",
 					"title": "Pitch Smart Cities",
 					"startHour": "18:00",
 					"endHour": "19:00",
@@ -302,7 +311,7 @@
 					"category": "Pitch"
 				},
 				{
-					"id":"33",
+					"id":"34",
 					"title": "Pitch Retail",
 					"startHour": "18:00",
 					"endHour": "19:00",
@@ -311,7 +320,7 @@
 					"category": "Pitch"
 				},
 				{
-					"id":"34",
+					"id":"35",
 					"title": "Pitch Student Life",
 					"startHour": "18:00",
 					"endHour": "19:00",
@@ -320,7 +329,7 @@
 					"category": "Pitch"
 				},
 				{
-					"id":"35",
+					"id":"36",
 					"title": "Pitch Banking & Insurance",
 					"startHour": "18:00",
 					"endHour": "19:00",
@@ -329,7 +338,7 @@
 					"category": "Pitch"
 				},
 				{
-					"id":"36",
+					"id":"37",
 					"title": "Closing Ceremony",
 					"startHour": "19:00",
 					"endHour": "20:00",
@@ -338,7 +347,7 @@
 					"category": "Group Activity"
 				},
 				{
-					"id":"37",
+					"id":"38",
 					"title": "Dinner",
 					"startHour": "20:00",
 					"locationName": "Alma 2",
@@ -346,7 +355,7 @@
 					"category": "Food & Drinks"
 				},
 				{
-					"id":"38",
+					"id":"39",
 					"title": "End of What The Hack 2019",
 					"startHour": "20:00",
 					"description": "Thanks for joining, see you next year!",

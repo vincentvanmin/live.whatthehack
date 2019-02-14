@@ -1,7 +1,7 @@
 .container-small {
     margin: 0 10%;
     @media (max-width: 480px) {
-        margin: 0;
+        margin: 0 10px;
     }
 }
 
@@ -28,7 +28,7 @@
             margin: auto; /* Gives that scrolling effect as the typing happens */
             letter-spacing: .1em; /* Adjust as needed */
             animation: 
-                typing 3s steps(30, end),
+                typing 1s steps(30, end),
                 blink-caret .5s step-end infinite;
             @media (max-width:720px) { font-size: 2em; }
             @media (max-width:480px) { font-size: 1,5em; }
@@ -131,9 +131,9 @@
       }
 }
 
-.coachtitle .typewriter h1 { animation: typing 2s steps(30, end), blink-caret .5s step-end infinite; }
+.coachtitle .typewriter h1 { animation: typing .8s steps(30, end), blink-caret .5s step-end infinite; }
 
-.jurybox {
+.jurybox, .coachbox {
     padding-top: 20px;
     h2 {
         padding: 50px 0 20px 0;

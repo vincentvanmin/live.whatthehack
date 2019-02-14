@@ -20,7 +20,7 @@
 		"fullscreen" : "fullscreen",
 		"live" : "live",
 		"home" : "home",
-		"rules" : "rules",
+		"jury" : "jury",
 		"travel" : "travel",
 		"streaming" : "streaming",
 		"faq" : "faq",
@@ -746,7 +746,6 @@
 
 
 	});
-
 }(CONST, Util));
 
 

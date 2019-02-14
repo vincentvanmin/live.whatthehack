@@ -358,12 +358,13 @@ a{
 	.panel{
 		flex:1 1 350px;
 		margin:20px;
-		background-color:$contrastColor;
+		background-color: #1e135f;
 		color:$textColor;
 		overflow:hidden;
 		text-align:left;
 		position:relative;
-		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+		border-radius: 10px;
 
 		p, ul, ol {
 			margin: 5px 15px 5px 15px;
@@ -376,15 +377,16 @@ a{
 			color:$secondaryColor;
 		}
 		h1{
-
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
 			width: 100%;
 			margin: 0 0 0 0;
 			padding-top:3px;
 			font-size:20px;
 			color:white;
-			background-color: $secondaryColor;
+			background-color: #D555F6;
 			text-align: center;
-			padding: 5px 0;
+			padding: 10px 0;
 		}
 		h2{
 			margin:5px 15px;

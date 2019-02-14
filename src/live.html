@@ -5,6 +5,7 @@
 	<title>WhatTheHack | Live-Schedule</title>
 	<meta name="description" content="Join us for Tobania's hackathon. 250 hackers. 24h. Mar 1st-2nd.">
 	<link rel="icon" href="favicon.png" type="image/png" data-finger-print>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/app.min.css" data-finger-print>
 	<script src="assets/js/app.min.js" data-finger-print></script>
 
@@ -18,7 +19,9 @@
 	<meta name="theme-color" content="#03A9B5">
 	<link rel="stylesheet" href="assets/css/app.min.css" data-finger-print>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  	<meta name="author" content="Tobania">
+	<meta name="author" content="Tobania">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 	<!--Prompt-->
 	<template id="promptTemplate">
@@ -228,86 +231,59 @@
 			</div>
 		</article>
 		<article id="home" class="under-header padding-bottom">
-			<div class="container">
-				<div class="panel bag">
-					<h1>What's in your bag</h1>
-					<div class="addfield">
-						<input type="text" id="myInput" placeholder="Title...">
-						<span onclick="newElement()" class="addBtn">Add</span>
-					</div>
-					<ul id="checklist">
-						<li class="item checked">Positive mental attitude :)</li>
-						<li class="item">Laptop & Charger</li>
-						<li class="item">Entrance Ticket & ID</li>
-						<li class="item">Comfortable clothing</li>
-						<li class="item">Yoga mat</li>
-						<li class="item">Cool stuff to build with</li>
-					</ul>
-				</div>
-				<div class="panel">
-					<h1>Find us</h1>
-					<div class="books">
-						<ul class="deck">
-							<li class="deck__item deck__item--facebook">
-								<a class="deck__link" href="#">
-								<span class="deck__icon fontawesome-facebook"></span>
-								<span class="deck__label">Facebook</span>
-								</a>
-							</li>
-							<li class="deck__item deck__item--github">
-								<a class="deck__link" href="#">
-								<span class="deck__icon fontawesome-github"></span>
-								<span class="deck__label">GitHub</span>
-								</a>
-							</li>
-							<li class="deck__item deck__item--twitter">
-								<a class="deck__link" href="#">
-								<span class="deck__icon fontawesome-twitter"></span>
-								<span class="deck__label">Twitter</span>
-								</a>
-							</li>
-							<li class="deck__item deck__item--linkedin">
-								<a class="deck__link" href="#">
-								<span class="deck__icon fontawesome-linkedin"></span>
-								<span class="deck__label">LinkedIn</span>
-								</a>
-							</li>
-							<li class="deck__item deck__item--pinterest">
-								<a class="deck__link" href="#">
-								<span class="deck__icon fontawesome-pinterest"></span>
-								<span class="deck__label">Pinterest</span>
-								</a>
-							</li>
-							<li class="deck__item deck__item--googleplus">
-								<a class="deck__link" href="#">
-								<span class="deck__icon fontawesome-google-plus"></span>
-								<span class="deck__label">Google+</span>
-								</a>
-							</li>
+			<div class="container-small">
+				<div class="bag">
+					<h1>What to bring with you?</h1>
+					<div class="listbox">
+						<div class="addfield">
+							<input type="text" id="myInput" placeholder="Title...">
+							<span onclick="newElement()" class="addBtn">Add</span>
+						</div>
+						<ul id="checklist">
+							<li class="item checked">Positive mental attitude :)</li>
+							<li class="item">Laptop & Charger</li>
+							<li class="item">Entrance Ticket & ID</li>
+							<li class="item">Comfortable clothing</li>
+							<li class="item">Yoga mat</li>
+							<li class="item">Sleeping bag & Airbed</li>
+							<li class="item">Cool stuff to build with</li>
 						</ul>
+						<p>Make sure to install all needed software on your pc!</p>
+					</div>
+					<div class="hacker">
+						<img src="assets/img/hacker.png" alt="hacker">
 					</div>
 				</div>
-				<div class="panel large">
-					<h1>How to get to HackUPC</h1>
-					<div class="get-there">
-						<h2 class="get-title text-centered"><i class="fa fa-plane" aria-hidden="true"></i> By plane</h2>
-						<h3 class="get-subtitle text-centered">Arriving</h3>
-						<p>Take the metro L9 in either <b>Aeroport T2</b> or <b>Aeroport T1</b> towards <b>Zona Universitària</b>. Go to the last station <b>Zona Universitària</b>. Our venue is a 10 minute walk from there. To get to our check-in point please check out our <a href="http://maps.hackupc.com">maps</a>.</p>
-						<p>Don't get a T-10 ticket if you are in the airport, you won't be able to use it from there. Buy a single trip ticket from the airport instead. If you really want to use a T-10, then you can take the train (R2 to Sant Celoni or Maçanet-Massanes) from Terminal 2B (a free shuttle bus from Terminal 1 to Terminal 2B departs every 5 minutes), but the train only runs every 30 minutes. You will have to get down at <b>Sants Estació</b> (3rd stop) and take the metro as explained below.</p>
-						<h3 class="get-subtitle text-centered">Leaving</h3>
-						<p>Take the metro L9 in <b>Zona Universitària</b> towards <b>Aeroport T1</b>. Stop at either <b> Aeroport T1</b> or <b>Aeroport T2</b> depending on the terminal your plane is departing from.</p>
-						<div class="get-accessible">
-						      <p><i style="background-color: #155196;" class="fa fa-wheelchair icon" aria-hidden="true"></i> This itinerary is completely accessible.</p>
+				<div class="findus">
+					<h1>Get in touch</h1>
+					<div class="slack">
+						<ul class="channels">
+							<h3>Slack Group Channels</h3>
+							<li class="channel"><a target="_blank" href="https://hackathon-aft-tobania.slack.com/messages/CDFBN57B2">General</a></li>
+							<li class="channel"><a target="_blank" href="">Coaching</a></li>
+							<li class="channel"><a target="_blank" href="">Workshops</a></li>
+							<li class="channel"><a target="_blank" href="">Challanges</a></li>
+							<li class="channel"><a target="_blank" href="">Communication</a></li>
+							<li class="channel"><a target="_blank" href="https://hackathon-aft-tobania.slack.com/messages/CDFUB54TE">Random</a></li>
+						</ul>
+						<div class="divider"></div>
+						<div class="contactform">
+							<h3>Email us</h3>
+							<form method="post" name="contactform" action="assets/php/form.php">
+								<input type="text" name="name" placeholder="Name" required>
+								<input type="text" name="email" placeholder="Email" required>
+								<textarea name="message" id="message" cols="30" rows="8" placeholder="Ask us a question" required></textarea>
+								<input type="submit" value="Send">
+								<input id="reset" type="reset" value="X">
+							</form>
 						</div>
-						<div class="get-separator"></div>
-						<h2 class="get-title text-centered margin-bottom"><i class="fa fa-train" aria-hidden="true"></i> By train</h2>
-						<h3 class="get-subtitle text-centered">Arriving</h3>
-						<p>If you take the train, you will probably arrive at <b>Sants Estació</b>. From there you need to take the metro L3, it is located on the north side of the station, follow the signs for the green line (L3), not the blue one (L5). When you reach the station, go towards <b>Zona Universitària</b> (to the right if coming from underground). Get off at <b>Palau Reial</b>, from there you should see some signs pointing where HackUPC is, otherwise you can check out our <a href="http://maps.hackupc.com">maps</a>.</p>
-						<h3 class="get-subtitle text-centered">Leaving</h3>
-						<p>Take the metro L3 in <b>Palau Reial</b> towards <b>Trinitat Nova</b> and get off at <b>Sants Estació</b>. When exiting, the easiest way is to turn left and follow the signs towards the railway station, you can follow the plane sign or the letter R with the orange background.</p>
-						<div class="get-accessible">
-						      <p><i style="background-color: #155196;" class="fa fa-wheelchair icon" aria-hidden="true"></i> This itinerary is completely accessible. To enter the metro, you will have to reach the elevator on the street at Sants Estació.</p>
-						</div>
+					</div>
+					<div class="socials">
+						<ul>
+							<li class="socials-item facebook-icon"><a target="_blank" href="https://www.facebook.com/whatthehackBelgium"></a></li>
+							<li class="socials-item linkedin-icon"><a target="_blank" href="https://www.linkedin.com/company/whatthehack2019/"></a></li>
+							<li class="socials-item instagram-icon"><a target="_blank" href="https://www.instagram.com/whatthehack_belgium"></a></li>
+						</ul>
 					</div>
 				</div>
 			<div>
@@ -350,7 +326,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Serge-Haubourdin.jpg" alt="Serge Haubourdin">
+										<img src="assets/img/jury/Serge-Haubourdin.jpg" alt="Serge Haubourdin">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -366,7 +342,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Jean-Sébastien-Struyf.jpg" alt="Serge Haubourdin">
+										<img src="assets/img/jury/Jean-Sébastien-Struyf.jpg" alt="Serge Haubourdin">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -382,7 +358,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Roel-De-Spiegeleer.jpg" alt="Roel De Spiegelaar">
+										<img src="assets/img/jury/Roel-De-Spiegeleer.jpg" alt="Roel De Spiegelaar">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -401,7 +377,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Heino-Schaght.jpeg" alt="Heino Schaght">
+										<img src="assets/img/jury/Heino-Schaght.jpeg" alt="Heino Schaght">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -417,7 +393,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Ivor-Micallef.jpg" alt="Ivor Micallef">
+										<img src="assets/img/jury/Ivor-Micallef.jpg" alt="Ivor Micallef">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -433,7 +409,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Sven-Munaron.jpg" alt="Sven Munaron">
+										<img src="assets/img/jury/Sven-Munaron.jpg" alt="Sven Munaron">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -449,7 +425,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Maarten-Verwaest.png" alt="Maarten Verwaest">
+										<img src="assets/img/jury/Maarten-Verwaest.png" alt="Maarten Verwaest">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -465,13 +441,29 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Marijke-Celis.jpg" alt="Marijke Celis">
+										<img src="assets/img/jury/Marijke-Celis.jpg" alt="Marijke Celis">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
 											<h1>Marijke Celis</h1> 
 											<p>Manager Digitaal Productiecentrum</p> 
 											<img src="assets/img/partners/VRT.svg" alt="VRT">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Pieter-Maes.jpg" alt="Pieter Maes">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Pieter Maes</h1> 
+											<p>Creative Account</p> 
+											<img src="assets/img/partners/De-Mensen.svg" alt="De Mensen">
 										</div>
 									</div>
 								</div>
@@ -484,7 +476,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Thomas-Baerten.jpeg" alt="Thomas Baerten">
+										<img src="assets/img/jury/Thomas-Baerten.jpeg" alt="Thomas Baerten">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -500,7 +492,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Frank-Desear.jpg" alt="Frank De Saer">
+										<img src="assets/img/jury/Frank-Desear.jpg" alt="Frank De Saer">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -516,7 +508,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Stefan-Costeur.jpg" alt="Stefan Costeur">
+										<img src="assets/img/jury/Stefan-Costeur.jpg" alt="Stefan Costeur">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -532,7 +524,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Gregory-Wuurman.jpg" alt="Gregory Wuurman">
+										<img src="assets/img/jury/Gregory-Wuurman.jpg" alt="Gregory Wuurman">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -548,7 +540,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Leen-Tyrions.jpg" alt="Leen Tyrions">
+										<img src="assets/img/jury/Leen-Tyrions.jpg" alt="Leen Tyrions">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -564,7 +556,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Tim-Guily.jpg" alt="Tim Guily">
+										<img src="assets/img/jury/Tim-Guily.jpg" alt="Tim Guily">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -580,7 +572,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/An-Van-Peteghem.jpg" alt="An Van Peteghem">
+										<img src="assets/img/jury/An-Van-Peteghem.jpg" alt="An Van Peteghem">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -599,13 +591,13 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Ignace-De-Nollin.png" alt="Ignace De Nollin">
+										<img src="assets/img/jury/Ignace-De-Nollin.png" alt="Ignace De Nollin">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
 											<h1>Ignace De Nollin</h1> 
 											<p>Managing Director</p> 
-											<img src="assets/img/partners/Smart-With-Food.svg" alt="Smart with Food - Colruyt">
+											<img src="assets/img/partners/SWF.svg" alt="Smart with Food - Colruyt">
 										</div>
 									</div>
 								</div>
@@ -615,7 +607,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Stein-Gullentops.jpg" alt="Stein Gullentops">
+										<img src="assets/img/jury/Stein-Gullentops.jpg" alt="Stein Gullentops">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -631,7 +623,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Ides-Ticket.png" alt="Ides Ticket">
+										<img src="assets/img/jury/Ides-Ticket.png" alt="Ides Ticket">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -650,7 +642,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Jesse-Hoobergs.jpeg" alt="Jesse Hoobergs">
+										<img src="assets/img/jury/Jesse-Hoobergs.jpeg" alt="Jesse Hoobergs">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -666,7 +658,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Guy-Gelaude.jpeg" alt="Guy Gelaude">
+										<img src="assets/img/jury/Guy-Gelaude.jpeg" alt="Guy Gelaude">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -682,7 +674,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Kenny-Van-Minsel.jpeg" alt="Kenny Van Minsel">
+										<img src="assets/img/jury/Kenny-Van-Minsel.jpeg" alt="Kenny Van Minsel">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -701,7 +693,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Peter-Croughs.jpg" alt="Peter Croughs">
+										<img src="assets/img/jury/Peter-Croughs.jpg" alt="Peter Croughs">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -717,7 +709,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Pascal-Cuppens.jpg" alt="Pascal Cuppens">
+										<img src="assets/img/jury/Pascal-Cuppens.jpg" alt="Pascal Cuppens">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -733,7 +725,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/coaches/Birgitta-Brys.jpeg" alt="Birgitta Brys">
+										<img src="assets/img/jury/Birgitta-Brys.jpeg" alt="Birgitta Brys">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -789,247 +781,574 @@
 					<div class="chevron"></div>
 				</div>
 			</div>
+			<div class="coachbox">
+				<ul class="coaches">
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/User.png" alt="Dirk Depré">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Dirk Depré</h1> 
+										<p>Agile</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Christophe-Soens.jpeg" alt="Christophe Soens">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Christophe Soens</h1> 
+										<p>Technical</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Domien-Frederix.jpeg" alt="Domien Frederix">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Domien Frederix</h1> 
+										<p>Technical</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/User.png" alt="Anton Kirschhock">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Anton Kirschhock</h1> 
+										<p>Technical</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Chamberlain-Mbah.jpeg" alt="Chamberlain Mbah">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Chamberlain Mbah</h1> 
+										<p>Technical</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Freddy-Schoeters.jpeg" alt="Freddy Schoeters">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Freddy Schoeters</h1> 
+										<p>Technical</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Phillippe-Michiels.jpeg" alt="Phillippe Michiels">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Phillippe Michiels</h1> 
+										<p>Business</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Tim-Neyens.jpeg" alt="Tim Neyens">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Tim Neyens</h1> 
+										<p>Technical</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Johan-Sevenants.jpeg" alt="Johan Sevenants">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Johan Sevenants</h1> 
+										<p>Marketing</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Leen-Veldeman.jpeg" alt="Leen Veldeman">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Leen Veldeman</h1> 
+										<p>Marketing</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/User.png" alt="Veerle Hendrickx">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Veerle Hendrickx</h1> 
+										<p>Dreamteam Coach</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Alexander-De-Meersman.jpeg" alt="Alexander De Meersman">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Alexander De Meersman</h1> 
+										<p>Dreamteam Coach</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Tom-Leers.jpeg" alt="Tom Leers">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Tom Leers</h1> 
+										<p>Dreamteam Coach</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Valérie-Heylen.jpeg" alt="Valérie Heylen">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Valérie Heylen</h1> 
+										<p>Dreamteam Coach</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Hans-Stevens.jpeg" alt="Hans Stevens">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Hans Stevens</h1> 
+										<p>Technical</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Wouter-Bauchart.jpeg" alt="Wouter Bauchart">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Wouter Bauchart</h1> 
+										<p>Technical</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Ruaa-Al-Durry.jpeg" alt="Ruaa Al Durry">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Ruaa Al Durry</h1> 
+										<p>Finance</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Serge-Lens.jpeg" alt="Serge Lens">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Serge Lens</h1> 
+										<p>Finance</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Dean-Bodart.jpg" alt="Dean Bodart">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Dean Bodart</h1> 
+										<p>Technical</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Dennis-Devroey.jpeg" alt="Dennis Devroey">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Dennis Devroey</h1> 
+										<p>Legal</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Wes-Van-de-Ven.jpeg" alt="Wes Van de Ven">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Wes Van de Ven</h1> 
+										<p>Legal</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Sammy-De-Moor.jpg" alt="Sammy De Moor">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Sammy De Moor</h1> 
+										<p>Technical</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Fabio-Ciaravola.jpg" alt="Fabio Ciaravola">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Fabio Ciaravola</h1> 
+										<p>Technical</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Silke-Peeterman.jpg" alt="Silke Peeterman">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Silke Peeterman</h1> 
+										<p>Business</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Curly-Van-Spaendonck.jpeg" alt="Curly Van Spaendonck">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Curly Van Spaendonck</h1> 
+										<p>Business</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Maarten-Jacobs.jpeg" alt="Maarten Jacobs">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Maarten Jacobs</h1> 
+										<p>Business</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/User.png" alt="Jan Van Wassenhove">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Jan Van Wassenhove</h1> 
+										<p>Technical</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Jan-Vanwezemael.jpeg" alt="Jan Vanwezemael">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Jan Vanwezemael</h1> 
+										<p>Technical</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Marc-Weiler.jpeg" alt="Marc Weiler">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Marc Weiler</h1> 
+										<p>Business</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Sander-Lesage.jpeg" alt="Sander Lesage">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Sander Lesage</h1> 
+										<p>Technical</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/User.png" alt="Isabelle Wullaerts">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Isabelle Wullaerts</h1> 
+										<p>Finance</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Thomas-Nunes-da-Silva.jpeg" alt="Thomas Nunes da Silva">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Thomas Nunes da Silva</h1> 
+										<p>Technical</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
 		</article>
 		<article id="challenges" class="under-header padding-bottom">
-			<div class="container">
-				<div class="panel large">
-					<h1>HackUPC</h1>
-					<div>
-						<h2 style="text-align: center;">HackUPC prizes will be announced at the opening ceremony</h2>
-						<p style="text-align: center;">We thank you for your patience!</p>
-					</div>
-				</div>
-				<div class="panel large">
-					<h1>Sopra Steria</h1>
-					<div>
-						<h2 class="panel-info margin-bottom text-centered">Find solutions to fight against fake news</h2>
-						<div class="margin-bottom text-centered">
-							<p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-							<span><a  target="_blank" href="https://hackupc2018.slack.com/messages/CC9CC7SDC">#soprasteria</a></span>
+			<div class="container-small">
+				<ul class="challenges">
+					<li>
+						<!-- Trigger the modal with a button -->
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal1">#1 Student Life - Quivr</button>
+
+						<!-- Modal -->
+						<div class="modal fade" id="myModal1" role="dialog">
+							<div class="modal-dialog">
+								<!-- Modal content-->
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#1 Student Life - Quivr</h4>
+									</div>
+									<div class="modal-body">
+										<p>Being a student is an amazing experience. How can technology help to make this experience even better? Student life consists of two very different parts. <br><br>
+												The first part is the studying itself where you learn the skills that you will be using in your future professional career. What kind of applications could make this part easier? <br><br>
+												The second part is the student’s social life: meeting new people, getting to know yourself, developing yourself, partying... Which applications can add value to this social aspect of student life? <br><br>
+												If this is not challenging enough: How can you combine these two parts, which are very different at first sight, in a useful way in an application that offers an even greater added value to student life? Work out the best idea to make the student life of future students even more awesome!</p>
+									</div>
+								</div>
+							</div>
 						</div>
-						<p>Build a tool that will help users to identify trustworthy or fake news by giving them an overall score.</p>
-						<ul class="no-indent margin-bottom">
-							<li>Considered as tool: website, application, extension, plugin or any other software that will take an input and give a score as output.</li>
-							<li>Users are any person that uses a social network or consumes media or news (online or offline).</li>
-							<li>Scores must be in the 0-10 range. 0 means completely fake while 10 means absolutely reliable (if that’s possible).</li>
-						</ul>
-						<div>
-							<p><b>Prize:</b> Google Home per each winner team member.</p>
+					</li>
+					<li>
+						<!-- Trigger the modal with a button -->
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal2">#2 Student Life - Tobania</button>
+
+						<!-- Modal -->
+						<div class="modal fade" id="myModal2" role="dialog">
+							<div class="modal-dialog">
+								<!-- Modal content-->
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#2 Student Life - Tobania</h4>
+									</div>
+									<div class="modal-body">
+										<p>Chat application
+												You have probably used many different chat applications in the last decade or so, but now is your chance to ‘roll your own’. Develop a secure chat application with all of the features that you have always wanted. Try to stand out with one defining feature: what makes your chat application different from all the others? <br><br>
+												• Security: consider the user’s privacy, do not let your messages be easily intercepted. <br><br>
+												• Authentication: how will your users authenticate with your application? <br><br>
+												• Availability: on which devices will it work?</p>
+									</div>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-				<div class="panel">
-					<h1>Infojobs</h1>
-					<div>
-						<h2 class="panel-info margin-bottom text-centered">Build your dreamed tech-InfoJobs</h2>
-						<div class="margin-bottom text-centered">
-							<p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-							<span><a  target="_blank" href="https://hackupc2018.slack.com/messages/CC9CCAN4E">#infojobs</a></span>
-						</div>
-						<p class="margin-bottom">Build your perfect job seeker. We encourage you to propose any change or improvement in our registration process, CV, job search... In other words, everything related to have a more suitable InfoJobs for you and your needs.</p>
-						<p class="margin-bottom">Their API is waiting for you to shake it. Check out its <a href="https://developer.infojobs.net/" target="_blank">documentation</a>.</p>
-						<div>
-							<p><b>Prize:</b> Nintendo Switch per each winner team member.</p>
-						</div>
-					</div>
-				</div>
-				<div class="panel">
-					<h1>AWSEducate</h1>
-					<div>
-						<h2 class="panel-info margin-bottom text-centered">The AWS City of a Cloud Serverless Hackathon</h2>
-						<div class="margin-bottom text-centered">
-							<p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-							<span><a  target="_blank" href="https://hackupc2018.slack.com/messages/CCUB71TV0">#awseducate</a></span>
-						</div>
-						<p class="margin-bottom">Put your skills to the test and apply the AWS Serverless portfolio to build solutions for cities: City planning, Sanitation, Parks, Street maintenance, Voting and Public Safety.</p>
-						<p class="margin-bottom">For more information click <a href="http://awshackupc.s3-website-eu-west-1.amazonaws.com/" target="_blank">here</a>.</p>
-						<div>
-							<p><b>Prizes:</b></p>
-							<ul class="no-indent">
-								<li>1st Prize: Amazon Echo for every team member.</li>
-								<li>2nd Prize: Amazon Echo dots for each team member.</li>
-								<li>3rd Prize: Amazon Echo dots for each team member.</li>
-								<li>4th Prize: €25 Amazon vouchers for each team member.</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="panel">
-					<h1>Everis</h1>
-					<div>
-						<h2 class="panel-info margin-bottom text-centered">Virtual assistants application for social purposes</h2>
-						<div class="margin-bottom text-centered">
-							<p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-							<span><a  target="_blank" href="https://hackupc2018.slack.com/messages/CC9CCGQP8">#everis</a></span>
-						</div>
-						<p class="margin-bottom">For more information please contact them at their stand or through Slack.</p>
-						<div>
-							<p><b>Prize:</b> Google Home Mini per each winner team member.</p>
-						</div>
-					</div>
-				</div>
-				<div class="panel">
-					<h1>Itequia</h1>
-					<div>
-						<h2 class="panel-info margin-bottom text-centered">Create an app that allow us to share and draw in a whiteboard in real time with a group of users</h2>
-						<div class="margin-bottom text-centered">
-							<p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-							<span><a  target="_blank" href="https://hackupc2018.slack.com/messages/CC86PJT9B">#itequia</a></span>
-						</div>
-						<p class="margin-bottom">Here at Itequia we always carry out our meetings next to a whiteboard. We think that having a visual feedback in a meeting helps a lot with transmitting ideas to clients and coworkers. But often we need to have online meetings with team members that are not in the office. That's why we would love to have a way to create and share a whiteboard in real time with a group of users.</p>
-						<div>
-							<p><b>Prize:</b> 50€ Amazon Gift Card for each winner team member.</p>
-						</div>
-					</div>
-				</div>
-				<div class="panel">
-					<h1>Opentrends</h1>
-					<div>
-						<h2 class="panel-info margin-bottom text-centered">IoT & Chatbot for eHealth</h2>
-						<div class="margin-bottom text-centered">
-							<p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-							<span><a  target="_blank" href="https://hackupc2018.slack.com/messages/CC9CCRD8W">#opentrends</a></span>
-						</div>
-						<p class="margin-bottom">IoT-based healthcare services are expected to reduce costs, increase the quality of life, and enrich the user’s experience. IoT-based healthcare systems can be applied to a diverse array of fields, including care for pediatric and elderly patients, the supervision of chronic diseases, and the management of private health and fitness, among others.</p>
-						<div>
-							<p><b>Prize:</b> Google Home per each winner team member.</p>
-						</div>
-					</div>
-				</div>
-				<div class="panel">
-					<h1>Skyscanner</h1>
-					<div>
-						<h2 class="panel-info margin-bottom text-centered">Most creative use of Skyscanner's API</h2>
-						<div class="margin-bottom text-centered">
-							<p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-							<span><a  target="_blank" href="https://hackupc2018.slack.com/messages/CCJM20DU5">#skyscanner</a></span>
-						</div>
-						<p class="margin-bottom">Come by our Booth to get your API keys. Check our <a href="https://skyscanner.github.io/slate/" target="_blank">documentation</a> for more information. Join us on API talk on Saturday morning.</p>
-						<div>
-							<p><b>Prize:</b> 75€ travel voucher.</p>
-						</div>
-					</div>
-				</div>
-				<div class="panel">
-					<h1>IThinkUPC</h1>
-					<div>
-						<h2 class="panel-info margin-bottom text-centered">Bring the university life to your smartphone</h2>
-						<div class="margin-bottom text-centered">
-							<p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-							<span><a  target="_blank" href="https://hackupc2018.slack.com/messages/CCKU9PTND">#ithinkupc</a></span>
-						</div>
-						<p class="margin-bottom">We want to improve UPC student's digital experience by designing a whole new set of apps and resources that help us make a difference in the relationship between university services and students needs and preferences.</p>
-						<p class="margin-bottom">We encourage you to design and build an app that includes your preferred feature and help our university to become digital!</p>
-						<p class="margin-bottom">For more information click <a href="https://drive.google.com/a/hackupc.com/file/d/1vg9ht7NH23BWCI6XiYO3rqs6ejjMbug2/view?usp=sharing" target="_blank">here</a>.</p>
-						<div>
-							<p><b>Prizes:</b></p>
-							<ul class="no-indent">
-								<li>1st Prize: Google Home for every team member.</li>
-								<li>2nd Prize: Arduboy for each team member.</li>
-								<li>3rd Prize: Raspberry Pi 3 for each team member.</li>
-								<li>4th Prize: Google Home Mini for each team member.</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="panel">
-					<h1>ServiZurich</h1>
-					<div>
-						<h2 class="panel-info margin-bottom text-centered">Millenials on the move</h2>
-						<div class="margin-bottom text-centered">
-							<p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-							<span><a  target="_blank" href="https://hackupc2018.slack.com/messages/CCTPG6VDX">#servizurich</a></span>
-						</div>
-						<p class="margin-bottom">Research shows that millennials are horrible drivers. Texting, emailing, chatting behind the wheel, running red lights, eating and drinking are just a few of the reckless acts millennials do while driving.</p>
-						<p class="margin-bottom">Are you a millennial? Do you agree? Is the research just wrong?</p>
-						<p class="margin-bottom">We challenge you to find out 1) how millennials really drive 2) how we can help improve and protect the lives of millennials on the move.</p>
-						<div>
-							<p><b>Prize:</b> 80€ on Amazon per each team member.</p>
-						</div>
-					</div>
-				</div>
-				<div class="panel">
-					<h1>Vueling</h1>
-					<div>
-						<h2 class="panel-info margin-bottom text-centered">Vueling prize</h2>
-						<div class="margin-bottom text-centered">
-							<p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-							<span><a  target="_blank" href="https://hackupc2018.slack.com/messages/CCR2QN5DG">#vueling</a></span>
-						</div>
-						<p>Vueling will award with 1 Round-trip ticket to any Vueling destination for each member of HackUPC winner team!</p>
-					</div>
-				</div>
-				<div class="panel">
-					<h1>ThoughtWorks</h1>
-					<div>
-						<h2 class="panel-info margin-bottom text-centered">Code what matters</h2>
-						<div class="margin-bottom text-centered">
-							<p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-							<span><a  target="_blank" href="https://hackupc2018.slack.com/messages/CC7U0NL91">#thoughtworks</a></span>
-						</div>
-						<p class="margin-bottom">This is your moment to have a social impact on your city or community... Use the power of technology to make a positive change or to solve an issue that is close to your heart!</p>
-						<div>
-							<p><b>Prize:</b> Reprap Prusa i3 3D Printer <b>OR</b> Tello Dron.</p>
-						</div>
-					</div>
-				</div>
-				<div class="panel">
-					<h1>Bloomberg</h1>
-					<div>
-						<h2 class="panel-info margin-bottom text-centered">Best Tech hack</h2>
-						<div class="margin-bottom text-centered">
-							<p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-							<span><a  target="_blank" href="https://hackupc2018.slack.com/messages/CCQUSJ99R">#bloomberg</a></span>
-						</div>
-						<p class="margin-bottom">Bloomberg will award the best tech project of HackUPC 2018! For more information please contact them at their stand or through Slack.</p>
-						<div>
-							<p><b>Prize:</b> Arduino.</p>
-						</div>
-					</div>
-				</div>
-				<div class="panel">
-					<h1>Typeform</h1>
-					<div>
-						<h2 class="panel-info margin-bottom text-centered">Best use of Typeform's API</h2>
-						<div class="margin-bottom text-centered">
-							<p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-							<span><a  target="_blank" href="https://hackupc2018.slack.com/messages/CD45YC4P2">#typeform</a></span>
-						</div>
-						<p class="margin-bottom">For more information please contact them through Slack.</p>
-						<div>
-							<p><b>Prize:</b> Nintendo SNES Classic Console.</p>
-						</div>
-					</div>
-				</div>
-				<div class="panel">
-					<h1>.tech domains</h1>
-					<div>
-						<h2 class="panel-info margin-bottom text-centered">Best project hosted on .tech domains</h2>
-						<div class="margin-bottom text-centered">
-							<p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-							<span><a  target="_blank" href="https://hackupc2018.slack.com/messages/CC7U0UYAX">#tech-domains</a></span>
-						</div>
-						<p class="margin-bottom">Come to Info-Desk for getting promotional codes (and some stickers of course).</p>
-						<div>
-							<p><b>Prize:</b> US$ 250 Amazon Gift Card for the whole team.</p>
-						</div>
-					</div>
-				</div>
-				<div class="panel">
-					<h1>Wolfram Language</h1>
-					<div>
-						<h2 class="panel-info margin-bottom text-centered">Use of Wolfram's API</h2>
-						<div class="margin-bottom text-centered">
-							<p class="icon"><i class="fa fa-slack" aria-hidden="true"></i></p>
-							<span><a  target="_blank" href="https://hackupc2018.slack.com/messages/CC82KAZFC">#wolfram</a></span>
-						</div>
-						<p class="margin-bottom">Wolfram Research is pleased to sponsor HackUPC by providing access to our latest technology, Wolfram|One! For complimentary access to our development platform and the Wolfram API, just click <a href="https://account.wolfram.com/redeem/HackUPC2018" target="_blank">here</a>.</p>
-						<p class="margin-bottom">This URL will take you to a sign-in page and prompt you to log in using your Wolfram ID. If you don't already have a Wolfram ID, you'll be prompted to create one using an active email address. Once logged in, you will see in the Downloads section which platforms of the software you have access to, with their accompanying activation keys. Please download the desktop version to your machine, boot up the application and use the associated activation key when prompted. This will grant you full access for 30 days from your activation date.</p>
-						<div>
-							<p><b>Prize:</b> One year each of Wolfram|One and Wolfram|Alpha Pro for everyone on the top ten teams with a value of $375 per award.</p>
-						</div>
-					</div>
-				</div>
+					</li>
+				</ul>
 			</div>
 		</article>
 		<article id="faq" class="under-header padding-bottom">
