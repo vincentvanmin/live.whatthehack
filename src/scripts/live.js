@@ -642,9 +642,8 @@
 		window.addEventListener("hashchange", onRouteChange);
 		document.addEventListener("keypress", function(ev){
 			var key = ev.which;
-			if(String.fromCharCode(key) == 'p')
+			if(String.fromCharCode(key) == '+')
 				toggleFullscreen();
-
 		});
 		document.getElementById("countdown-li").addEventListener("click",function(){
 			goTo(views.live);

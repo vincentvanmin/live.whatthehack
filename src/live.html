@@ -16,7 +16,7 @@
 	<meta property="og:site_name" content="WhatTheHack" />
 	<meta property="og:image" content="https://whatthehack.be/wp-content/uploads/2018/11/Screen-Shot-2018-11-22-at-08.00.56.png" />
 	<meta property="og:image:secure_url" content="https://whatthehack.be/wp-content/uploads/2018/11/Screen-Shot-2018-11-22-at-08.00.56.png" />
-	<meta name="theme-color" content="#03A9B5">
+	<meta name="theme-color" content="#332275">
 	<link rel="stylesheet" href="assets/css/app.min.css" data-finger-print>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<meta name="author" content="Tobania">
@@ -100,7 +100,7 @@
 	<!--Fancy schedule event-->
 	<template id="fancyEvent">
 		<div class="event" data-event-id="{id}" data-start-timestamp="{startTmsp}" data-end-timestamp="{endTmsp}" data-end-action="removeEndedEvent" data-update-action="updateFancyEvent">
-			<a  target="_blank" href="http://maps.hackupc.com/#{mapsLink}"></a>
+			<a target="_blank" href="/live.html#/maps"></a>
 			<div class='event-hour'>
 				<div>{startHour}</div>
 				<div class="end-hour">{endHour}</div>
@@ -120,7 +120,7 @@
 	<header id="header-small" class="show-when-small">
 		<div class="bar">
 			<div id="open-aside-btn">
-				<span>&#9776;</span>
+				<img src="assets/img/menu.svg" alt="Menu">
 			</div>
 			<div class="title-container">
 				<img src="assets/img/long-logo.png" alt="WhatTheHack">
@@ -156,7 +156,7 @@
 					<a href="#/challenges" onclick="scrollToTop()">Challenges</a>
 				</li>
 				<li data-bind-view="faq">
-					<a href="#/faq" onclick="scrollToTop()">FAQ</a>
+					<a href="#/faq" onclick="scrollToTop()">FAQ & Rules</a>
 				</li>
 			</ul>
 		</nav>
@@ -194,7 +194,7 @@
 					<a href="#/challenges" onclick="scrollToTop()">Challenges</a>
 				</li>
 				<li data-bind-view="faq">
-					<a href="#/faq" onclick="scrollToTop()">FAQ</a>
+					<a href="#/faq" onclick="scrollToTop()">FAQ & Rules</a>
 				</li>
 			</ul>
 		</nav>
@@ -256,12 +256,12 @@
 					<div class="slack">
 						<ul class="channels">
 							<h3>Slack Group Channels</h3>
-							<li class="channel"><a target="_blank" href="https://hackathon-aft-tobania.slack.com/messages/CDFBN57B2">General</a></li>
-							<li class="channel"><a target="_blank" href="">Coaching</a></li>
-							<li class="channel"><a target="_blank" href="">Workshops</a></li>
-							<li class="channel"><a target="_blank" href="">Challanges</a></li>
-							<li class="channel"><a target="_blank" href="">Communication</a></li>
-							<li class="channel"><a target="_blank" href="https://hackathon-aft-tobania.slack.com/messages/CDFUB54TE">Random</a></li>
+							<li class="channel"><a target="_blank" href="https://whatthehacksl-utu6570.slack.com/messages/CFRQT37V4/">General</a></li>
+							<li class="channel"><a target="_blank" href="https://whatthehacksl-utu6570.slack.com/messages/CFPQ3R1LZ/">Coaching</a></li>
+							<li class="channel"><a target="_blank" href="https://whatthehacksl-utu6570.slack.com/messages/CFPL6HJUQ/">Workshops</a></li>
+							<li class="channel"><a target="_blank" href="https://whatthehacksl-utu6570.slack.com/messages/CFQDXA6F6/">Challenges</a></li>
+							<li class="channel"><a target="_blank" href="https://whatthehacksl-utu6570.slack.com/messages/CFRQT39V4/">Communication</a></li>
+							<li class="channel"><a target="_blank" href="https://whatthehacksl-utu6570.slack.com/messages/CFQCDRGG2/">Random</a></li>
 						</ul>
 						<div class="divider"></div>
 						<div class="contactform">
@@ -358,7 +358,7 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/jury/Heino-Schaght.jpeg" alt="Heino Schaght">
+										<img src="assets/img/jury/Heino-Schaght.jpg" alt="Heino Schaght">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
@@ -768,12 +768,12 @@
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
-									<img src="assets/img/coaches/User.png" alt="Dirk Depré">
+									<img src="assets/img/coaches/Dirk-Depre.jpg" alt="Dirk Depré">
 								</div>
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Dirk Depré</h1> 
-										<p>Agile</p> 
+										<p>Service Delivery Manager</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -789,7 +789,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Christophe Soens</h1> 
-										<p>Technical</p> 
+										<p>Test Specialist</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -805,7 +805,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Domien Frederix</h1> 
-										<p>Technical</p> 
+										<p>Test Specialist</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -821,7 +821,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Anton Kirschhock</h1> 
-										<p>Technical</p> 
+										<p>.NET Developer</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -837,7 +837,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Chamberlain Mbah</h1> 
-										<p>Technical</p> 
+										<p>Data Scientist</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -853,7 +853,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Freddy Schoeters</h1> 
-										<p>Technical</p> 
+										<p>Solution Architect Testing</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -869,7 +869,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Phillippe Michiels</h1> 
-										<p>Business</p> 
+										<p>Subject Matter Expert Cyber Security</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -885,7 +885,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Tim Neyens</h1> 
-										<p>Technical</p> 
+										<p>.NET Developer</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -901,7 +901,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Johan Sevenants</h1> 
-										<p>Marketing</p> 
+										<p>Strategy Consultant</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -917,7 +917,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Leen Veldeman</h1> 
-										<p>Marketing</p> 
+										<p>Digital Marketing consultant</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -928,12 +928,28 @@
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
-									<img src="assets/img/coaches/User.png" alt="Veerle Hendrickx">
+									<img src="assets/img/coaches/Dries-Bovijn.jpeg" alt="Dries Bovijn">
 								</div>
 								<div class="flip-card-back">
 									<div class="content">
-										<h1>Veerle Hendrickx</h1> 
-										<p>Dreamteam Coach</p> 
+										<h1>Dries Bovijn</h1> 
+										<p>Head of Strategy & Innovation - Business Development</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Veerle-Hendrikx.jpeg" alt="Veerle Hendrikx">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Veerle Hendrikx</h1> 
+										<p>Corporate Talent & Development Manager</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -949,7 +965,23 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Alexander De Meersman</h1> 
-										<p>Dreamteam Coach</p> 
+										<p>Functional Analist</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Shen-Sandele.jpeg" alt="Shen Sandelé">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Shen Sandelé</h1> 
+										<p>Business Manager</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -965,7 +997,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Tom Leers</h1> 
-										<p>Dreamteam Coach</p> 
+										<p>User Adoption Expert & Analist</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -976,12 +1008,12 @@
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
-									<img src="assets/img/coaches/Valérie-Heylen.jpeg" alt="Valérie Heylen">
+									<img src="assets/img/coaches/Valerie-Heylen.jpeg" alt="Valérie Heylen">
 								</div>
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Valérie Heylen</h1> 
-										<p>Dreamteam Coach</p> 
+										<p>Business coach</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -997,7 +1029,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Hans Stevens</h1> 
-										<p>Technical</p> 
+										<p>Scrum Master</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -1013,7 +1045,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Wouter Bauchart</h1> 
-										<p>Technical</p> 
+										<p>.NET Developer</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -1029,7 +1061,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Ruaa Al Durry</h1> 
-										<p>Finance</p> 
+										<p>M&A and Strategic Projects Analyst</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -1045,7 +1077,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Serge Lens</h1> 
-										<p>Finance</p> 
+										<p>M&A and Strategic Projects Analyst</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -1061,7 +1093,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Dean Bodart</h1> 
-										<p>Technical</p> 
+										<p>CTO at Lean Vertical</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -1077,7 +1109,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Dennis Devroey</h1> 
-										<p>Legal</p> 
+										<p>Legal Counsel</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -1093,7 +1125,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Wes Van de Ven</h1> 
-										<p>Legal</p> 
+										<p>Legal Counsel</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -1109,7 +1141,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Sammy De Moor</h1> 
-										<p>Technical</p> 
+										<p>COO at Lean Vertical</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -1125,7 +1157,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Fabio Ciaravola</h1> 
-										<p>Technical</p> 
+										<p>Test Specialist</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -1141,7 +1173,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Silke Peeterman</h1> 
-										<p>Business</p> 
+										<p>Product Manager</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -1157,7 +1189,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Curly Van Spaendonck</h1> 
-										<p>Business</p> 
+										<p>Service Delivery Manager</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -1173,7 +1205,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Maarten Jacobs</h1> 
-										<p>Business</p> 
+										<p>Analyst</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -1184,12 +1216,12 @@
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
-									<img src="assets/img/coaches/User.png" alt="Jan Van Wassenhove">
+									<img src="assets/img/coaches/Jan-Van-Wassenhove.jpg" alt="Jan Van Wassenhove">
 								</div>
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Jan Van Wassenhove</h1> 
-										<p>Technical</p> 
+										<p>IT consultant</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -1205,23 +1237,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Jan Vanwezemael</h1> 
-										<p>Technical</p> 
-										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="flip-card">
-							<div class="flip-card-inner">
-								<div class="flip-card-front">
-									<img src="assets/img/coaches/Marc-Weiler.jpeg" alt="Marc Weiler">
-								</div>
-								<div class="flip-card-back">
-									<div class="content">
-										<h1>Marc Weiler</h1> 
-										<p>Business</p> 
+										<p>Developer</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -1237,7 +1253,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Sander Lesage</h1> 
-										<p>Technical</p> 
+										<p>Enterprise Architect</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -1248,12 +1264,12 @@
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
-									<img src="assets/img/coaches/User.png" alt="Isabelle Wullaerts">
+									<img src="assets/img/coaches/Isabelle-Wullaerts.jpg" alt="Isabelle Wullaerts">
 								</div>
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Isabelle Wullaerts</h1> 
-										<p>Finance</p> 
+										<p>Business Controller</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -1269,7 +1285,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Thomas Nunes da Silva</h1> 
-										<p>Technical</p> 
+										<p>Test Specialist</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -2110,6 +2126,27 @@
 			<div class="container-small">
 				<div class="faqimage"></div>
 				<div id="questions">
+					<div class="question rulessection">
+						<button type="button" class="question-heading" data-toggle="modal" data-target="#myModal0">
+							<div class="open-icon"></div>
+							<h2>Where can I find the terms of participation?</h2>
+						</button>
+
+						<div class="modal fade" id="myModal0" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">Terms of participation</h4>
+									</div>
+									<div class="modal-body">
+										<p>Please <strong>read</strong> the terms of participation for WhatTheHack 2019 carefully. You need to indicate that you <strong>accept</strong> them in the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWtCNehqLceD-qzsjAz9uLtL3YSLKZ0M0Zz1g6w1xDnGBWkA/viewform" target="_blank">Google Form</a>.</p>
+										<p>You can find the terms of participation <a href="assets/docs/WhatTheHack 2019 - Terms of Participation.pdf" download>here</a>.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 					<div id="question1" class="question readmore">
 						<button class="question-heading" onclick="openQuestion1()">
 							<div class="open-icon"></div>
@@ -2134,11 +2171,20 @@
 							<h2>What if I cannot make it in time?</h2>
 						</button>
 						<div class="question-body">
-							<p>No problem. Just come to our InfoDesk for a late check-in. Ask your team for any important information you may have missed. If you are confused, please reach out to any crew member (purple t-shirts).</p>
+							<p>No problem. Be there at 6:00 PM, so your team doesn't lag behind the others. Just come to our InfoDesk for a late check-in. Ask your team for any important information you may have missed. If you are confused, please reach out to any crew member (purple t-shirts).</p>
 						</div>
 					</div>
 					<div id="question4" class="question">
 						<button class="question-heading" onclick="openQuestion4()">
+							<div class="open-icon"></div>
+							<h2>How do I sign up for a workshop?</h2>
+						</button>
+						<div class="question-body">
+							<p>You can sign up at the InfoDesk!</p>
+						</div>
+					</div>
+					<div id="question5" class="question">
+						<button class="question-heading" onclick="openQuestion5()">
 							<div class="open-icon"></div>
 							<h2>I'm not in Slack, how do I get in?</h2>
 						</button>
@@ -2146,8 +2192,8 @@
 							<p>Come to the InfoDesk during the event or send us an email to <a href="mailto:info@whatthehack.com" target="_blank">info@whatthehack.com</a></p>
 						</div>
 					</div>
-					<div id="question5" class="question">
-						<button class="question-heading" onclick="openQuestion5()">
+					<div id="question6" class="question">
+						<button class="question-heading" onclick="openQuestion6()">
 							<div class="open-icon"></div>
 							<h2>Can I leave WhatTheHack?</h2>
 						</button>
@@ -2155,8 +2201,8 @@
 							<p>Yes. However make sure you have your wristband with you, otherwise we might not let you in when you come back.</p>
 						</div>
 					</div>
-					<div id="question6" class="question">
-						<button class="question-heading" onclick="openQuestion6()">
+					<div id="question7" class="question">
+						<button class="question-heading" onclick="openQuestion7()">
 							<div class="open-icon"></div>
 							<h2>Can I sleep now?</h2>
 						</button>
@@ -2164,8 +2210,8 @@
 							<p>Yes, sure. We have provided a sleeping area. Make sure to bring your own matress & sleeping bag.</p>
 						</div>
 					</div>
-					<div id="question7" class="question">
-						<button class="question-heading" onclick="openQuestion7()">
+					<div id="question8" class="question">
+						<button class="question-heading" onclick="openQuestion8()">
 							<div class="open-icon"></div>
 							<h2>Something isn’t working!</h2>
 						</button>
@@ -2173,8 +2219,8 @@
 							<p>If something is not working, please ask your questing in slack or come to our InfoDesk and meet our awesome crew. They'll love to help you!</p>
 						</div>
 					</div>
-					<div id="question8" class="question">
-						<button class="question-heading" onclick="openQuestion8()">
+					<div id="question9" class="question">
+						<button class="question-heading" onclick="openQuestion9()">
 							<div class="open-icon"></div>
 							<h2>Deadline for project submissions?</h2>
 						</button>
@@ -2182,8 +2228,8 @@
 							<p>The hacking ends Saturday 2nd at 6:00 PM.</p>
 						</div>
 					</div>
-					<div id="question9" class="question">
-						<button class="question-heading" onclick="openQuestion9()">
+					<div id="question10" class="question">
+						<button class="question-heading" onclick="openQuestion10()">
 							<div class="open-icon"></div>
 							<h2>How does judging work?</h2>
 						</button>
@@ -2191,8 +2237,8 @@
 							<p>We will have a judging expo on Saturday from 6:00 PM - 7:00 PM. Depening on your challenge or subject, you will get assigned a specific jury. All information can be found in the <a href="/live#/schedule">schedule</a></p>
 						</div>
 					</div>
-					<div id="question10" class="question">
-						<button class="question-heading" onclick="openQuestion10()">
+					<div id="question11" class="question">
+						<button class="question-heading" onclick="openQuestion11()">
 							<div class="open-icon"></div>
 							<h2>I have another question... Okay?</h2>
 						</button>
@@ -2205,8 +2251,6 @@
 		</article>
 	</main>
 
-	<script src="assets/js/checklist.js"></script>
-	<script src="assets/js/modal.js"></script>
-	<script src="assets/js/faq.js"></script>
+	<script src="assets/js/whatthehack.min.js"></script>
 </body>
 </html>

@@ -1,29 +1,5 @@
 @import "bootstrap";
-
-@font-face {
-    font-family: Gotham-Black;
-    src: url(../fonts/GothamBlack.ttf);
-}
-
-@font-face {
-    font-family: Gotham-Bold;
-    src: url(../fonts/GothamBold.ttf);
-}
-
-@font-face {
-    font-family: Gotham-Medium;
-    src: url(../fonts/GothamMedium.ttf);
-}
-
-@font-face {
-    font-family: Gotham-Light;
-    src: url(../fonts/GothamLight.ttf);
-}
-
-@font-face {
-    font-family: Gotham-Thin;
-    src: url(../fonts/GothamThin.ttf);
-}
+@import "params";
 
 @font-face {
     font-family: ProximaNovaBlack;
@@ -82,7 +58,7 @@ html, body{
 body {
   background: $background-color;
   color: $text-color;
-  font-family: ProximaNovaRegular, sans-serif;
+  font-family: 'Museo Sans Rounded 300', sans-serif;
   font-weight: normal;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -377,6 +353,7 @@ h1 {
     margin-top: 5vh;
     font-size: 3.5em;
     margin-bottom: 2.5vh;
+    font-family: 'Museo Sans Rounded 500', sans-serif;
 }
 
 h2 {

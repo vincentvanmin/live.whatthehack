@@ -27,6 +27,7 @@
             white-space: nowrap; /* Keeps the content on a single line */
             margin: auto; /* Gives that scrolling effect as the typing happens */
             letter-spacing: .1em; /* Adjust as needed */
+            font-family: 'Museo Sans Rounded 500', sans-serif;
             animation: 
                 typing 1s steps(30, end),
                 blink-caret .5s step-end infinite;
@@ -111,19 +112,6 @@
         }
     }
       
-      .text {
-        display: block;
-        margin-top: 75px;
-        margin-left: -30px;
-        font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
-        font-size: 12px;
-        color: #fff;
-        text-transform: uppercase;
-        white-space: nowrap;
-        opacity: .25;
-        animation: pulse 2s linear alternate infinite;
-      }
-      
       @keyframes pulse {
         to {
           opacity: 1;
@@ -139,6 +127,7 @@
         padding: 50px 0 20px 0;
         font-size: 2em;
         color: #fff;
+        font-family: 'Museo Sans Rounded 500', sans-serif;
         text-align: center;
         margin: 0 auto;
     }
@@ -222,6 +211,7 @@
                             font-size: 1.35em;
                             text-align: center;
                             margin: 0 auto;
+                            font-family: 'Museo Sans Rounded 500', sans-serif;
                             
                         }
             

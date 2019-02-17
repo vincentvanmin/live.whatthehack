@@ -5,6 +5,7 @@
     text-align: left;
     margin-bottom: 20px;
     line-height: 40px;
+    font-family: 'Museo Sans Rounded 500', sans-serif;
     @media (max-width: 720px) { font-size: 30px; }
 }
 
@@ -24,6 +25,7 @@
         p {
             color: #00ece2;
             font-size: 16px;
+            padding-top: 10px;
         }
     }
 
@@ -302,6 +304,7 @@
                     border: solid 2px rgb(255, 90, 70);
                     border-radius: 50%;
                     color: #fff;
+                    outline: none;
     
                     &:hover {
                         background-color: transparent;

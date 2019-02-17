@@ -22,6 +22,7 @@ body.modal-open {
             font-size: 18px;
             background: #332275;
             color: #fff;
+            font-family: 'Museo Sans Rounded 500', sans-serif;
             border: none;
             border-radius: 100px;
             cursor: pointer;
@@ -62,6 +63,10 @@ body.modal-open {
                         transition: 0.2s;
                         margin: 10px 0;
                         border: none;
+
+                        h4 {
+                            font-family: 'Museo Sans Rounded 500', sans-serif;
+                        }
         
                         .close-button {
                             position: absolute;

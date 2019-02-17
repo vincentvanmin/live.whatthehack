@@ -14,6 +14,7 @@
 				padding: 10px;
 				background-color: #D555F6;
 				color: #FFFFFF;
+				font-family: 'Museo Sans Rounded 500', sans-serif;
 				border-bottom: 1px solid #FFFFFF33;
 				border-top-left-radius: 10px;
 				border-top-right-radius: 10px;
@@ -33,6 +34,9 @@
 				td,th{
 					padding:10px;
 					text-align: left;
+				}
+				th {
+					font-family: 'Museo Sans Rounded 500', sans-serif;
 				}
 				td{
 					border:thin solid fade($secondaryColor,20%);

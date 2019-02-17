@@ -2,12 +2,12 @@
 	"version": 1,
 	"message": "",
 	"baseTimeOffset":"-60",
-	"countdownStart":"14/02/2019 10:30",
+	"countdownStart":"15/02/2019 10:30",
 	"days":
 	[
 		{
 			"name":"Friday",
-			"date":"14/02/2019",
+			"date":"15/02/2019",
 			"events":
 			[
 				{
@@ -16,8 +16,7 @@
 					"startHour": "16:30",
 					"endHour": "17:30",
 					"locationName": "Entrance Hall Max Weber",
-					"description": "Register to the hackathon and get your swag! Make sure to have your ID ready.",
-					"category": "Group Event"
+					"description": "Register to the hackathon and get your swag! Make sure to have your ID ready."
 				},
 				{
 					"id":"2",
@@ -25,16 +24,14 @@
 					"startHour": "17:30",
 					"endHour": "18:00",
 					"locationName": "Max Weber",
-					"description": "Introduction talk. You will get all information about the next 24h.",
-					"category": "Group Event"
+					"description": "Introduction talk. You will get all information about the next 24h."
 				},
 				{
 					"id":"3",
 					"title": "Hacking starts",
 					"startHour": "18:00",
 					"locationName": "Alma 2",
-					"description": "Ready. Set. GO!",
-					"category": "Group Event"
+					"description": "Ready. Set. GO!"
 				},
 				{
 					"id":"4",
@@ -43,7 +40,7 @@
 					"endHour": "19:00",
 					"locationName": "Flex Space (Agora)",
 					"description": "By Dirk Depré",
-					"category": "Technical"
+					"category": "Inspirational"
 				},
 				{
 					"id":"5",
@@ -61,7 +58,7 @@
 					"endHour": "19:00",
 					"locationName": "Matchu Picchu",
 					"description": "By Tom Leers & Alexander De Meersman",
-					"category": "Technical"
+					"category": "Entrepreneurial"
 				},
 				{
 					"id":"7",
@@ -74,21 +71,20 @@
 				},
 				{
 					"id":"8",
-					"title": "Chroques and Hot Dogs",
-					"startHour": "18:30",
-					"endHour": "19:30",
-					"locationName": "Alma 2",
-					"description": "Enjoy your meal!",
-					"category": "Food & Drinks"
-				},
-				{
-					"id":"9",
 					"title": "DJ Vinavil",
 					"startHour": "19:00",
 					"endHour": "22:00",
 					"locationName": "Alma 2",
-					"description": "Lets Party!",
-					"category": "Group Event"
+					"description": "Inspirational Lounge Music for a healthy dose of good courage! <a href='https://soundcloud.com/vinavil/' target='_blank' style='color: #000; text-decoration: underline;'>Visit DJ Vinavil on SoundCloud</a>."
+				},
+				{
+					"id":"9",
+					"title": "Croques and Hot Dogs",
+					"startHour": "19:30",
+					"endHour": "21:00",
+					"locationName": "Alma 2",
+					"description": "Enjoy your meal!",
+					"category": "Food & Drinks"
 				},
 				{
 					"id":"10",
@@ -101,11 +97,11 @@
 				},
 				{
 					"id":"11",
-					"title": "[Workshop] Angular",
+					"title": "[Workshop] Angular vs. React",
 					"startHour": "19:30",
 					"endHour": "20:15",
 					"locationName": "Paris",
-					"description": "By Anton Kirschchok",
+					"description": "By Anton Kirschhock & Tim Neyens",
 					"category": "Technical"
 				},
 				{
@@ -114,7 +110,7 @@
 					"startHour": "19:30",
 					"endHour": "20:15",
 					"locationName": "Saint Petersburg",
-					"description": "By Chamberlain",
+					"description": "By Chamberlain Mbah",
 					"category": "Technical"
 				},
 				{
@@ -125,42 +121,50 @@
 					"locationName": "Xi'an",
 					"description": "By Freddy Schoeters",
 					"category": "Entrepreneurial"
+				},
+				{
+					"id":"14",
+					"title": "Elevator Pitch",
+					"startHour": "21:00",
+					"endHour": "22:00",
+					"locationName": "Alma 2",
+					"description": "Our coaches will hear your genius idea.",
+					"category": "Pitch"
+				},
+				{
+					"id":"15",
+					"title": "Snack buffet",
+					"startHour": "22:00",
+					"locationName": "Alma 2",
+					"description": "Feeling hungry? Come get some extra energy!",
+					"category": "Food & Drinks"
 				}
 			]
 		},
 		{
 			"name":"Saturday",
-			"date":"15/02/2019",
+			"date":"16/02/2019",
 			"events":
-			[
+			[	
 				{
-					"id":"14",
-					"title": "Midnight Snacks",
-					"startHour": "02:00",
-					"locationName": "Alma 2",
-					"description": "Feeling hungry? Come get some extra energy!",
-					"category": "Food & Drinks"
-				},	
-				{
-					"id":"15",
+					"id":"16",
 					"title": "Breakfast",
-					"startHour": "07:15",
-					"endHour": "08:00",
+					"startHour": "08:00",
 					"locationName": "Alma 2",
 					"description": "Come and get some extra energy!",
 					"category": "Food & Drinks"
 				},	
 				{
-					"id":"16",
+					"id":"17",
 					"title": "[Workshop] Angular",
 					"startHour": "08:30",
 					"endHour": "09:15",
 					"locationName": "Agra",
-					"description": "By Anton Kirschchock",
+					"description": "By Anton Kirschhock",
 					"category": "Technical"
 				},	
 				{
-					"id":"17",
+					"id":"18",
 					"title": "[Workshop] Security",
 					"startHour": "08:30",
 					"endHour": "09:15",
@@ -169,7 +173,7 @@
 					"category": "Technical"
 				},	
 				{
-					"id":"18",
+					"id":"19",
 					"title": "[Workshop] Behavior Driven Development",
 					"startHour": "08:30",
 					"endHour": "09:15",
@@ -178,7 +182,7 @@
 					"category": "Technical"
 				},	
 				{
-					"id":"19",
+					"id":"20",
 					"title": "[Workshop] Elevator Pitch",
 					"startHour": "08:30",
 					"endHour": "09:15",
@@ -187,7 +191,7 @@
 					"category": "Entrepreneurial"
 				},	
 				{
-					"id":"20",
+					"id":"21",
 					"title": "[Workshop] Yoga",
 					"startHour": "08:30",
 					"endHour": "09:15",
@@ -196,7 +200,7 @@
 					"category": "Inspirational"
 				},	
 				{
-					"id":"21",
+					"id":"22",
 					"title": "[Workshop] Elevator Pitch",
 					"startHour": "10:00",
 					"endHour": "10:45",
@@ -205,7 +209,7 @@
 					"category": "Entrepreneurial"
 				},
 				{
-					"id":"22",
+					"id":"23",
 					"title": "[Workshop] The importance of Optimal Customer Experience",
 					"startHour": "10:00",
 					"endHour": "10:45",
@@ -214,7 +218,7 @@
 					"category": "Entrepreneurial"
 				},
 				{
-					"id":"23",
+					"id":"24",
 					"title": "[Workshop] Introduction to REST API's & Automatic API testing",
 					"startHour": "10:00",
 					"endHour": "10:45",
@@ -223,7 +227,7 @@
 					"category": "Technical"
 				},
 				{
-					"id":"24",
+					"id":"25",
 					"title": "[Workshop] Building your Brand on Social",
 					"startHour": "10:00",
 					"endHour": "10:45",
@@ -232,21 +236,13 @@
 					"category": "Inspirational"
 				},
 				{
-					"id":"25",
+					"id":"26",
 					"title": "[Workshop] Mindfulness",
 					"startHour": "10:00",
 					"endHour": "10:45",
 					"locationName": "Saint Petersburg",
 					"description": "By Valérie Heylen. Make sure to bring a Yoga Mat and wear comfortable clothes.",
 					"category": "Inspirational"
-				},
-				{
-					"id":"26",
-					"title": "Lunch",
-					"startHour": "11:00",
-					"locationName": "Alma 2",
-					"description": "Fresh energy available!",
-					"category": "Food & Drinks"
 				},
 				{
 					"id":"27",
@@ -277,6 +273,15 @@
 				},
 				{
 					"id":"30",
+					"title": "Lunch",
+					"startHour": "12:30",
+					"endHour": "14:00",
+					"locationName": "Alma 2",
+					"description": "Fresh energy available!",
+					"category": "Food & Drinks"
+				},
+				{
+					"id":"31",
 					"title": "Hacking ends",
 					"startHour": "18:00",
 					"locationName": "Alma 2",
@@ -284,7 +289,7 @@
 					"category": "Group Activity"
 				},
 				{
-					"id":"31",
+					"id":"32",
 					"title": "Pitch HealthTech",
 					"startHour": "18:00",
 					"endHour": "19:00",
@@ -293,7 +298,7 @@
 					"category": "Pitch"
 				},
 				{
-					"id":"32",
+					"id":"33",
 					"title": "Pitch Media",
 					"startHour": "18:00",
 					"endHour": "19:00",
@@ -302,7 +307,7 @@
 					"category": "Pitch"
 				},
 				{
-					"id":"33",
+					"id":"34",
 					"title": "Pitch Smart Cities",
 					"startHour": "18:00",
 					"endHour": "19:00",
@@ -311,7 +316,7 @@
 					"category": "Pitch"
 				},
 				{
-					"id":"34",
+					"id":"35",
 					"title": "Pitch Retail",
 					"startHour": "18:00",
 					"endHour": "19:00",
@@ -320,7 +325,7 @@
 					"category": "Pitch"
 				},
 				{
-					"id":"35",
+					"id":"36",
 					"title": "Pitch Student Life",
 					"startHour": "18:00",
 					"endHour": "19:00",
@@ -329,7 +334,7 @@
 					"category": "Pitch"
 				},
 				{
-					"id":"36",
+					"id":"37",
 					"title": "Pitch Banking & Insurance",
 					"startHour": "18:00",
 					"endHour": "19:00",
@@ -338,24 +343,25 @@
 					"category": "Pitch"
 				},
 				{
-					"id":"37",
+					"id":"38",
 					"title": "Closing Ceremony",
 					"startHour": "19:00",
 					"endHour": "20:00",
 					"locationName": "Max Weber",
-					"description": "The best 6 teams will pitch their prototype or business plan.",
+					"description": "The 6 challenge winners will compete to win the audience prize or be priced as overall winner by the jury!",
 					"category": "Group Activity"
 				},
 				{
-					"id":"38",
+					"id":"39",
 					"title": "Dinner",
 					"startHour": "20:00",
+					"endHour": "22:00",
 					"locationName": "Alma 2",
 					"description": "Have a talk with others and enjoy your meal!",
 					"category": "Food & Drinks"
 				},
 				{
-					"id":"39",
+					"id":"40",
 					"title": "End of What The Hack 2019",
 					"startHour": "20:00",
 					"description": "Thanks for joining, see you next year!",
