@@ -175,3 +175,10 @@ function openQuestion11() {
   question11.classList.add("readmore");
   question12.classList.remove("readmore");
 }
+
+/*
+function resizeBackground() {
+  var bg = document.body;
+  bg.height = window.innerHeight + 60;
+}
+*/

@@ -15,7 +15,7 @@
     "dist:docs": "cp -R src/docs dist/",
     "dist:styles": "rm -Rf dist/assets/css && mkdir dist/assets/css && npm-run-all -p scss:* && postcss -u autoprefixer -r dist/assets/css/*",
     "dist:scripts": "npm-run-all -p minjs:*",
-    "dist:php": "rm dist/assets/php/ form.php && cp src/scripts/form.php dist/assets/php/",
+    "dist:php": "rm dist/assets/php/form.php && cp src/scripts/form.php dist/assets/php/",
     "dist:images": "cp -R src/images/ dist/assets/images && rm -Rf dist/assets/img && mv dist/assets/images dist/assets/img",
     "dist:html": "cp src/*.html dist",
     "dist:favicon": "cp src/*.ico dist",
@@ -44,7 +44,7 @@
     "lint:sass": "sass-lint -v -q -c .sass-lint.yml 'src/styles/*.scss'",
     "lint:js": "eslint src/scripts/*.js"
   },
-  "author": "HackUPC Dev Team",
+  "author": "Tobania",
   "license": "MIT",
   "dependencies": {
     "asset-cache-bust": "^2.2.0",

@@ -146,7 +146,7 @@
                 background-color: transparent;
 
                 &:hover {
-                    background-color: rgb(255, 90, 70);
+                    background-color: #D555F6;
                     color: white;
                 }
             }
@@ -203,13 +203,17 @@
             padding: 0;
             @media (max-width: 720px) { width: 100%; }
 
-            .channel {
+            .channel a {
                 cursor: pointer;
                 position: relative;
+                display: block;
                 min-height: 50px;
+                width: 100%;
                 padding: 12px 8px 12px 50px;
                 list-style-type: none;
                 background: #332275;
+                color: #fff;
+                text-decoration: none;
                 border-radius: 25px;
                 font-size: 18px;
                 transition: 0.2s;
@@ -235,14 +239,8 @@
     
                 &:hover {
                     background: #00ece2;
-
-                    a {
-                        color: #1b0a5f;
-                    }
-                }
-
-                a {
-                    color: #fff;
+                    color: #1b0a5f;
+                    text-decoration: none;
                 }
             }
         }
@@ -300,16 +298,17 @@
                     margin-top: 10px;
                     font-size: 16px;
                     text-align: center;
-                    background-color: rgb(255, 90, 70);
-                    border: solid 2px rgb(255, 90, 70);
+                    background-color: #D555F6;
+                    border: solid 2px #D555F6;
                     border-radius: 50%;
                     color: #fff;
                     outline: none;
+                    transition: 0.3s;
     
                     &:hover {
                         background-color: transparent;
-                        border: solid 2px rgb(255, 90, 70);
-                        color: rgb(255, 90, 70);
+                        border: solid 2px #D555F6;
+                        color: #D555F6;
                     }
                 }
             }
