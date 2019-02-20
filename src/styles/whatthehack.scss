@@ -6,6 +6,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    top: -150px;
+    @media (max-width: 720px) { top: -60px; }
 
     #ball {
         height: 100vh;
@@ -50,21 +52,5 @@
                 font-family: 'Museo Sans Rounded 300' sans-serif;
             }
         }
-    }
-}
-
-#sponsors {
-    padding: 50px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    img {
-        width: 100px;
-        height: auto;
-        margin: 10px 20px;
-        @media (max-width: 1024px) { width: 80px; margin: 0 20px; }
-        @media (max-width: 720px) { width: 60px; margin: 0 20px; }
-        @media (max-width: 480px) { width: 25%; margin: 04%}
     }
 }

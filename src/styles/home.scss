@@ -3,10 +3,10 @@
     color: #fff;
     font-size: 40px;
     text-align: left;
-    margin-bottom: 20px;
+    padding-bottom: 30px;
     line-height: 40px;
     font-family: 'Museo Sans Rounded 500', sans-serif;
-    @media (max-width: 720px) { font-size: 30px; }
+    @media (max-width: 720px) { font-size: 30px; padding-bottom: 10px; }
 }
 
 .bag {
@@ -14,13 +14,12 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    min-height: calc(100vh - 150px);
-    @media (max-width: 720px) { min-height: calc(100vh - 60px); }
 
     .listbox {
         flex-direction: row;
         width: 50%;
         @media (max-width: 720px) { width: 100%; }
+        z-index: 2;
 
         p {
             color: #00ece2;
@@ -38,12 +37,12 @@
 
         img {
             position: absolute;
-            width: 100%;
+            width: 500px;
             height: auto;
             vertical-align: center;
             opacity: 0.7;
             top: 50%;
-            left: 50%;
+            left: 60%;
             transform: translate(-50%, -50%);
         }
     }
@@ -177,6 +176,8 @@
 
 .findus {    
     padding-top: 40px;
+    margin-top: 40px;
+    @media (max-width: 720px) { margin-top: 0; }
 
     .slack {
         width: 100%;
@@ -317,7 +318,8 @@
 
     .socials {
         width: 100%;
-        padding-top: 30px;
+        padding-top: 70px;
+        padding-bottom: 20px;
 
         ul {
             display: flex;
@@ -363,4 +365,21 @@
             }
         }
     } 
+}
+
+#sponsors {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @media (max-width: 720px) { padding: 20px 0; }
+
+    img {
+        width: 100px;
+        height: auto;
+        margin: 10px 20px;
+        @media (max-width: 1024px) { width: 80px; margin: 0 20px; }
+        @media (max-width: 720px) { width: 60px; margin: 0 20px; }
+        @media (max-width: 480px) { width: 20%; margin: 0 2.5%; }
+    }
 }

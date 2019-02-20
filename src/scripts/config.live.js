@@ -16,7 +16,7 @@ var CONST ={
 	//ms to timeout an async req
 	"REQ_TIMEOUT": 2000,
 	"SCHEDULE_REFRESH_INTERVAL": 60000,
-	"DEFAULT_VIEW": "live",
+	"DEFAULT_VIEW": "home",
 	"HACKATHON_DURATION": 24*60*60,
 	"DEFAULT_NOTIFICATION_TITLE": "HackUPC Fall 2017",
 	"DEFAULT_NOTIFICATION_ICON": "favicon.ico",
