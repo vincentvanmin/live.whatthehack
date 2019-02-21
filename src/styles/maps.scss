@@ -28,7 +28,7 @@
                 position: absolute;
                 width: 100%;
                 max-height: 300px;
-                overflow: hidden;
+                overflow-y: scroll;
                 padding-right: 25px;
                 left: 0;
                 top: 50%;
@@ -49,6 +49,16 @@
                     font-size: 16px;
                     line-height: 24px;
                     @media (max-width: 720px) { padding-bottom: 20px; }
+
+                    a {
+                        color: #fff;
+                        font-size: 16px;
+                        text-decoration: underline;
+
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
                 }
             }
         }

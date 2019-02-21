@@ -387,11 +387,10 @@
 	* Result is stored in localStorage
 	*/
 	function askSubscribeAll(cb){
-		prompt("Don't miss anything!", "Do you want to subscribe to all the events?"+
-			" You will receive a notification before something happens. You can choose to subscribe/unsubscribe by clicking individually on an event.",
+		prompt("Don't miss anything!", "Do you want to get notified when a WhatTheHack workshop/food event starts?"+
+			" You will receive a notification before something from the schedule happens. You can choose to subscribe/unsubscribe by clicking individually on an event on the live page (a flag will appear).",
 			"Do it!", function(){
 				if(cb) cb();
-
 			},
 			"No, thanks. I'll choose manually", function(){
 				//Do nothing

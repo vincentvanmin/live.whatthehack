@@ -45,6 +45,18 @@
             left: 60%;
             transform: translate(-50%, -50%);
         }
+        p {
+            position: absolute;
+            width: 100%;
+            margin: 0 auto;
+            top: 70%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 40px;
+            color: #fff;
+
+        }
     }
 
     .addfield {
@@ -104,7 +116,7 @@
     ul {
         margin: 0;
         padding: 0;
-        overflow: scroll;
+        overflow-y: scroll;
         height: 380px;
 
         li {
@@ -316,6 +328,35 @@
         }
     }
 
+    .address a {
+        cursor: pointer;
+        position: relative;
+        display: block;
+        min-height: 50px;
+        width: 100%;
+        padding: 12px 8px 12px 8px;
+        list-style-type: none;
+        background: #332275;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 25px;
+        font-size: 18px;
+        text-align: center;
+        transition: 0.2s;
+        margin: 10px 0;
+        
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        &:hover {
+            background: #00ece2;
+            color: #1b0a5f;
+            text-decoration: none;
+        }
+    }
+
     .socials {
         width: 100%;
         padding-top: 70px;
@@ -325,7 +366,19 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
             padding: 0;
+
+            .hashtag {
+                font-size: 20px;
+                color: #fff;
+                list-style: none;
+                padding: 0 12px;
+                @media (max-width: 720px) { width: 100%; padding-bottom: 15px; text-align: center; }
+            }
+            .notonmobile {
+                @media (max-width: 720px) { display: none; }
+            }
     
             .socials-item {
                 flex-direction: row;
@@ -338,6 +391,7 @@
                 transition: all 0.3s;
                 display: inline-block;
                 cursor: pointer;
+                @media (max-width: 720px) { width: 30%; margin: 0; padding: 10px; }
             }
     
             .facebook-icon {
@@ -381,5 +435,17 @@
         @media (max-width: 1024px) { width: 80px; margin: 0 20px; }
         @media (max-width: 720px) { width: 60px; margin: 0 20px; }
         @media (max-width: 480px) { width: 20%; margin: 0 2.5%; }
+    }
+    img.big {
+        width: 170px;
+        @media (max-width: 1024px) { width: 140px; }
+        @media (max-width: 720px) { width: 110px; }
+        @media (max-width: 480px) { width: 30%; }
+    }
+    img.small {
+        width: 70px;
+        @media (max-width: 1024px) { width: 60px; }
+        @media (max-width: 720px) { width: 40px; }
+        @media (max-width: 480px) { width: 15%; }
     }
 }

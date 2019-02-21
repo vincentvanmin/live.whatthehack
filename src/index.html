@@ -46,7 +46,7 @@
 	<template id="scheduleRow">
 		<tr data-start-timestamp="{startTmsp}" data-end-timestamp="{endTmsp}">
 			<td>
-				<a target="_blank" href="#/maps">{locationName}</a>
+				<a href="#/maps#bottom">{locationName}</a>
 			</td>
 			<td>
 				{startHour}
@@ -100,7 +100,7 @@
 	<!--Fancy schedule event-->
 	<template id="fancyEvent">
 		<div class="event" data-event-id="{id}" data-start-timestamp="{startTmsp}" data-end-timestamp="{endTmsp}" data-end-action="removeEndedEvent" data-update-action="updateFancyEvent">
-			<a target="_blank" href="#/maps"></a>
+			<a href="#/maps"></a>
 			<div class='event-hour'>
 				<div>{startHour}</div>
 				<div class="end-hour">{endHour}</div>
@@ -249,6 +249,7 @@
 					</div>
 					<div class="hacker">
 						<img src="assets/img/hacker.png" alt="hacker">
+						<p id="timer"></p>
 					</div>
 				</div>
 				<div class="findus">
@@ -277,40 +278,47 @@
 					</div>
 					<div class="socials">
 						<ul>
+							<li class="hashtag">#whatthehack</li>
 							<li class="socials-item facebook-icon"><a target="_blank" href="https://www.facebook.com/whatthehackBelgium"></a></li>
 							<li class="socials-item linkedin-icon"><a target="_blank" href="https://www.linkedin.com/company/whatthehack2019/"></a></li>
 							<li class="socials-item instagram-icon"><a target="_blank" href="https://www.instagram.com/whatthehack_belgium"></a></li>
+							<li class="hashtag notonmobile">#whatthehack</li>
 						</ul>
 					</div>
+					<div class="address"><a target="_blank" href="https://www.google.be/maps/place/Alma+2/@50.8737268,4.7008207,17z/data=!3m1!4b1!4m5!3m4!1s0x47c1612861461a5d:0x5a3ef02572169028!8m2!3d50.8737268!4d4.7030094">Venue address: Parkstraat 45, 3000 Leuven</a></div>
 				</div>
 				<div id="sponsors">
-					<img src="assets/img/partners/Advelox.svg" alt="Advelox">
-					<img src="assets/img/partners/Atrias.svg" alt="Atrias">
-					<img src="assets/img/partners/Bilzen.svg" alt="Bilzen">
-					<img src="assets/img/partners/CM.svg" alt="CM">
-					<img src="assets/img/partners/CoolBlue.svg" alt="CoolBlue">
-					<img src="assets/img/partners/Corporate-Coach.svg" alt="Corporate-Coach">
-					<img src="assets/img/partners/De-Lijn.svg" alt="De-Lijn">
-					<img src="assets/img/partners/De-Mensen.svg" alt="De-Mensen">
-					<img src="assets/img/partners/De-Persgroep.svg" alt="De-Persgroep">
-					<img src="assets/img/partners/Fish-Digital.svg" alt="Fish-Digital">
-					<img src="assets/img/partners/FruitSnacks.svg" alt="FruitSnacks">
-					<img src="assets/img/partners/Google.svg" alt="Google">
-					<img src="assets/img/partners/IMEC.svg" alt="IMEC">
-					<img src="assets/img/partners/KBC.svg" alt="KBC">
-					<img src="assets/img/partners/Leuven.svg" alt="Leuven">
-					<img src="assets/img/partners/Limecraft.svg" alt="Limecraft">
-					<img src="assets/img/partners/Loko.svg" alt="Loko">
-					<img src="assets/img/partners/MasterVending.svg" alt="Mastervending">
-					<img src="assets/img/partners/Mediahuis.svg" alt="Mediahuis">
-					<img src="assets/img/partners/Mercedes.svg" alt="Mercedes">
-					<img src="assets/img/partners/NMBS.svg" alt="NMBS">
-					<img src="assets/img/partners/Quivr.svg" alt="Quivr">
-					<img src="assets/img/partners/SWF.svg" alt="SWF">
-					<img src="assets/img/partners/SSB.svg" alt="SSB">
-					<img src="assets/img/partners/Telenet.svg" alt="Telenet">
-					<img src="assets/img/partners/Tobania.svg" alt="Tobania">
-					<img src="assets/img/partners/Worldline.svg" alt="Worldline">
+					<img src="assets/img/partners/Advelox.svg" class="big" alt="Advelox" data-aos="zoom-in">>
+					<img src="assets/img/partners/Atrias.svg" class="small" alt="Atrias" data-aos="zoom-in">>
+					<img src="assets/img/partners/Bilzen.svg" alt="Bilzen" data-aos="zoom-in">>
+					<img src="assets/img/partners/BMW.svg" alt="BMW" data-aos="zoom-in">>
+					<img src="assets/img/partners/Business-Markers.svg" class="small" alt="Business-Markers" data-aos="zoom-in">>
+					<img src="assets/img/partners/Carglass.svg" class="big" alt="Carglass" data-aos="zoom-in">>
+					<img src="assets/img/partners/CM.svg" class="small" alt="CM" data-aos="zoom-in">>
+					<img src="assets/img/partners/CoolBlue.svg" alt="CoolBlue" data-aos="zoom-in">>
+					<img src="assets/img/partners/Corporate-Coach.svg" alt="Corporate-Coach" data-aos="zoom-in">>
+					<img src="assets/img/partners/De-Lijn.svg" class="small" alt="De-Lijn" data-aos="zoom-in">>
+					<img src="assets/img/partners/De-Mensen.svg" class="small" alt="De-Mensen" data-aos="zoom-in">>
+					<img src="assets/img/partners/De-Persgroep.svg" class="big" alt="De-Persgroep" data-aos="zoom-in">>
+					<img src="assets/img/partners/Fish-Digital.svg" alt="Fish-Digital" data-aos="zoom-in">>
+					<img src="assets/img/partners/FruitSnacks.svg" class="big" alt="FruitSnacks" data-aos="zoom-in">>
+					<img src="assets/img/partners/Google.svg" class="big" alt="Google" data-aos="zoom-in">>
+					<img src="assets/img/partners/IMEC.svg" class="big" alt="IMEC" data-aos="zoom-in">>
+					<img src="assets/img/partners/KBC.svg" alt="KBC" data-aos="zoom-in">>
+					<img src="assets/img/partners/Leuven.svg" class="big" alt="Leuven" data-aos="zoom-in">>
+					<img src="assets/img/partners/Limecraft.svg" class="big" alt="Limecraft" data-aos="zoom-in">>
+					<img src="assets/img/partners/Loko.svg" class="big" alt="Loko" data-aos="zoom-in">>
+					<img src="assets/img/partners/MasterVending.svg" alt="Mastervending" data-aos="zoom-in">>
+					<img src="assets/img/partners/Mediahuis.svg" class="big" alt="Mediahuis" data-aos="zoom-in">>
+					<img src="assets/img/partners/Mercedes.svg" alt="Mercedes" data-aos="zoom-in">>
+					<img src="assets/img/partners/NMBS.svg" class="big" alt="NMBS" data-aos="zoom-in">>
+					<img src="assets/img/partners/Quivr.svg" alt="Quivr" data-aos="zoom-in">>
+					<img src="assets/img/partners/SWF.svg" alt="SmartWithFood" data-aos="zoom-in">>
+					<img src="assets/img/partners/SSB.svg" alt="SSB" data-aos="zoom-in">>
+					<img src="assets/img/partners/Telenet.svg" alt="Telenet" data-aos="zoom-in">>
+					<img src="assets/img/partners/Tobania.svg" alt="Tobania" data-aos="zoom-in">>
+					<img src="assets/img/partners/VRT.svg" alt="VRT" data-aos="zoom-in">>
+					<img src="assets/img/partners/Worldline.svg" class="big" alt="Worldline" data-aos="zoom-in">>
 				</div>
 			<div>
 		</article>
@@ -776,7 +784,7 @@
 						<div class="mapdescription">
 							<div class="content">
 								<h1>The Village</h1>
-								<p>Our village contains 3 buildings. The opening and closing ceremony will take place in Max Weber, located on the bottom left of the map. Alma 2 (top left on the map) is the hacking area, this will be the location where you will spend most of your time. Entertainment, food and all information will be available here. You can find a detailed map of the inside below. All workshops will take place in our third location, Agora (top right on the map). We provided a detailed map of the different workshop rooms below.</p>
+								<p><a target="_blank" href="https://www.google.be/maps/place/Alma+2/@50.8737268,4.7008207,17z/data=!3m1!4b1!4m5!3m4!1s0x47c1612861461a5d:0x5a3ef02572169028!8m2!3d50.8737268!4d4.7030094">Find our village on Google maps!</a> Our village contains 3 buildings. The opening and closing ceremony will take place in Max Weber, located on the bottom left of the map. Alma 2 (top left on the map) is the hacking area, this will be the location where you will spend most of your time. Entertainment, food and all information will be available here. You can find a detailed map of the inside below. All workshops will take place in our third location, Agora (top right on the map). We provided a detailed map of the different workshop rooms below.</p>
 							</div>
 						</div>
 						<div class="mapimage">
@@ -802,23 +810,23 @@
 							</div>
 						</div>
 						<div class="mapimage">
-							<img src="assets/img/Map-on-Ball.png" alt="Hacking Area">
+							<img src="assets/img/Plan-Hacking-Area.png" alt="Hacking Area">
 						</div>
 					</div>
 					<div class="map">
 						<div class="mapdescription">
 							<div class="content">
 								<h1>Agora - Workshop Area</h1>
-								<p>Dit is random uitleg over wat er op deze locatie zal plaatsvinden of waar er meer informatie zal kunnen gevonden worden</p>
+								<p>All workshops will take place in the Agora building. Take a look at the <a href="#/schedule">schedule</a> to see the workshops given in the different rooms. You will find signs locating the room you are searching for! You can enter the building in the front, go through the door (and take the stairs) to get to the right workshop area.</p>
 							</div>
 						</div>
 						<div class="mapimage">
-							<img src="assets/img/Map-on-Ball.png" alt="Workshop Area">
+							<img src="assets/img/Floorplan-Agora.png" alt="Workshop Area">
 						</div>
 					</div>
 				</div>
+				<a id="bottom"></a>
 			</div>
-			<div id="googleMap" style="width:100%;height:400px;"></div>
 		</article>
 		<article id="coaches" class="under-header padding-bottom">
 			<div class="coachtitle">
@@ -1333,12 +1341,12 @@
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
-									<img src="assets/img/coaches/Isabelle-Wullaerts.jpg" alt="Isabelle Wullaerts">
+									<img src="assets/img/coaches/Thomas-Nunes-da-Silva.jpeg" alt="Thomas Nunes da Silva">
 								</div>
 								<div class="flip-card-back">
 									<div class="content">
-										<h1>Isabelle Wullaerts</h1> 
-										<p>Business Controller</p> 
+										<h1>Thomas Nunes da Silva</h1> 
+										<p>Test Specialist</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -1349,12 +1357,12 @@
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
-									<img src="assets/img/coaches/Thomas-Nunes-da-Silva.jpeg" alt="Thomas Nunes da Silva">
+									<img src="assets/img/coaches/Laurent-Belbar.jpg" alt="Laurent Belbar">
 								</div>
 								<div class="flip-card-back">
 									<div class="content">
-										<h1>Thomas Nunes da Silva</h1> 
-										<p>Test Specialist</p> 
+										<h1>Laurent Belbar</h1> 
+										<p>Analyst</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -2343,5 +2351,6 @@
 		})
 	</script>
 	<script src="assets/js/whatthehack.min.js"></script>
+	<script src="assets/js/aos.js"></script>
 </body>
 </html>

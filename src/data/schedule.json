@@ -38,7 +38,7 @@
 					"title": "[Workshop] Manage the Panic Monster",
 					"startHour": "18:15",
 					"endHour": "19:00",
-					"locationName": "Flex Space (Agora)",
+					"locationName": "Flex Space",
 					"description": "By Dirk Depré",
 					"category": "Inspirational"
 				},
@@ -53,11 +53,11 @@
 				},
 				{
 					"id":"6",
-					"title": "[Workshop] Gamestorming",
+					"title": "[Workshop] Microsoft Azure Serverless Solutions for Web and Microservices",
 					"startHour": "18:15",
 					"endHour": "19:00",
 					"locationName": "Matchu Picchu",
-					"description": "By Tom Leers & Alexander De Meersman",
+					"description": "By Wouter Bauchart",
 					"category": "Entrepreneurial"
 				},
 				{
@@ -71,6 +71,24 @@
 				},
 				{
 					"id":"8",
+					"title": "Croques and Hot Dogs",
+					"startHour": "18:30",
+					"endHour": "19:30",
+					"locationName": "Alma 2",
+					"description": "Enjoy your meal!",
+					"category": "Food & Drinks"
+				},
+				{
+					"id":"9",
+					"title": "[Workshop] Briefing Data",
+					"startHour": "19:00",
+					"endHour": "19:30",
+					"locationName": "Paris",
+					"description": "By Stad Leuven",
+					"category": "Entrepreneurial"
+				},
+				{
+					"id":"10",
 					"title": "DJ Vinavil",
 					"startHour": "19:00",
 					"endHour": "22:00",
@@ -78,16 +96,16 @@
 					"description": "Inspirational Lounge Music for a healthy dose of good courage! <a href='https://soundcloud.com/vinavil/' target='_blank' style='color: #000; text-decoration: underline;'>Visit DJ Vinavil on SoundCloud</a>."
 				},
 				{
-					"id":"9",
-					"title": "Croques and Hot Dogs",
+					"id":"11",
+					"title": "[Workshop] Gamestorming",
 					"startHour": "19:30",
-					"endHour": "21:00",
-					"locationName": "Alma 2",
-					"description": "Enjoy your meal!",
-					"category": "Food & Drinks"
+					"endHour": "20:15",
+					"locationName": "Flex Space",
+					"description": "By Tom Leers & Alexander De Meersman",
+					"category": "Entrepreneurial"
 				},
 				{
-					"id":"10",
+					"id":"12",
 					"title": "[Workshop] Introduction to REST API's & Automatic API testing",
 					"startHour": "19:30",
 					"endHour": "20:15",
@@ -96,7 +114,7 @@
 					"category": "Technical"
 				},
 				{
-					"id":"11",
+					"id":"13",
 					"title": "[Workshop] Angular vs. React",
 					"startHour": "19:30",
 					"endHour": "20:15",
@@ -105,7 +123,7 @@
 					"category": "Technical"
 				},
 				{
-					"id":"12",
+					"id":"14",
 					"title": "[Workshop] Basics of Python for Data Science",
 					"startHour": "19:30",
 					"endHour": "20:15",
@@ -114,7 +132,7 @@
 					"category": "Technical"
 				},
 				{
-					"id":"13",
+					"id":"15",
 					"title": "[Workshop] Introduction to Agile & DevOps",
 					"startHour": "19:30",
 					"endHour": "20:15",
@@ -123,7 +141,25 @@
 					"category": "Entrepreneurial"
 				},
 				{
-					"id":"14",
+					"id":"16",
+					"title": "[Workshop] Hands-on Introduction to Scrum",
+					"startHour": "19:30",
+					"endHour": "20:15",
+					"locationName": "Agra",
+					"description": "By Hans Stevens",
+					"category": "Entrepreneurial"
+				},
+				{
+					"id":"17",
+					"title": "[Workshop] Introduction to Behavior Driven Development",
+					"startHour": "19:30",
+					"endHour": "20:15",
+					"locationName": "Galapagos",
+					"description": "By Christophe Soens",
+					"category": "Technical"
+				},
+				{
+					"id":"18",
 					"title": "Elevator Pitch",
 					"startHour": "21:00",
 					"endHour": "22:00",
@@ -132,7 +168,7 @@
 					"category": "Pitch"
 				},
 				{
-					"id":"15",
+					"id":"19",
 					"title": "Snack buffet",
 					"startHour": "22:00",
 					"locationName": "Alma 2",
@@ -147,7 +183,7 @@
 			"events":
 			[	
 				{
-					"id":"16",
+					"id":"20",
 					"title": "Breakfast",
 					"startHour": "08:00",
 					"endHour": "10:00",
@@ -156,7 +192,16 @@
 					"category": "Food & Drinks"
 				},	
 				{
-					"id":"17",
+					"id":"21",
+					"title": "[Workshop] Service Design Thinking",
+					"startHour": "08:30",
+					"endHour": "09:30",
+					"locationName": "Flex Space",
+					"description": "By Alexander De Meersman & Tom Leers",
+					"category": "Technical"
+				},	
+				{
+					"id":"22",
 					"title": "[Workshop] Angular",
 					"startHour": "08:30",
 					"endHour": "09:15",
@@ -165,8 +210,8 @@
 					"category": "Technical"
 				},	
 				{
-					"id":"18",
-					"title": "[Workshop] Security",
+					"id":"23",
+					"title": "[Workshop] Today's Cyber Threat Landscape & Help from Technology Organisations",
 					"startHour": "08:30",
 					"endHour": "09:15",
 					"locationName": "Galapagos",
@@ -174,7 +219,7 @@
 					"category": "Technical"
 				},	
 				{
-					"id":"19",
+					"id":"24",
 					"title": "[Workshop] Behavior Driven Development",
 					"startHour": "08:30",
 					"endHour": "09:15",
@@ -183,44 +228,44 @@
 					"category": "Technical"
 				},	
 				{
-					"id":"20",
+					"id":"25",
 					"title": "[Workshop] Elevator Pitch",
 					"startHour": "08:30",
-					"endHour": "09:15",
+					"endHour": "09:00",
 					"locationName": "Paris",
 					"description": "By Shen Sandelé",
 					"category": "Entrepreneurial"
 				},	
 				{
-					"id":"21",
+					"id":"26",
 					"title": "[Workshop] Yoga",
 					"startHour": "08:30",
-					"endHour": "09:15",
+					"endHour": "09:30",
 					"locationName": "Saint Petersburg",
 					"description": "By Valérie Heylen. Make sure to bring a Yoga Mat and wear comfortable clothes.",
 					"category": "Inspirational"
 				},	
 				{
-					"id":"22",
+					"id":"27",
 					"title": "[Workshop] Elevator Pitch",
 					"startHour": "10:00",
-					"endHour": "10:45",
+					"endHour": "10:30",
 					"locationName": "Agra",
 					"description": "By Shen Sandelé",
 					"category": "Entrepreneurial"
 				},
 				{
-					"id":"23",
+					"id":"28",
 					"title": "[Workshop] The importance of Optimal Customer Experience",
 					"startHour": "10:00",
-					"endHour": "10:45",
+					"endHour": "11:00",
 					"locationName": "Galapagos",
-					"description": "By Johan Sevenants",
+					"description": "By Johan Sevenants (Custom X)",
 					"category": "Entrepreneurial"
 				},
 				{
-					"id":"24",
-					"title": "[Workshop] Introduction to REST API's & Automatic API testing",
+					"id":"29",
+					"title": "[Workshop] REST API's & Automatic API testing",
 					"startHour": "10:00",
 					"endHour": "10:45",
 					"locationName": "Machu Picchu",
@@ -228,43 +273,43 @@
 					"category": "Technical"
 				},
 				{
-					"id":"25",
+					"id":"30",
 					"title": "[Workshop] Building your Brand on Social",
 					"startHour": "10:00",
-					"endHour": "10:45",
+					"endHour": "11:30",
 					"locationName": "Paris",
-					"description": "By Leen Veldeman",
+					"description": "By Leen Veldeman (Custom X)",
 					"category": "Inspirational"
 				},
 				{
-					"id":"26",
+					"id":"31",
 					"title": "[Workshop] Mindfulness",
 					"startHour": "10:00",
-					"endHour": "10:45",
+					"endHour": "10:30",
 					"locationName": "Saint Petersburg",
 					"description": "By Valérie Heylen. Make sure to bring a Yoga Mat and wear comfortable clothes.",
 					"category": "Inspirational"
 				},
 				{
-					"id":"27",
+					"id":"32",
 					"title": "[Workshop] Visual Language Basics",
 					"startHour": "11:30",
 					"endHour": "12:15",
-					"locationName": "Flex Space (Agora)",
+					"locationName": "Flex Space",
 					"description": "By Veerle Hendrickx",
 					"category": "Entrepreneurial"
 				},
 				{
-					"id":"28",
-					"title": "[Workshop] Storytelling",
+					"id":"33",
+					"title": "[Workshop] .NET Core Essentials",
 					"startHour": "11:30",
 					"endHour": "12:15",
-					"locationName": "Galapagos",
-					"description": "By Tom Leers & Alexander De Meersman",
-					"category": "Entrepreneurial"
+					"locationName": "Saint Petersburg",
+					"description": "By Jan Vanwezemael",
+					"category": "Technical"
 				},
 				{
-					"id":"29",
+					"id":"34",
 					"title": "[Workshop] Pitching your Story",
 					"startHour": "11:30",
 					"endHour": "12:15",
@@ -273,7 +318,7 @@
 					"category": "Entrepreneurial"
 				},
 				{
-					"id":"30",
+					"id":"35",
 					"title": "Lunch",
 					"startHour": "12:30",
 					"endHour": "14:00",
@@ -282,7 +327,7 @@
 					"category": "Food & Drinks"
 				},
 				{
-					"id":"31",
+					"id":"36",
 					"title": "Smoothies",
 					"startHour": "13:00",
 					"endHour": "15:00",
@@ -291,7 +336,7 @@
 					"category": "Food & Drinks"
 				},
 				{
-					"id":"32",
+					"id":"37",
 					"title": "Hacking ends",
 					"startHour": "18:00",
 					"locationName": "Alma 2",
@@ -299,61 +344,61 @@
 					"category": "Group Activity"
 				},
 				{
-					"id":"33",
+					"id":"38",
 					"title": "Pitch HealthTech",
 					"startHour": "18:00",
 					"endHour": "19:00",
-					"locationName": "Cambridge (Agora)",
+					"locationName": "Cambridge",
 					"description": "Jury members: Serge Haubourdin, Jean-Sébastien Struyf, Roel De Spiegelaar",
 					"category": "Pitch"
 				},
 				{
-					"id":"34",
+					"id":"39",
 					"title": "Pitch Media",
 					"startHour": "18:00",
 					"endHour": "19:00",
-					"locationName": "Agra (Agora)",
+					"locationName": "Agra",
 					"description": "Jury members: Heino Schaght, Ivor Micallef, Sven Munaron, Maarten Verwaest, Marijke Celis",
 					"category": "Pitch"
 				},
 				{
-					"id":"35",
+					"id":"40",
 					"title": "Pitch Smart Cities",
 					"startHour": "18:00",
 					"endHour": "19:00",
-					"locationName": "Berlin (Agora)",
+					"locationName": "Berlin",
 					"description": "Jury members: Thomas Baerten, Frank De Saer, Stefan Costeur, Gregory Wuurman, Leen Tyrions, Tim Guily, An Van Peteghem",
 					"category": "Pitch"
 				},
 				{
-					"id":"36",
+					"id":"41",
 					"title": "Pitch Retail",
 					"startHour": "18:00",
 					"endHour": "19:00",
-					"locationName": "Athens (Agora)",
+					"locationName": "Athens",
 					"description": "Jury members: Ignace De Nollin, Stein Gullentops, Ides Ticket",
 					"category": "Pitch"
 				},
 				{
-					"id":"37",
+					"id":"42",
 					"title": "Pitch Student Life",
 					"startHour": "18:00",
 					"endHour": "19:00",
-					"locationName": "Amsterdam (Agora)",
+					"locationName": "Amsterdam",
 					"description": "Jury members: Jesse Hoobergs, Guy Gelaude, Kenny Van Minsel",
 					"category": "Pitch"
 				},
 				{
-					"id":"38",
+					"id":"43",
 					"title": "Pitch Banking & Insurance",
 					"startHour": "18:00",
 					"endHour": "19:00",
-					"locationName": "Galapagos (Agora)",
+					"locationName": "Galapagos",
 					"description": "Jury members: Peter Croughs, Pascal Cuppens, Birgitta Brys",
 					"category": "Pitch"
 				},
 				{
-					"id":"39",
+					"id":"44",
 					"title": "Closing Ceremony",
 					"startHour": "19:00",
 					"endHour": "20:00",
@@ -362,7 +407,7 @@
 					"category": "Group Activity"
 				},
 				{
-					"id":"40",
+					"id":"45",
 					"title": "Dinner",
 					"startHour": "20:00",
 					"endHour": "22:00",
@@ -371,7 +416,7 @@
 					"category": "Food & Drinks"
 				},
 				{
-					"id":"41",
+					"id":"46",
 					"title": "End of What The Hack 2019",
 					"startHour": "22:00",
 					"description": "Thanks for joining, see you next year!",
