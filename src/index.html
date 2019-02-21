@@ -5,6 +5,7 @@
 	<title>WhatTheHack | Live-Schedule</title>
 	<meta name="description" content="Join us for Belgium's most epic student hackathon. 250 hackers. 24h. Mar 1st-2nd.">
 	<link rel="icon" href="favicon.png" type="image/png" data-finger-print>
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/app.min.css" data-finger-print>
 	<script src="assets/js/app.min.js" data-finger-print></script>
@@ -22,6 +23,16 @@
 	<meta name="author" content="Tobania">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134931208-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-134931208-1');
+	</script>
 
 	<!--Prompt-->
 	<template id="promptTemplate">
@@ -46,7 +57,7 @@
 	<template id="scheduleRow">
 		<tr data-start-timestamp="{startTmsp}" data-end-timestamp="{endTmsp}">
 			<td>
-				<a href="#/maps#bottom">{locationName}</a>
+				<a href="#/maps">{locationName}</a>
 			</td>
 			<td>
 				{startHour}
@@ -241,9 +252,9 @@
 							<li class="item">Laptop & Charger</li>
 							<li class="item">Headphone or Earphones</li>
 							<li class="item">ID Card or Passport</li>
+							<li class="item">Sleeping bag & Airbed</li>
 							<li class="item">Comfortable clothing</li>
 							<li class="item">Yoga mat</li>
-							<li class="item">Sleeping bag & Airbed</li>
 							<li class="item">All needed software installed</li>
 						</ul>
 					</div>
@@ -251,6 +262,9 @@
 						<img src="assets/img/hacker.png" alt="hacker">
 						<p id="timer"></p>
 					</div>
+					<!-- <div class="livestream">
+						<iframe src="https://www.youtube.com/embed/3nQNiWdeH2Q" frameborder='0' allowfullscreen></iframe>
+					</div> -->
 				</div>
 				<div class="findus">
 					<h1>Get in touch</h1>
@@ -287,38 +301,41 @@
 					</div>
 					<div class="address"><a target="_blank" href="https://www.google.be/maps/place/Alma+2/@50.8737268,4.7008207,17z/data=!3m1!4b1!4m5!3m4!1s0x47c1612861461a5d:0x5a3ef02572169028!8m2!3d50.8737268!4d4.7030094">Venue address: Parkstraat 45, 3000 Leuven</a></div>
 				</div>
+				<div class="prizes">
+					<img src="assets/img/Prizes.svg" alt="Prizes">
+				</div>
 				<div id="sponsors">
-					<img src="assets/img/partners/Advelox.svg" class="big" alt="Advelox" data-aos="zoom-in">>
-					<img src="assets/img/partners/Atrias.svg" class="small" alt="Atrias" data-aos="zoom-in">>
-					<img src="assets/img/partners/Bilzen.svg" alt="Bilzen" data-aos="zoom-in">>
-					<img src="assets/img/partners/BMW.svg" alt="BMW" data-aos="zoom-in">>
-					<img src="assets/img/partners/Business-Markers.svg" class="small" alt="Business-Markers" data-aos="zoom-in">>
-					<img src="assets/img/partners/Carglass.svg" class="big" alt="Carglass" data-aos="zoom-in">>
-					<img src="assets/img/partners/CM.svg" class="small" alt="CM" data-aos="zoom-in">>
-					<img src="assets/img/partners/CoolBlue.svg" alt="CoolBlue" data-aos="zoom-in">>
-					<img src="assets/img/partners/Corporate-Coach.svg" alt="Corporate-Coach" data-aos="zoom-in">>
-					<img src="assets/img/partners/De-Lijn.svg" class="small" alt="De-Lijn" data-aos="zoom-in">>
-					<img src="assets/img/partners/De-Mensen.svg" class="small" alt="De-Mensen" data-aos="zoom-in">>
-					<img src="assets/img/partners/De-Persgroep.svg" class="big" alt="De-Persgroep" data-aos="zoom-in">>
-					<img src="assets/img/partners/Fish-Digital.svg" alt="Fish-Digital" data-aos="zoom-in">>
-					<img src="assets/img/partners/FruitSnacks.svg" class="big" alt="FruitSnacks" data-aos="zoom-in">>
-					<img src="assets/img/partners/Google.svg" class="big" alt="Google" data-aos="zoom-in">>
-					<img src="assets/img/partners/IMEC.svg" class="big" alt="IMEC" data-aos="zoom-in">>
-					<img src="assets/img/partners/KBC.svg" alt="KBC" data-aos="zoom-in">>
-					<img src="assets/img/partners/Leuven.svg" class="big" alt="Leuven" data-aos="zoom-in">>
-					<img src="assets/img/partners/Limecraft.svg" class="big" alt="Limecraft" data-aos="zoom-in">>
-					<img src="assets/img/partners/Loko.svg" class="big" alt="Loko" data-aos="zoom-in">>
-					<img src="assets/img/partners/MasterVending.svg" alt="Mastervending" data-aos="zoom-in">>
-					<img src="assets/img/partners/Mediahuis.svg" class="big" alt="Mediahuis" data-aos="zoom-in">>
-					<img src="assets/img/partners/Mercedes.svg" alt="Mercedes" data-aos="zoom-in">>
-					<img src="assets/img/partners/NMBS.svg" class="big" alt="NMBS" data-aos="zoom-in">>
-					<img src="assets/img/partners/Quivr.svg" alt="Quivr" data-aos="zoom-in">>
-					<img src="assets/img/partners/SWF.svg" alt="SmartWithFood" data-aos="zoom-in">>
-					<img src="assets/img/partners/SSB.svg" alt="SSB" data-aos="zoom-in">>
-					<img src="assets/img/partners/Telenet.svg" alt="Telenet" data-aos="zoom-in">>
-					<img src="assets/img/partners/Tobania.svg" alt="Tobania" data-aos="zoom-in">>
-					<img src="assets/img/partners/VRT.svg" alt="VRT" data-aos="zoom-in">>
-					<img src="assets/img/partners/Worldline.svg" class="big" alt="Worldline" data-aos="zoom-in">>
+					<img src="assets/img/partners/Advelox.svg" class="big" alt="Advelox" data-aos="zoom-in">
+					<img src="assets/img/partners/Atrias.svg" class="small" alt="Atrias" data-aos="zoom-in">
+					<img src="assets/img/partners/Bilzen.svg" alt="Bilzen" data-aos="zoom-in">
+					<img src="assets/img/partners/BMW.svg" alt="BMW" data-aos="zoom-in">
+					<img src="assets/img/partners/Business-Markers.svg" class="small" alt="Business-Markers" data-aos="zoom-in">
+					<img src="assets/img/partners/Carglass.svg" class="big" alt="Carglass" data-aos="zoom-in">
+					<img src="assets/img/partners/CM.svg" class="small" alt="CM" data-aos="zoom-in">
+					<img src="assets/img/partners/CoolBlue.svg" alt="CoolBlue" data-aos="zoom-in">
+					<img src="assets/img/partners/Corporate-Coach.svg" alt="Corporate-Coach" data-aos="zoom-in">
+					<img src="assets/img/partners/De-Lijn.svg" class="small" alt="De-Lijn" data-aos="zoom-in">
+					<img src="assets/img/partners/De-Mensen.svg" class="small" alt="De-Mensen" data-aos="zoom-in">
+					<img src="assets/img/partners/De-Persgroep.svg" class="big" alt="De-Persgroep" data-aos="zoom-in">
+					<img src="assets/img/partners/Fish-Digital.svg" alt="Fish-Digital" data-aos="zoom-in">
+					<img src="assets/img/partners/FruitSnacks.svg" class="big" alt="FruitSnacks" data-aos="zoom-in">
+					<img src="assets/img/partners/Google.svg" class="big" alt="Google" data-aos="zoom-in">
+					<img src="assets/img/partners/IMEC.svg" class="big" alt="IMEC" data-aos="zoom-in">
+					<img src="assets/img/partners/KBC.svg" alt="KBC" data-aos="zoom-in">
+					<img src="assets/img/partners/Leuven.svg" class="big" alt="Leuven" data-aos="zoom-in">
+					<img src="assets/img/partners/Limecraft.svg" class="big" alt="Limecraft" data-aos="zoom-in">
+					<img src="assets/img/partners/Loko.svg" class="big" alt="Loko" data-aos="zoom-in">
+					<img src="assets/img/partners/MasterVending.svg" alt="Mastervending" data-aos="zoom-in">
+					<img src="assets/img/partners/Mediahuis.svg" class="big" alt="Mediahuis" data-aos="zoom-in">
+					<img src="assets/img/partners/Mercedes.svg" alt="Mercedes" data-aos="zoom-in">
+					<img src="assets/img/partners/NMBS.svg" class="big" alt="NMBS" data-aos="zoom-in">
+					<img src="assets/img/partners/Quivr.svg" alt="Quivr" data-aos="zoom-in">
+					<img src="assets/img/partners/SWF.svg" alt="SmartWithFood" data-aos="zoom-in">
+					<img src="assets/img/partners/SSB.svg" alt="SSB" data-aos="zoom-in">
+					<img src="assets/img/partners/Telenet.svg" alt="Telenet" data-aos="zoom-in">
+					<img src="assets/img/partners/Tobania.svg" alt="Tobania" data-aos="zoom-in">
+					<img src="assets/img/partners/VRT.svg" alt="VRT" data-aos="zoom-in">
+					<img src="assets/img/partners/Worldline.svg" class="big" alt="Worldline" data-aos="zoom-in">
 				</div>
 			<div>
 		</article>
@@ -340,7 +357,7 @@
 				<div class="jurybox">
 					<h2>HealthTech</h2>
 					<ul class="healthtech">
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -349,14 +366,14 @@
 									<div class="flip-card-back">
 										<div class="content">
 											<h1>Serge Haubourdin</h1> 
-											<p>Associate Profession at IE University</p> 
+											<p>Associate Professor at IE University</p> 
 											<img src="assets/img/partners/Corporate-Coach.svg" alt="Corporate Coach">
 										</div>
 									</div>
 								</div>
 							</div>
 						</li>
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -372,15 +389,15 @@
 								</div>
 							</div>
 						</li>
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/jury/Roel-De-Spiegeleer.jpg" alt="Roel De Spiegelaar">
+										<img src="assets/img/jury/Roel-De-Spiegeleer.jpg" alt="Roel De Spiegeleer">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
-											<h1>Roel De Spiegelaar</h1> 
+											<h1>Roel De Spiegeleer</h1> 
 											<p>IT Service Delivery Manager</p> 
 											<img src="assets/img/partners/CM.svg" alt="CM">
 										</div>
@@ -391,7 +408,7 @@
 					</ul>
 					<h2>Media</h2>
 					<ul class="media">
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -407,7 +424,7 @@
 								</div>
 							</div>
 						</li>
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -423,7 +440,7 @@
 								</div>
 							</div>
 						</li>
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -439,7 +456,7 @@
 								</div>
 							</div>
 						</li>
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -455,7 +472,7 @@
 								</div>
 							</div>
 						</li>
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -471,7 +488,7 @@
 								</div>
 							</div>
 						</li>
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -490,7 +507,7 @@
 					</ul>
 					<h2>Smart Cities</h2>
 					<ul class="smartcities">
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -506,7 +523,7 @@
 								</div>
 							</div>
 						</li>
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -522,7 +539,7 @@
 								</div>
 							</div>
 						</li>
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -538,7 +555,7 @@
 								</div>
 							</div>
 						</li>
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -554,7 +571,7 @@
 								</div>
 							</div>
 						</li>
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -570,7 +587,7 @@
 								</div>
 							</div>
 						</li>
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -586,7 +603,7 @@
 								</div>
 							</div>
 						</li>
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -605,7 +622,7 @@
 					</ul>
 					<h2>Retail</h2>
 					<ul class="retail">
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -621,7 +638,7 @@
 								</div>
 							</div>
 						</li>
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -637,7 +654,7 @@
 								</div>
 							</div>
 						</li>
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -656,7 +673,7 @@
 					</ul>
 					<h2>Student Life</h2>
 					<ul class="studentlife">
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -672,7 +689,7 @@
 								</div>
 							</div>
 						</li>
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -688,7 +705,7 @@
 								</div>
 							</div>
 						</li>
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -707,7 +724,7 @@
 					</ul>
 					<h2>Banking & Insurance</h2>
 					<ul class="banking">
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -723,7 +740,7 @@
 								</div>
 							</div>
 						</li>
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -739,7 +756,7 @@
 								</div>
 							</div>
 						</li>
-						<li>
+						<li data-aos="fade-up">
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
@@ -788,12 +805,12 @@
 							</div>
 						</div>
 						<div class="mapimage">
-							<img src="assets/img/Map-on-Ball.png" alt="WhatTheHack Planet">
+							<img src="assets/img/Map-on-Ball.png" alt="WhatTheHack Planet" data-aos="fade-left">
 						</div>
 					</div>
 					<div class="map">
 						<div class="mapimage">
-							<img src="assets/img/Plan-Hacking-Area.png" alt="Hacking Area">
+							<img src="assets/img/Plan-Hacking-Area.png" alt="Hacking Area" data-aos="fade-right">
 						</div>
 						<div class="mapdescription">
 							<div class="content">
@@ -810,22 +827,21 @@
 							</div>
 						</div>
 						<div class="mapimage">
-							<img src="assets/img/Plan-Hacking-Area.png" alt="Hacking Area">
+							<img src="assets/img/Plan-Hacking-Area.png" alt="Hacking Area" data-aos="fade-left">
 						</div>
 					</div>
 					<div class="map">
 						<div class="mapdescription">
 							<div class="content">
 								<h1>Agora - Workshop Area</h1>
-								<p>All workshops will take place in the Agora building. Take a look at the <a href="#/schedule">schedule</a> to see the workshops given in the different rooms. You will find signs locating the room you are searching for! You can enter the building in the front, go through the door (and take the stairs) to get to the right workshop area.</p>
+								<p>All workshops will take place in the Agora building, which has 4 floors. Take a look at the <a href="#/schedule">schedule</a> to see the workshops given in the different rooms. You will find signs locating the room you are searching for! You can enter the building in the front, go through the door (and take the stairs) to get to the right workshop area.</p>
 							</div>
 						</div>
 						<div class="mapimage">
-							<img src="assets/img/Floorplan-Agora.png" alt="Workshop Area">
+							<img src="assets/img/Floorplan-Agora.png" alt="Workshop Area" data-aos="fade-left">
 						</div>
 					</div>
 				</div>
-				<a id="bottom"></a>
 			</div>
 		</article>
 		<article id="coaches" class="under-header padding-bottom">
@@ -841,7 +857,7 @@
 			</div>
 			<div class="coachbox">
 				<ul class="coaches">
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -857,7 +873,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -873,7 +889,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -889,11 +905,11 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
-									<img src="assets/img/coaches/User.png" alt="Anton Kirschhock">
+									<img src="assets/img/coaches/Anton-Kirschhock.png" alt="Anton Kirschhock">
 								</div>
 								<div class="flip-card-back">
 									<div class="content">
@@ -905,7 +921,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -921,7 +937,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -937,7 +953,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -953,7 +969,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -969,7 +985,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -985,7 +1001,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1001,7 +1017,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1017,7 +1033,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1033,7 +1049,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1049,7 +1065,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1065,7 +1081,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1081,7 +1097,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1097,7 +1113,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1113,7 +1129,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1129,7 +1145,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1145,7 +1161,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1161,7 +1177,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1177,7 +1193,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1193,7 +1209,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1209,7 +1225,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1225,7 +1241,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1241,7 +1257,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1257,7 +1273,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1273,7 +1289,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1289,7 +1305,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1305,7 +1321,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1321,7 +1337,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1337,7 +1353,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -1353,7 +1369,7 @@
 							</div>
 						</div>
 					</li>
-					<li>
+					<li data-aos="fade-up">
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
@@ -2351,6 +2367,9 @@
 		})
 	</script>
 	<script src="assets/js/whatthehack.min.js"></script>
-	<script src="assets/js/aos.js"></script>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
 </body>
 </html>

@@ -23,6 +23,6 @@ var x = setInterval(function() {
   // If the count down is finished, write some text 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("timer").innerHTML = "Event Started!";
+    document.getElementById("timer").innerHTML = "WhatTheHack Started!";
   }
 }, 1000);

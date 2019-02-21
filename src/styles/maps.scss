@@ -34,7 +34,7 @@
                 top: 50%;
                 transform: translateY(-50%);
                 margin: 0;
-                @media (max-width: 720px) { position: relative; max-height: none; overflow: visible; transform: translateY(0); top: 0; }
+                @media (max-width: 720px) { position: relative; max-height: none; overflow-y: visible; transform: translateY(0); top: 0; }
 
                 h1 {
                     color: #00ece2;

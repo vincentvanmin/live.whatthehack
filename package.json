@@ -15,7 +15,6 @@
     "dist:docs": "cp -R src/docs dist/",
     "dist:styles": "rm -Rf dist/assets/css && mkdir dist/assets/css && npm-run-all -p scss:* && postcss -u autoprefixer -r dist/assets/css/*",
     "dist:scripts": "npm-run-all -p minjs:*",
-    "dist:aos": "cp src/scripts/aos.js dist/assets/js/",
     "dist:php": "rm dist/assets/php/form.php && cp src/scripts/form.php dist/assets/php/",
     "dist:images": "cp -R src/images/ dist/assets/images && rm -Rf dist/assets/img && mv dist/assets/images dist/assets/img",
     "dist:html": "cp src/*.html dist",
@@ -28,9 +27,8 @@
     "minjs:chroma": "cp node_modules/chroma-js/chroma.min.js dist/assets/js/chroma.min.js",
     "minjs:main": "tsc src/scripts/barcelona.ts --outFile /dev/stdout | uglifyjs -m -c -o dist/assets/js/barcelona.min.js ",
     "minjs:live": "uglifyjs src/scripts/config.live.js src/scripts/util.live.js src/scripts/live.js -m -c -o dist/assets/js/app.min.js",
-    "minjs:whatthehack": "uglifyjs src/scripts/checklist.js src/scripts/faq.js src/scripts/modal.js src/scripts/timer.js src/scripts/fadein.js -m -c -o dist/assets/js/whatthehack.min.js",
+    "minjs:whatthehack": "uglifyjs src/scripts/checklist.js src/scripts/faq.js src/scripts/modal.js src/scripts/timer.js -m -c -o dist/assets/js/whatthehack.min.js",
     "watch:js": "onchange \"src/scripts\" -- npm-run-all dist:scripts notify-update",
-    "watch:aos": "onchange \"src/scripts\" -- npm-run-all dist:aos notify-update",
     "watch:php": "onchange \"src/php\" -- npm-run-all dist:php notify-update",
     "watch:css": "onchange \"src/styles\" -- npm-run-all dist:styles notify-update",
     "watch:fonts": "onchange \"src/fonts\" -- npm-run-all dist:fonts notify-update",
@@ -48,8 +46,10 @@
   "author": "Tobania",
   "license": "MIT",
   "dependencies": {
+    "aos": "^3.0.0-beta.6",
     "asset-cache-bust": "^2.2.0",
     "autoprefixer": "^6.7.3",
+    "chroma-js": "^1.3.7",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.2.0",
@@ -69,7 +69,6 @@
     "sass-lint": "^1.10.2",
     "standard": "^8.0.0",
     "typescript": "^2.0.3",
-    "uglify-js": "^2.7.5",
-    "chroma-js": "^1.3.7"
+    "uglify-js": "^2.7.5"
   }
 }
