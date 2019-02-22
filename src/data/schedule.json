@@ -80,7 +80,7 @@
 				},
 				{
 					"id":"9",
-					"title": "[Workshop] Briefing Data",
+					"title": "[Workshop] Briefing Data & Challenge",
 					"startHour": "19:00",
 					"endHour": "19:30",
 					"locationName": "Paris",
@@ -194,17 +194,17 @@
 				{
 					"id":"21",
 					"title": "[Workshop] Service Design Thinking",
-					"startHour": "08:30",
-					"endHour": "09:30",
-					"locationName": "Flex Space",
+					"startHour": "09:30",
+					"endHour": "10:30",
+					"locationName": "Saint Petersburg",
 					"description": "By Alexander De Meersman & Tom Leers",
 					"category": "Technical"
 				},	
 				{
 					"id":"22",
 					"title": "[Workshop] Angular",
-					"startHour": "08:30",
-					"endHour": "09:15",
+					"startHour": "09:30",
+					"endHour": "10:15",
 					"locationName": "Agra",
 					"description": "By Anton Kirschhock",
 					"category": "Technical"
@@ -212,8 +212,8 @@
 				{
 					"id":"23",
 					"title": "[Workshop] Today's Cyber Threat Landscape & Help from Technology Organisations",
-					"startHour": "08:30",
-					"endHour": "09:15",
+					"startHour": "09:30",
+					"endHour": "10:15",
 					"locationName": "Galapagos",
 					"description": "By Philippe Michiels",
 					"category": "Technical"
@@ -221,8 +221,8 @@
 				{
 					"id":"24",
 					"title": "[Workshop] Behavior Driven Development",
-					"startHour": "08:30",
-					"endHour": "09:15",
+					"startHour": "09:30",
+					"endHour": "10:15",
 					"locationName": "Machu Picchu",
 					"description": "By Christophe Soens",
 					"category": "Technical"
@@ -230,8 +230,8 @@
 				{
 					"id":"25",
 					"title": "[Workshop] Elevator Pitch",
-					"startHour": "08:30",
-					"endHour": "09:00",
+					"startHour": "09:30",
+					"endHour": "10:15",
 					"locationName": "Paris",
 					"description": "By Shen Sandelé",
 					"category": "Entrepreneurial"
@@ -239,26 +239,26 @@
 				{
 					"id":"26",
 					"title": "[Workshop] Yoga",
-					"startHour": "08:30",
-					"endHour": "09:30",
-					"locationName": "Saint Petersburg",
+					"startHour": "09:30",
+					"endHour": "10:15",
+					"locationName": "Flex Space",
 					"description": "By Valérie Heylen. Make sure to bring a Yoga Mat and wear comfortable clothes.",
 					"category": "Inspirational"
 				},	
 				{
 					"id":"27",
-					"title": "[Workshop] Elevator Pitch",
-					"startHour": "10:00",
-					"endHour": "10:30",
-					"locationName": "Agra",
-					"description": "By Shen Sandelé",
-					"category": "Entrepreneurial"
+					"title": "[Workshop] Mindfulness",
+					"startHour": "10:30",
+					"endHour": "11:00",
+					"locationName": "Flex Space",
+					"description": "By Valérie Heylen. Make sure to bring a Yoga Mat and wear comfortable clothes.",
+					"category": "Inspirational"
 				},
 				{
 					"id":"28",
 					"title": "[Workshop] The importance of Optimal Customer Experience",
-					"startHour": "10:00",
-					"endHour": "11:00",
+					"startHour": "10:30",
+					"endHour": "11:15",
 					"locationName": "Galapagos",
 					"description": "By Johan Sevenants (Custom X)",
 					"category": "Entrepreneurial"
@@ -266,8 +266,8 @@
 				{
 					"id":"29",
 					"title": "[Workshop] REST API's & Automatic API testing",
-					"startHour": "10:00",
-					"endHour": "10:45",
+					"startHour": "10:30",
+					"endHour": "11:15",
 					"locationName": "Machu Picchu",
 					"description": "By Domien Frederix",
 					"category": "Technical"
@@ -275,38 +275,29 @@
 				{
 					"id":"30",
 					"title": "[Workshop] Building your Brand on Social",
-					"startHour": "10:00",
-					"endHour": "11:30",
+					"startHour": "10:30",
+					"endHour": "11:15",
 					"locationName": "Paris",
 					"description": "By Leen Veldeman (Custom X)",
-					"category": "Inspirational"
-				},
-				{
-					"id":"31",
-					"title": "[Workshop] Mindfulness",
-					"startHour": "10:00",
-					"endHour": "10:30",
-					"locationName": "Saint Petersburg",
-					"description": "By Valérie Heylen. Make sure to bring a Yoga Mat and wear comfortable clothes.",
-					"category": "Inspirational"
+					"category": "Entrepreneurial"
 				},
 				{
 					"id":"32",
+					"title": "[Workshop] .NET Core Essentials",
+					"startHour": "10:30",
+					"endHour": "11:15",
+					"locationName": "Agra",
+					"description": "By Jan Vanwezemael",
+					"category": "Technical"
+				},
+				{
+					"id":"33",
 					"title": "[Workshop] Visual Language Basics",
 					"startHour": "11:30",
 					"endHour": "12:15",
 					"locationName": "Flex Space",
 					"description": "By Veerle Hendrickx",
 					"category": "Entrepreneurial"
-				},
-				{
-					"id":"33",
-					"title": "[Workshop] .NET Core Essentials",
-					"startHour": "11:30",
-					"endHour": "12:15",
-					"locationName": "Saint Petersburg",
-					"description": "By Jan Vanwezemael",
-					"category": "Technical"
 				},
 				{
 					"id":"34",
@@ -349,7 +340,7 @@
 					"startHour": "18:00",
 					"endHour": "19:00",
 					"locationName": "Cambridge",
-					"description": "Jury members: Serge Haubourdin, Jean-Sébastien Struyf, Roel De Spiegelaar",
+					"description": "Jury members: Serge Haubourdin, Jean-Sébastien Struyf, Roel De Spiegeleer",
 					"category": "Pitch"
 				},
 				{

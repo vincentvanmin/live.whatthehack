@@ -1,4 +1,4 @@
-// Add a "readmore" symbol when clicking on a list item
+var question0 = document.getElementById("question0");
 var question1 = document.getElementById("question1");
 var question2 = document.getElementById("question2");
 var question3 = document.getElementById("question3");
@@ -10,8 +10,26 @@ var question8 = document.getElementById("question8");
 var question9 = document.getElementById("question9");
 var question10 = document.getElementById("question10");
 var question11 = document.getElementById("question11");
+// var question12 = document.getElementById("question12");
+
+function openQuestion0() {
+    question0.classList.add("readmore");
+    question1.classList.remove("readmore");
+    question2.classList.remove("readmore");
+    question3.classList.remove("readmore");
+    question4.classList.remove("readmore");
+    question5.classList.remove("readmore");
+    question6.classList.remove("readmore");
+    question7.classList.remove("readmore");
+    question8.classList.remove("readmore");
+    question9.classList.remove("readmore");
+    question10.classList.remove("readmore");
+    question11.classList.remove("readmore");
+    // question12.classList.remove("readmore");
+}
 
 function openQuestion1() {
+    question0.classList.remove("readmore");
     question1.classList.add("readmore");
     question2.classList.remove("readmore");
     question3.classList.remove("readmore");
@@ -23,10 +41,11 @@ function openQuestion1() {
     question9.classList.remove("readmore");
     question10.classList.remove("readmore");
     question11.classList.remove("readmore");
-    question12.classList.remove("readmore");
+    // question12.classList.remove("readmore");
 }
 
 function openQuestion2() {
+  question0.classList.remove("readmore");
   question1.classList.remove("readmore");
   question2.classList.add("readmore");
   question3.classList.remove("readmore");
@@ -38,10 +57,11 @@ function openQuestion2() {
   question9.classList.remove("readmore");
   question10.classList.remove("readmore");
   question11.classList.remove("readmore");
-  question12.classList.remove("readmore");
+  // question12.classList.remove("readmore");
 }
 
 function openQuestion3() {
+  question0.classList.remove("readmore");
   question1.classList.remove("readmore");
   question2.classList.remove("readmore");
   question3.classList.add("readmore");
@@ -53,10 +73,11 @@ function openQuestion3() {
   question9.classList.remove("readmore");
   question10.classList.remove("readmore");
   question11.classList.remove("readmore");
-  question12.classList.remove("readmore");
+  // question12.classList.remove("readmore");
 }
 
 function openQuestion4() {
+  question0.classList.remove("readmore");
   question1.classList.remove("readmore");
   question2.classList.remove("readmore");
   question3.classList.remove("readmore");
@@ -68,10 +89,11 @@ function openQuestion4() {
   question9.classList.remove("readmore");
   question10.classList.remove("readmore");
   question11.classList.remove("readmore");
-  question12.classList.remove("readmore");
+  // question12.classList.remove("readmore");
 }
 
 function openQuestion5() {
+  question0.classList.remove("readmore");
   question1.classList.remove("readmore");
   question2.classList.remove("readmore");
   question3.classList.remove("readmore");
@@ -83,10 +105,11 @@ function openQuestion5() {
   question9.classList.remove("readmore");
   question10.classList.remove("readmore");
   question11.classList.remove("readmore");
-  question12.classList.remove("readmore");
+  // question12.classList.remove("readmore");
 }
 
 function openQuestion6() {
+  question0.classList.remove("readmore");
   question1.classList.remove("readmore");
   question2.classList.remove("readmore");
   question3.classList.remove("readmore");
@@ -98,10 +121,11 @@ function openQuestion6() {
   question9.classList.remove("readmore");
   question10.classList.remove("readmore");
   question11.classList.remove("readmore");
-  question12.classList.remove("readmore");
+  // question12.classList.remove("readmore");
 }
 
 function openQuestion7() {
+  question0.classList.remove("readmore");
   question1.classList.remove("readmore");
   question2.classList.remove("readmore");
   question3.classList.remove("readmore");
@@ -113,10 +137,11 @@ function openQuestion7() {
   question9.classList.remove("readmore");
   question10.classList.remove("readmore");
   question11.classList.remove("readmore");
-  question12.classList.remove("readmore");
+  // question12.classList.remove("readmore");
 }
 
 function openQuestion8() {
+  question0.classList.remove("readmore");
   question1.classList.remove("readmore");
   question2.classList.remove("readmore");
   question3.classList.remove("readmore");
@@ -128,10 +153,11 @@ function openQuestion8() {
   question9.classList.remove("readmore");
   question10.classList.remove("readmore");
   question11.classList.remove("readmore");
-  question12.classList.remove("readmore");
+  // question12.classList.remove("readmore");
 }
 
 function openQuestion9() {
+  question0.classList.remove("readmore");
   question1.classList.remove("readmore");
   question2.classList.remove("readmore");
   question3.classList.remove("readmore");
@@ -143,10 +169,11 @@ function openQuestion9() {
   question9.classList.add("readmore");
   question10.classList.remove("readmore");
   question11.classList.remove("readmore");
-  question12.classList.remove("readmore");
+  // question12.classList.remove("readmore");
 }
 
 function openQuestion10() {
+  question0.classList.remove("readmore");
   question1.classList.remove("readmore");
   question2.classList.remove("readmore");
   question3.classList.remove("readmore");
@@ -158,10 +185,11 @@ function openQuestion10() {
   question9.classList.remove("readmore");
   question10.classList.add("readmore");
   question11.classList.remove("readmore");
-  question12.classList.remove("readmore");
+  // question12.classList.remove("readmore");
 }
 
 function openQuestion11() {
+  question0.classList.remove("readmore");
   question1.classList.remove("readmore");
   question2.classList.remove("readmore");
   question3.classList.remove("readmore");
@@ -173,7 +201,7 @@ function openQuestion11() {
   question9.classList.remove("readmore");
   question10.classList.remove("readmore");
   question11.classList.add("readmore");
-  question12.classList.remove("readmore");
+  // question12.classList.remove("readmore");
 }
 
 /*
