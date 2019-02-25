@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/app.min.css" data-finger-print>
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
 	<script src="assets/js/app.min.js" data-finger-print></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -240,6 +241,31 @@
 		</article>
 		<article id="home" class="under-header padding-bottom">
 			<div class="container-small">
+				<div class="visualhome">
+					<div class="text">
+						<h1>
+							<div id="typed-strings">
+								<p>Build your ideas</p>
+								<p>Learn new skills</p>
+								<p>Get inspired</p>
+								<p>Have fun</p>
+							</div>
+							<span id="typed"></span>
+						</h1>
+						<h1>at WhatTheHack</h1>
+						<p class="info">MARCH 1-2 • ALMA 2 – LEUVEN</p>
+						<p class="description">WhatTheHack is Belgium’s most epic student hackathon. Gather with 250 students from engineering, business and beyond to bring your ideas to life in 24 hours.</p>
+						<div id="seeschedule">
+							<a href="#/schedule" onmouseleave="this.style.color='#ffffff';this.style.background='linear-gradient(to right , #26d7d4 , #0088fe)';" onmouseenter="this.style.color='#ffffff';this.style.background='linear-gradient(to right , #00fff2 , #0099ff)';">Check Schedule</a>
+						</div>
+					</div>
+					<div class="ball">
+						<img src="assets/img/ball.png" alt="WhatTheHack">
+					</div>
+					<div class="powered">
+						<p>Powered by Academics For Technology & Tobania</p>
+					</div>
+				</div>
 				<div class="bag">
 					<h1>What to bring with you?</h1>
 					<div class="listbox">
@@ -307,6 +333,7 @@
 				<div id="sponsors">
 					<img src="assets/img/partners/Advelox.svg" class="big" alt="Advelox" data-aos="zoom-in">
 					<img src="assets/img/partners/Atrias.svg" class="small" alt="Atrias" data-aos="zoom-in">
+					<img src="assets/img/partners/Au-Flan-Breton.svg" alt="Au Flan Breton" data-aos="zoom-in">
 					<img src="assets/img/partners/Bilzen.svg" alt="Bilzen" data-aos="zoom-in">
 					<img src="assets/img/partners/BMW.svg" alt="BMW" data-aos="zoom-in">
 					<img src="assets/img/partners/Business-Markers.svg" class="small" alt="Business-Markers" data-aos="zoom-in">
@@ -1330,7 +1357,7 @@
 								<div class="flip-card-back">
 									<div class="content">
 										<h1>Jan Van Wassenhove</h1> 
-										<p>IT consultant</p> 
+										<p>Java Chapter Lead</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -1395,6 +1422,22 @@
 									<div class="content">
 										<h1>Laurent Belbar</h1> 
 										<p>Analyst</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/User.png" alt="Mante Bos">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Mante Bos</h1> 
+										<p>Test Specialist</p> 
 										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
 									</div>
 								</div>
@@ -2391,6 +2434,17 @@
 				}, 1010)
 			})
 		})
+	</script>
+	<script>
+		var typed = new Typed('#typed', {
+			stringsElement: '#typed-strings',
+			typeSpeed: 30,
+			startDelay: 700,
+			backSpeed: 20,
+			backDelay: 700,
+			loopCount: 999,
+			loop: 1
+		});
 	</script>
 	<script src="assets/js/whatthehack.min.js"></script>
 	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>

@@ -35,12 +35,12 @@
 				},
 				{
 					"id":"4",
-					"title": "[Workshop] Manage the Panic Monster",
+					"title": "[Workshop] Gamestorming",
 					"startHour": "18:15",
 					"endHour": "19:00",
 					"locationName": "Flex Space",
-					"description": "By Dirk Depré",
-					"category": "Inspirational"
+					"description": "By Tom Leers & Alexander De Meersman",
+					"category": "Entrepreneurial"
 				},
 				{
 					"id":"5",
@@ -97,12 +97,12 @@
 				},
 				{
 					"id":"11",
-					"title": "[Workshop] Gamestorming",
+					"title": "[Workshop] Manage the Panic Monster",
 					"startHour": "19:30",
 					"endHour": "20:15",
 					"locationName": "Flex Space",
-					"description": "By Tom Leers & Alexander De Meersman",
-					"category": "Entrepreneurial"
+					"description": "By Dirk Depré",
+					"category": "Inspirational"
 				},
 				{
 					"id":"12",
