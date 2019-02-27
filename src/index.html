@@ -6,9 +6,11 @@
 	<meta name="description" content="Join us for Belgium's most epic student hackathon. 250 hackers. 24h. Mar 1st-2nd.">
 	<link rel="icon" href="favicon.png" type="image/png" data-finger-print>
 	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/app.min.css" data-finger-print>
 	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script src="assets/js/app.min.js" data-finger-print></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -66,14 +68,11 @@
 			<td>
 				{endHour}
 			</td>
-			<td>
+			<td class="scheduletitle">
 				{title}
 			</td>
 			<td class="hide-when-small">
 				{description}
-			</td>
-			<td class="hide-when-small">
-				{category}
 			</td>
 		</tr>
 	</template>
@@ -89,7 +88,6 @@
 						<th>End</th>
 						<th>Title</th>
 						<th class="hide-when-small">Description</th>
-						<th class="hide-when-small">Category</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -111,7 +109,7 @@
 	</template>
 	<!--Fancy schedule event-->
 	<template id="fancyEvent">
-		<div class="event" data-event-id="{id}" data-start-timestamp="{startTmsp}" data-end-timestamp="{endTmsp}" data-end-action="removeEndedEvent" data-update-action="updateFancyEvent">
+		<div class="event" id="{id}" data-event-id="{id}" data-start-timestamp="{startTmsp}" data-end-timestamp="{endTmsp}" data-end-action="removeEndedEvent" data-update-action="updateFancyEvent">
 			<a href="#/maps"></a>
 			<div class='event-hour'>
 				<div>{startHour}</div>
@@ -128,6 +126,9 @@
 	</template>
 </head>
 <body>
+	<div class="cat">
+		<img src="assets/img/nyan-cat.gif" alt="Nyan Cat">
+	</div>
 	<!--header for <720px-->
 	<header id="header-small" class="show-when-small">
 		<div class="bar">
@@ -213,17 +214,250 @@
 	</header>
 	<main>
 		<article id="fullscreen">
-			<div>
+			<div class="fullscreentimer">
 				<div id="countdown-full" class="hide-when-small">
 					<div class="countdown">
 						<div>
-							<span>36:00</span>:00.00
+							<span>24:00</span>:00.00
 						</div>
 					</div>
-					<img class="bg" src="assets/img/ball.png"/>
+					<div class="bg"></div>
 				</div>
 				<div class="events-fancy">
 					<!--To be filled by js-->
+				</div>
+			</div>
+			<div class="slider">
+				<div class="slide-track">
+					<div class="slide">
+						<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Advelox.svg" class="big" alt="Advelox">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Atrias.svg" class="small" alt="Atrias">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Au-Flan-Breton.svg" alt="Au Flan Breton">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Bilzen.svg" alt="Bilzen">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/BMW.svg" alt="BMW">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Business-Markers.svg" class="small" alt="Business-Markers">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Carglass.svg" class="big" alt="Carglass">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/CM.svg" class="small" alt="CM">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/CoolBlue.svg" alt="CoolBlue">
+					</div>	
+					<div class="slide">
+						<img src="assets/img/partners/Corporate-Coach.svg" alt="Corporate-Coach">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/De-Lijn.svg" class="small" alt="De-Lijn">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/De-Mensen.svg" class="small" alt="De-Mensen">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/De-Persgroep.svg" class="big" alt="De-Persgroep">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Fish-Digital.svg" alt="Fish-Digital">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/FruitSnacks.svg" class="big" alt="FruitSnacks">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Google.svg" class="big" alt="Google">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/IMEC.svg" class="big" alt="IMEC">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/KBC.svg" alt="KBC">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Leuven.svg" class="big" alt="Leuven">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Limecraft.svg" class="big" alt="Limecraft">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Loko.svg" class="big" alt="Loko">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/MasterVending.svg" alt="Mastervending">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Mediahuis.svg" class="big" alt="Mediahuis">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Mercedes.svg" alt="Mercedes">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/NMBS.svg" class="big" alt="NMBS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Quivr.svg" alt="Quivr">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/SWF.svg" alt="SmartWithFood">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/SSB.svg" alt="SSB">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Telenet.svg" alt="Telenet">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Volvo.svg" alt="Volvo">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/VRT.svg" alt="VRT">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Worldline.svg" class="big" alt="Worldline">
+					</div>
+
+					<div class="slide">
+						<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Advelox.svg" class="big" alt="Advelox">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Atrias.svg" class="small" alt="Atrias">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Au-Flan-Breton.svg" alt="Au Flan Breton">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Bilzen.svg" alt="Bilzen">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/BMW.svg" alt="BMW">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Business-Markers.svg" class="small" alt="Business-Markers">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Carglass.svg" class="big" alt="Carglass">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/CM.svg" class="small" alt="CM">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/CoolBlue.svg" alt="CoolBlue">
+					</div>	
+					<div class="slide">
+						<img src="assets/img/partners/Corporate-Coach.svg" alt="Corporate-Coach">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/De-Lijn.svg" class="small" alt="De-Lijn">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/De-Mensen.svg" class="small" alt="De-Mensen">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/De-Persgroep.svg" class="big" alt="De-Persgroep">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Fish-Digital.svg" alt="Fish-Digital">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/FruitSnacks.svg" class="big" alt="FruitSnacks">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Google.svg" class="big" alt="Google">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/IMEC.svg" class="big" alt="IMEC">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/KBC.svg" alt="KBC">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Leuven.svg" class="big" alt="Leuven">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Limecraft.svg" class="big" alt="Limecraft">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Loko.svg" class="big" alt="Loko">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/MasterVending.svg" alt="Mastervending">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Mediahuis.svg" class="big" alt="Mediahuis">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Mercedes.svg" alt="Mercedes">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/NMBS.svg" class="big" alt="NMBS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Quivr.svg" alt="Quivr">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/SWF.svg" alt="SmartWithFood">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/SSB.svg" alt="SSB">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Telenet.svg" alt="Telenet">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Volvo.svg" alt="Volvo">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/VRT.svg" alt="VRT">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Worldline.svg" class="big" alt="Worldline">
+					</div>
 				</div>
 			</div>
 		</article>
@@ -241,7 +475,8 @@
 		</article>
 		<article id="home" class="under-header padding-bottom">
 			<div class="container-small">
-				<div class="visualhome">
+				<div class="visualhome">	
+					<!-- <div id="particles-js"></div>-->
 					<div class="text">
 						<h1>
 							<div id="typed-strings">
@@ -330,7 +565,10 @@
 				<div class="prizes">
 					<img src="assets/img/Prizes.png" alt="Prizes">
 				</div>
-				<div id="sponsors">
+				<div class="sponsors">
+					<img src="assets/img/partners/GMS.svg" class="big" alt="GMS" data-aos="zoom-in">
+				</div>
+				<div class="sponsors">
 					<img src="assets/img/partners/Advelox.svg" class="big" alt="Advelox" data-aos="zoom-in">
 					<img src="assets/img/partners/Atrias.svg" class="small" alt="Atrias" data-aos="zoom-in">
 					<img src="assets/img/partners/Au-Flan-Breton.svg" alt="Au Flan Breton" data-aos="zoom-in">
@@ -361,6 +599,7 @@
 					<img src="assets/img/partners/SSB.svg" alt="SSB" data-aos="zoom-in">
 					<img src="assets/img/partners/Telenet.svg" alt="Telenet" data-aos="zoom-in">
 					<img src="assets/img/partners/Tobania.svg" alt="Tobania" data-aos="zoom-in">
+					<img src="assets/img/partners/Volvo.svg" alt="Volvo" data-aos="zoom-in">
 					<img src="assets/img/partners/VRT.svg" alt="VRT" data-aos="zoom-in">
 					<img src="assets/img/partners/Worldline.svg" class="big" alt="Worldline" data-aos="zoom-in">
 				</div>
@@ -815,6 +1054,22 @@
 								</div>
 							</div>
 						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Davy-Haesen.jpeg" alt="Davy Haesen">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Davy Haesen</h1> 
+											<p>CIO SBB</p> 
+											<img src="assets/img/partners/SSB.svg" alt="SBB">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -844,7 +1099,7 @@
 						<div class="mapdescription">
 							<div class="content">
 								<h1>The Village</h1>
-								<p><a target="_blank" href="https://www.google.be/maps/place/Alma+2/@50.8737268,4.7008207,17z/data=!3m1!4b1!4m5!3m4!1s0x47c1612861461a5d:0x5a3ef02572169028!8m2!3d50.8737268!4d4.7030094">Find our village on Google maps!</a> Our village contains 3 buildings. The opening and closing ceremony will take place in Max Weber, located on the bottom left of the map. Alma 2 (top left on the map) is the hacking area, this will be the location where you will spend most of your time. Entertainment, food and all information will be available here. You can find a detailed map of the inside below. All workshops will take place in our third location, Agora (top right on the map). We provided a detailed map of the different workshop rooms below.</p>
+								<p><a target="_blank" href="https://www.google.be/maps/place/Alma+2/@50.8737268,4.7008207,17z/data=!3m1!4b1!4m5!3m4!1s0x47c1612861461a5d:0x5a3ef02572169028!8m2!3d50.8737268!4d4.7030094">Find our village on Google maps!</a> You can find information about parking on the <a href="#/faq">faq page</a>. Our village contains 3 buildings. The opening and closing ceremony will take place in Max Weber, located on the bottom left of the map. Alma 2 (top left on the map) is the hacking area, this will be the location where you will spend most of your time. Entertainment, food and all information will be available here. You can find a detailed map of the inside below. All workshops will take place in our third location, Agora (top right on the map). We provided a detailed map of the different workshop rooms below.</p>
 							</div>
 						</div>
 						<div class="mapimage">
@@ -1432,7 +1687,7 @@
 						<div class="flip-card">
 							<div class="flip-card-inner">
 								<div class="flip-card-front">
-									<img src="assets/img/coaches/User.png" alt="Mante Bos">
+									<img src="assets/img/coaches/Mante-Bos.jpg" alt="Mante Bos">
 								</div>
 								<div class="flip-card-back">
 									<div class="content">
@@ -2321,91 +2576,121 @@
 					<div id="question2" class="question">
 						<button class="question-heading" onclick="openQuestion2()">
 							<div class="open-icon"></div>
-							<h2>When is WhatTheHack ending?</h2>
+							<h2>How do I get to WhatTheHack?</h2>
 						</button>
 						<div class="question-body">
-							<p>The closing ceremony is expected to end on Saturday 2nd at 7:00 PM.</p>
+							<p>You can find the address <a href="https://goo.gl/maps/oezU7KCTWWm" target="_blank">here</a>. Some different ways to get to our <a href="#/maps">village</a>:</p>
+							<ul>
+								<li>Train: Arrival at Leuven Station (15min walk)</li>
+								<li>Bike: Bicycle stands are provided in the village</li>
+								<li>Car: You can park on <a href="https://www.leuven.be/parkings/wagens/parking-bodart" target="_blank">parking Bodart</a> for free (Max 10hrs with parking disc between 7:00 AM and 7:00 PM. You can change your disc during the hackathon) 
+									<p>&rarr; <a href="https://www.google.be/maps/dir//Koning+Boudewijnlaan,+3001+Leuven/@50.8666291,4.6630755,15z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x47c16105be1b6eff:0x66476fea4bfcdca2!2m2!1d4.6718303!2d50.8666294" target="_blank">Directions to parking</a></p>
+									<p>&rarr; <a href="https://www.google.com/maps/dir/Parking+Bodart,+Veilingweg,+3001+Leuven/Parkstraat+45,+Leuven/@50.8714339,4.6919066,16z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x47c16121e15e3d2b:0xce70fbb044dbb6e7!2m2!1d4.6891477!2d50.8725342!1m5!1m1!1s0x47c161285e1acc5b:0xe946495ef058437b!2m2!1d4.7034418!2d50.8738338!3e2" target="_blank">How to get to the village on foot</a></p>
+								</li>
+								<li>Car: For <a href="https://www.leuven.be/parkings/wagens/parking-bodart" target="_blank">parking Teken</a> you have to pay €3.00 (Unlimited duration)
+									<p>&rarr; <a href="https://www.google.be/maps/dir//Mgr.+van+Waeyenberghlaan,+3000+Leuven/@50.879041,4.679053,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x47c160e17e886d1d:0xdbaa6b32ffab26cf!2m2!1d4.683721!2d50.8798711" target="_blank">Directions to parking</a></p>
+									<p>&rarr; <a href="https://www.google.com/maps/dir/50.8794611,4.6796388/Parkstraat+45,+Leuven/@50.8770356,4.6876754,16z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x47c161285e1acc5b:0xe946495ef058437b!2m2!1d4.7034418!2d50.8738338!3e3" target="_blank">How to get to the village by bus</a></p>
+								</li>
+							</ul>
 						</div>
 					</div>
 					<div id="question3" class="question">
 						<button class="question-heading" onclick="openQuestion3()">
 							<div class="open-icon"></div>
-							<h2>What if I cannot make it in time?</h2>
+							<h2>When is WhatTheHack ending?</h2>
 						</button>
 						<div class="question-body">
-							<p>No problem. Be there at 6:00 PM, so your team doesn't lag behind the others. Just come to our InfoDesk for a late check-in. Ask your team for any important information you may have missed. If you are confused, please reach out to any crew member (purple t-shirts).</p>
+							<p>The closing ceremony is expected to end on Saturday 2nd at 9:15 PM.</p>
 						</div>
 					</div>
 					<div id="question4" class="question">
 						<button class="question-heading" onclick="openQuestion4()">
 							<div class="open-icon"></div>
-							<h2>How do I sign up for a workshop?</h2>
+							<h2>What if I cannot make it in time?</h2>
 						</button>
 						<div class="question-body">
-							<p>You can sign up at the InfoDesk!</p>
+							<p>No problem. Be there at 6:00 PM, so your team doesn't lag behind the others. Just come to our Infodesk for a late check-in. Ask your team for any important information you may have missed. If you are confused, please reach out to any crew member (purple t-shirts).</p>
 						</div>
 					</div>
 					<div id="question5" class="question">
 						<button class="question-heading" onclick="openQuestion5()">
 							<div class="open-icon"></div>
-							<h2>I'm not in Slack, how do I get in?</h2>
+							<h2>How do I sign up for a workshop?</h2>
 						</button>
 						<div class="question-body">
-							<p>Come to the InfoDesk during the event or send us an email to <a href="mailto:info@whatthehack.be" target="_blank">info@whatthehack.be</a></p>
+							<p>You can sign up at the Infodesk! If you go to the Agora building, you have to wear your WhatThehack T-shirt or Lanyard to get in.</p>
 						</div>
 					</div>
 					<div id="question6" class="question">
 						<button class="question-heading" onclick="openQuestion6()">
 							<div class="open-icon"></div>
-							<h2>Can I leave WhatTheHack?</h2>
+							<h2>I'm not in Slack, how do I get in?</h2>
 						</button>
 						<div class="question-body">
-							<p>Yes. However make sure you have your wristband with you, otherwise we might not let you in when you come back.</p>
+							<p>Come to the Infodesk during the event or send us an email to <a href="mailto:info@whatthehack.be" target="_blank">info@whatthehack.be</a></p>
 						</div>
 					</div>
 					<div id="question7" class="question">
 						<button class="question-heading" onclick="openQuestion7()">
 							<div class="open-icon"></div>
-							<h2>Can I sleep now?</h2>
+							<h2>Can I leave WhatTheHack?</h2>
 						</button>
 						<div class="question-body">
-							<p>Yes, sure. We have provided a sleeping area. Make sure to bring your own matress & sleeping bag.</p>
+							<p>Yes. However make sure you have your T-shirt or Lanyard with you, otherwise we might not let you in when you come back.</p>
 						</div>
 					</div>
 					<div id="question8" class="question">
 						<button class="question-heading" onclick="openQuestion8()">
 							<div class="open-icon"></div>
-							<h2>Something isn’t working!</h2>
+							<h2>Is food provided?</h2>
 						</button>
 						<div class="question-body">
-							<p>If something is not working, please ask your questing in slack or come to our InfoDesk and meet our awesome crew. They'll love to help you!</p>
+							<p>Of course! In the <a href="#/schedule">schedule</a> you can find a few moments where food is served.</p>
 						</div>
 					</div>
 					<div id="question9" class="question">
 						<button class="question-heading" onclick="openQuestion9()">
 							<div class="open-icon"></div>
-							<h2>Deadline for project submissions?</h2>
+							<h2>Can I sleep now?</h2>
 						</button>
 						<div class="question-body">
-							<p>The hacking ends Saturday 2nd at 6:00 PM.</p>
+							<p>Yes, sure. We have provided a resting area. Make sure to bring your own matress & sleeping bag.</p>
 						</div>
 					</div>
 					<div id="question10" class="question">
 						<button class="question-heading" onclick="openQuestion10()">
 							<div class="open-icon"></div>
-							<h2>How does judging work?</h2>
+							<h2>Something isn’t working!</h2>
 						</button>
 						<div class="question-body">
-							<p>We will have a judging expo on Saturday from 6:00 PM - 7:00 PM. Depening on your challenge or subject, you will get assigned a specific jury. All information can be found in the <a href="/live#/schedule">schedule</a></p>
+							<p>If something is not working, please ask your questing in slack or come to our Infodesk and meet our awesome crew. They'll love to help you!</p>
 						</div>
 					</div>
 					<div id="question11" class="question">
 						<button class="question-heading" onclick="openQuestion11()">
 							<div class="open-icon"></div>
+							<h2>How does judging work?</h2>
+						</button>
+						<div class="question-body">
+							<p>We will have a judging expo on Saturday from 6:00 PM - 7:30 PM. Depening on your challenge or subject, you will get assigned a specific jury. All information can be found in the <a href="#/schedule">schedule</a>.</p>
+						</div>
+					</div>
+					<div id="question12" class="question">
+						<button class="question-heading" onclick="openQuestion12()">
+							<div class="open-icon"></div>
+							<h2>Deadline for project submissions?</h2>
+						</button>
+						<div class="question-body">
+							<p>The hacking ends Saturday 2nd at 5:30 PM. You will have to sumbit using <a href="https://wetransfer.com/" target="_blank">WeTransfer</a>. Make sure to PASTE the link in a NEW EMAIL and send it to <a href="mailto:info@whatthehack.be">info@whatthehack.be</a></p>
+						</div>
+					</div>
+					<div id="question13" class="question">
+						<button class="question-heading" onclick="openQuestion13()">
+							<div class="open-icon"></div>
 							<h2>I have another question... Okay?</h2>
 						</button>
 						<div class="question-body">
-							<p>If you have any other questions and you can't find it here, make sure to pay us a visit at our InfoDesk.</p>
+							<p>If you have any other questions and you can't find it here, make sure to pay us a visit at our Infodesk.</p>
 						</div>
 					</div>
 				</div>
@@ -2451,5 +2736,9 @@
 	<script>
 		AOS.init();
 	</script>
+	
+	<!-- <script src="assets/js/particles.js"></script> -->
+	<!-- <script src="assets/js/particles2.js"></script> -->
+	<!-- <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
 </body>
 </html>

@@ -2,7 +2,7 @@
 	"version": 1,
 	"message": "",
 	"baseTimeOffset":"-60",
-	"countdownStart":"01/03/2019 18:00",
+	"countdownStart":"01/03/2019 17:30",
 	"days":
 	[
 		{
@@ -12,7 +12,7 @@
 			[
 				{
 					"id":"1",
-					"title": "Registration",
+					"title": "<p class='titleblock'><i class='fas fa-hand-paper'></i> Registration</p>",
 					"startHour": "16:30",
 					"endHour": "17:30",
 					"locationName": "Entrance Hall Max Weber",
@@ -20,7 +20,7 @@
 				},
 				{
 					"id":"2",
-					"title": "Opening Ceremony",
+					"title": "<p class='titleblock'><i class='fas fa-eye'></i> Opening Ceremony</p>",
 					"startHour": "17:30",
 					"endHour": "18:00",
 					"locationName": "Max Weber",
@@ -28,152 +28,137 @@
 				},
 				{
 					"id":"3",
-					"title": "Hacking starts",
+					"title": "<p class='titleblock'><i class='fas fa-hourglass-start'></i> Hacking starts</p>",
 					"startHour": "18:00",
 					"locationName": "Alma 2",
 					"description": "Ready. Set. GO!"
 				},
 				{
 					"id":"4",
-					"title": "[Workshop] Gamestorming",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Gamestorming</p>",
 					"startHour": "18:15",
 					"endHour": "19:00",
 					"locationName": "Flex Space",
-					"description": "By Tom Leers & Alexander De Meersman",
-					"category": "Entrepreneurial"
+					"description": "By Tom Leers & Alexander De Meersman (Entrepreneurial)"
 				},
 				{
 					"id":"5",
-					"title": "[Workshop] Lean Startup",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Lean Startup</p>",
 					"startHour": "18:15",
 					"endHour": "19:00",
 					"locationName": "Galapagos",
-					"description": "By Dries Bovijn",
-					"category": "Entrepreneurial"
+					"description": "By Dries Bovijn (Entrepreneurial)"
 				},
 				{
 					"id":"6",
-					"title": "[Workshop] Microsoft Azure Serverless Solutions for Web and Microservices",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Microsoft Azure Serverless Solutions for Web and Microservices</p>",
 					"startHour": "18:15",
 					"endHour": "19:00",
 					"locationName": "Matchu Picchu",
-					"description": "By Wouter Bauchart",
-					"category": "Technical"
+					"description": "By Wouter Bauchart (Technical)"
 				},
 				{
 					"id":"7",
-					"title": "[Workshop] Elevator Pitch",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Elevator Pitch</p>",
 					"startHour": "18:15",
 					"endHour": "19:00",
 					"locationName": "Saint Petersburg",
-					"description": "By Shen Sandelé",
-					"category": "Entrepreneurial"
+					"description": "By Shen Sandelé (Entrepreneurial)"
 				},
 				{
 					"id":"8",
-					"title": "Croques and Hot Dogs",
-					"startHour": "18:30",
-					"endHour": "19:30",
-					"locationName": "Alma 2",
-					"description": "Enjoy your meal!",
-					"category": "Food & Drinks"
-				},
-				{
-					"id":"9",
-					"title": "[Workshop] Briefing Data & Challenge",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Briefing Data & Challenge</p>",
 					"startHour": "19:00",
 					"endHour": "19:30",
 					"locationName": "Paris",
-					"description": "By Stad Leuven",
-					"category": "Entrepreneurial"
+					"description": "By Stad Leuven (Entrepreneurial)"
 				},
 				{
-					"id":"10",
-					"title": "DJ Vinavil",
+					"id":"9",
+					"title": "<p class='titleblock'><i class='fas fa-music'></i> DJ Vinavil</p>",
 					"startHour": "19:00",
 					"endHour": "22:00",
 					"locationName": "Alma 2",
 					"description": "Inspirational Lounge Music for a healthy dose of good courage! <a href='https://soundcloud.com/vinavil/' target='_blank' style='color: #000; text-decoration: underline;'>Visit DJ Vinavil on SoundCloud</a>."
 				},
 				{
+					"id":"10",
+					"title": "<p class='titleblock'><i class='fas fa-utensils'></i> Croques and Hot Dogs</p>",
+					"startHour": "19:30",
+					"endHour": "21:00",
+					"locationName": "Alma 2",
+					"description": "Enjoy your meal!"
+				},
+				{
 					"id":"11",
-					"title": "[Workshop] Manage the Panic Monster",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Manage the Panic Monster</p>",
 					"startHour": "19:30",
 					"endHour": "20:15",
 					"locationName": "Flex Space",
-					"description": "By Dirk Depré",
-					"category": "Inspirational"
+					"description": "By Dirk Depré (Inspirational)"
 				},
 				{
 					"id":"12",
-					"title": "[Workshop] Introduction to REST API's & Automatic API testing",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Introduction to REST API's & Automatic API testing</p>",
 					"startHour": "19:30",
 					"endHour": "20:15",
 					"locationName": "Machu Picchu",
-					"description": "By Domien Frederix",
-					"category": "Technical"
+					"description": "By Domien Frederix (Technical)"
 				},
 				{
 					"id":"13",
-					"title": "[Workshop] Angular vs. React",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Angular vs. React</p>",
 					"startHour": "19:30",
 					"endHour": "20:15",
 					"locationName": "Paris",
-					"description": "By Anton Kirschhock & Tim Neyens",
-					"category": "Technical"
+					"description": "By Anton Kirschhock & Tim Neyens (Technical)"
 				},
 				{
 					"id":"14",
-					"title": "[Workshop] Basics of Python for Data Science",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Basics of Python for Data Science</p>",
 					"startHour": "19:30",
 					"endHour": "20:15",
 					"locationName": "Saint Petersburg",
-					"description": "By Chamberlain Mbah",
-					"category": "Technical"
+					"description": "By Chamberlain Mbah. Make sure you have <a href='https://www.python.org/downloads/' target='_blank' style='color: #000; text-decoration: underline;'>Python</a> installed. (Technical)"
 				},
 				{
 					"id":"15",
-					"title": "[Workshop] Introduction to Agile & DevOps",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Introduction to Agile & DevOps</p>",
 					"startHour": "19:30",
 					"endHour": "20:15",
 					"locationName": "Xi'an",
-					"description": "By Freddy Schoeters",
-					"category": "Entrepreneurial"
+					"description": "By Freddy Schoeters (Entrepreneurial)"
 				},
 				{
 					"id":"16",
-					"title": "[Workshop] Hands-on Introduction to Scrum",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Hands-on Introduction to Scrum</p>",
 					"startHour": "19:30",
 					"endHour": "20:15",
 					"locationName": "Agra",
-					"description": "By Hans Stevens",
-					"category": "Entrepreneurial"
+					"description": "By Hans Stevens (Entrepreneurial)"
 				},
 				{
 					"id":"17",
-					"title": "[Workshop] Introduction to Behavior Driven Development",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Introduction to Behavior Driven Development</p>",
 					"startHour": "19:30",
 					"endHour": "20:15",
 					"locationName": "Galapagos",
-					"description": "By Christophe Soens",
-					"category": "Technical"
+					"description": "By Christophe Soens (Technical)"
 				},
 				{
 					"id":"18",
-					"title": "Elevator Pitch",
+					"title": "<p class='titleblock'><i class='fas fa-desktop'></i> Elevator Pitch</p>",
 					"startHour": "21:00",
 					"endHour": "22:00",
 					"locationName": "Alma 2",
-					"description": "Our coaches will hear your genius idea.",
-					"category": "Pitch"
+					"description": "Our coaches will hear your genius idea."
 				},
 				{
 					"id":"19",
-					"title": "Snack buffet",
+					"title": "<p class='titleblock'><i class='fas fa-utensils'></i> Snack buffet</p>",
 					"startHour": "22:00",
 					"locationName": "Alma 2",
-					"description": "Feeling hungry? Come get some extra energy!",
-					"category": "Food & Drinks"
+					"description": "Feeling hungry? Come get some extra energy!"
 				}
 			]
 		},
@@ -184,234 +169,216 @@
 			[	
 				{
 					"id":"20",
-					"title": "Breakfast",
+					"title": "<p class='titleblock'><i class='fas fa-utensils'></i> Breakfast</p>",
 					"startHour": "08:00",
 					"endHour": "10:00",
 					"locationName": "Alma 2",
-					"description": "Come and get some extra energy!",
-					"category": "Food & Drinks"
+					"description": "Come and get some extra energy!"
 				},	
 				{
 					"id":"21",
-					"title": "[Workshop] Service Design Thinking",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Service Design Thinking</p>",
 					"startHour": "09:30",
 					"endHour": "10:30",
 					"locationName": "Saint Petersburg",
-					"description": "By Alexander De Meersman & Tom Leers",
-					"category": "Technical"
+					"description": "By Alexander De Meersman & Tom Leers (Technical)"
 				},	
 				{
 					"id":"22",
-					"title": "[Workshop] Angular",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Angular</p>",
 					"startHour": "09:30",
 					"endHour": "10:15",
 					"locationName": "Agra",
-					"description": "By Anton Kirschhock",
-					"category": "Technical"
+					"description": "By Anton Kirschhock (Technical)"
 				},	
 				{
 					"id":"23",
-					"title": "[Workshop] Today's Cyber Threat Landscape & Help from Technology Organisations",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Today's Cyber Threat Landscape & Help from Technology Organisations</p>",
 					"startHour": "09:30",
 					"endHour": "10:15",
 					"locationName": "Galapagos",
-					"description": "By Philippe Michiels",
-					"category": "Technical"
+					"description": "By Philippe Michiels (Technical)"
 				},	
 				{
 					"id":"24",
-					"title": "[Workshop] Behavior Driven Development",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Behavior Driven Development</p>",
 					"startHour": "09:30",
 					"endHour": "10:15",
 					"locationName": "Machu Picchu",
-					"description": "By Christophe Soens",
-					"category": "Technical"
+					"description": "By Christophe Soens (Technical)"
 				},	
 				{
 					"id":"25",
-					"title": "[Workshop] Elevator Pitch",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Elevator Pitch</p>",
 					"startHour": "09:30",
 					"endHour": "10:15",
 					"locationName": "Paris",
-					"description": "By Shen Sandelé",
-					"category": "Entrepreneurial"
+					"description": "By Shen Sandelé (Entrepreneurial)"
 				},	
 				{
 					"id":"26",
-					"title": "[Workshop] Yoga",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Yoga</p>",
 					"startHour": "09:30",
 					"endHour": "10:15",
 					"locationName": "Flex Space",
-					"description": "By Valérie Heylen. Make sure to bring a Yoga Mat and wear comfortable clothes.",
-					"category": "Inspirational"
+					"description": "By Valérie Heylen. Make sure to bring a Yoga Mat and wear comfortable clothes. (Inspirational)"
 				},	
 				{
 					"id":"27",
-					"title": "[Workshop] Mindfulness",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Mindfulness</p>",
 					"startHour": "10:30",
 					"endHour": "11:00",
 					"locationName": "Flex Space",
-					"description": "By Valérie Heylen. Make sure to bring a Yoga Mat and wear comfortable clothes.",
-					"category": "Inspirational"
+					"description": "By Valérie Heylen. Make sure to bring a Yoga Mat and wear comfortable clothes. (Inspirational)"
 				},
 				{
 					"id":"28",
-					"title": "[Workshop] The importance of Optimal Customer Experience",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> The importance of Optimal Customer Experience</p>",
 					"startHour": "10:30",
 					"endHour": "11:15",
 					"locationName": "Galapagos",
-					"description": "By Johan Sevenants (Custom X)",
-					"category": "Entrepreneurial"
+					"description": "By Johan Sevenants (Entrepreneurial)"
 				},
 				{
 					"id":"29",
-					"title": "[Workshop] REST API's & Automatic API testing",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> REST API's & Automatic API testing</p>",
 					"startHour": "10:30",
 					"endHour": "11:15",
 					"locationName": "Machu Picchu",
-					"description": "By Domien Frederix",
-					"category": "Technical"
+					"description": "By Domien Frederix (Technical)"
 				},
 				{
 					"id":"30",
-					"title": "[Workshop] Building your Brand on Social",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Building your Brand on Social</p>",
 					"startHour": "10:30",
 					"endHour": "11:15",
 					"locationName": "Paris",
-					"description": "By Leen Veldeman (Custom X)",
-					"category": "Entrepreneurial"
+					"description": "By Leen Veldeman (Entrepreneurial)"
 				},
 				{
 					"id":"32",
-					"title": "[Workshop] .NET Core Essentials",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> .NET Core Essentials</p>",
 					"startHour": "10:30",
 					"endHour": "11:15",
 					"locationName": "Agra",
-					"description": "By Jan Vanwezemael",
-					"category": "Technical"
+					"description": "By Jan Vanwezemael (Technical)"
 				},
 				{
 					"id":"33",
-					"title": "[Workshop] Visual Language Basics",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Visual Language Basics</p>",
 					"startHour": "11:30",
 					"endHour": "12:15",
 					"locationName": "Flex Space",
-					"description": "By Veerle Hendrickx",
-					"category": "Entrepreneurial"
+					"description": "By Veerle Hendrickx (Entrepreneurial)"
 				},
 				{
 					"id":"34",
-					"title": "[Workshop] Pitching your Story",
+					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Pitching your Story</p>",
 					"startHour": "11:30",
 					"endHour": "12:15",
 					"locationName": "Machu Picchu",
-					"description": "By Angelique De Clerq",
-					"category": "Entrepreneurial"
+					"description": "By Angelique De Clerq (Entrepreneurial)"
 				},
 				{
 					"id":"35",
-					"title": "Lunch",
+					"title": "<p class='titleblock'><i class='fas fa-utensils'></i> Lunch</p>",
 					"startHour": "12:30",
 					"endHour": "14:00",
 					"locationName": "Alma 2",
-					"description": "Fresh energy available!",
-					"category": "Food & Drinks"
+					"description": "Fresh energy available!"
 				},
 				{
 					"id":"36",
-					"title": "Smoothies",
+					"title": "<p class='titleblock'><i class='fas fa-utensils'></i> Smoothies</p>",
 					"startHour": "13:00",
 					"endHour": "15:00",
 					"locationName": "HR Corner (Alma 2)",
-					"description": "Sign up and get a free smoothie!",
-					"category": "Food & Drinks"
+					"description": "Sign up and get a free smoothie!"
 				},
 				{
 					"id":"37",
-					"title": "Hacking ends",
-					"startHour": "18:00",
+					"title": "<p class='titleblock'><i class='fas fa-hourglass-end'></i> Hacking ends</p>",
+					"startHour": "17:30",
 					"locationName": "Alma 2",
-					"description": "STOP. STOP. STOP! Hands up and go rock for the jury!",
-					"category": "Group Activity"
+					"description": "STOP. STOP. STOP! Hands up and go rock for the jury! <br> Please sumbit using <a href='https://wetransfer.com/' target='_blank' style='color: #000; text-decoration: underline;'>WeTransfer</a>. Make sure to PASTE the link in a NEW EMAIL and send it to <a href='mailto:info@whatthehack.be' style='color: #000; text-decoration: underline;'>info@whatthehack.be</a>"
 				},
 				{
 					"id":"38",
-					"title": "Pitch HealthTech",
-					"startHour": "18:00",
-					"endHour": "19:00",
-					"locationName": "Cambridge",
-					"description": "Jury members: Serge Haubourdin, Jean-Sébastien Struyf, Roel De Spiegeleer",
-					"category": "Pitch"
+					"title": "<p class='titleblock'><i class='fas fa-broom'></i> Clean up you stuff</p>",
+					"startHour": "17:30",
+					"endHour": "18:30",
+					"locationName": "Alma 2",
+					"description": "Bring all your possessions to the R&R. Your valuables can be stored in the lockers"
 				},
 				{
 					"id":"39",
-					"title": "Pitch Media",
-					"startHour": "18:00",
-					"endHour": "19:00",
-					"locationName": "Agra",
-					"description": "Jury members: Heino Schaght, Ivor Micallef, Sven Munaron, Maarten Verwaest, Marijke Celis",
-					"category": "Pitch"
+					"title": "<p class='titleblock'><i class='fas fa-utensils'></i> Dinner</p>",
+					"startHour": "17:30",
+					"endHour": "19:45",
+					"locationName": "Alma 2",
+					"description": "Have a talk with others and enjoy your meal!"
 				},
 				{
 					"id":"40",
-					"title": "Pitch Smart Cities",
+					"title": "<p class='titleblock'><i class='fas fa-desktop'></i> Pitch HealthTech</p>",
 					"startHour": "18:00",
-					"endHour": "19:00",
-					"locationName": "Berlin",
-					"description": "Jury members: Thomas Baerten, Frank De Saer, Stefan Costeur, Gregory Wuurman, Leen Tyrions, Tim Guily, An Van Peteghem",
-					"category": "Pitch"
+					"endHour": "19:30",
+					"locationName": "Cambridge",
+					"description": "Make sure to bring at least 1 laptop (HDMI). You can find the detailed schedule in your Slack group, be there or be square!"
 				},
 				{
 					"id":"41",
-					"title": "Pitch Retail",
+					"title": "<p class='titleblock'><i class='fas fa-desktop'></i> Pitch Media</p>",
 					"startHour": "18:00",
-					"endHour": "19:00",
-					"locationName": "Athens",
-					"description": "Jury members: Ignace De Nollin, Stein Gullentops, Ides Ticket",
-					"category": "Pitch"
+					"endHour": "19:30",
+					"locationName": "Agra",
+					"description": "Make sure to bring at least 1 laptop (HDMI). You can find the detailed schedule in your Slack group, be there or be square!"
 				},
 				{
 					"id":"42",
-					"title": "Pitch Student Life",
+					"title": "<p class='titleblock'><i class='fas fa-desktop'></i> Pitch Smart Cities</p>",
 					"startHour": "18:00",
-					"endHour": "19:00",
-					"locationName": "Amsterdam",
-					"description": "Jury members: Jesse Hoobergs, Guy Gelaude, Kenny Van Minsel",
-					"category": "Pitch"
+					"endHour": "19:30",
+					"locationName": "Berlin",
+					"description": "Make sure to bring at least 1 laptop (HDMI). You can find the detailed schedule in your Slack group, be there or be square!"
 				},
 				{
 					"id":"43",
-					"title": "Pitch Banking & Insurance",
+					"title": "<p class='titleblock'><i class='fas fa-desktop'></i> Pitch Retail</p>",
 					"startHour": "18:00",
-					"endHour": "19:00",
-					"locationName": "Galapagos",
-					"description": "Jury members: Peter Croughs, Pascal Cuppens, Birgitta Brys",
-					"category": "Pitch"
+					"endHour": "19:30",
+					"locationName": "Athens",
+					"description": "Make sure to bring at least 1 laptop (HDMI). You can find the detailed schedule in your Slack group, be there or be square!"
 				},
 				{
 					"id":"44",
-					"title": "Closing Ceremony",
-					"startHour": "19:00",
-					"endHour": "20:00",
-					"locationName": "Max Weber",
-					"description": "The 6 challenge winners will compete to win the audience prize or be priced as overall winner by the jury!",
-					"category": "Group Activity"
+					"title": "<p class='titleblock'><i class='fas fa-desktop'></i> Pitch Student Life</p>",
+					"startHour": "18:00",
+					"endHour": "19:30",
+					"locationName": "Amsterdam",
+					"description": "Make sure to bring at least 1 laptop (HDMI). You can find the detailed schedule in your Slack group, be there or be square!"
 				},
 				{
 					"id":"45",
-					"title": "Dinner",
-					"startHour": "20:00",
-					"endHour": "22:00",
-					"locationName": "Alma 2",
-					"description": "Have a talk with others and enjoy your meal!",
-					"category": "Food & Drinks"
+					"title": "<p class='titleblock'><i class='fas fa-desktop'></i> Pitch Banking & Insurance</p>",
+					"startHour": "18:00",
+					"endHour": "19:30",
+					"locationName": "Galapagos",
+					"description": "Make sure to bring at least 1 laptop (HDMI). You can find the detailed schedule in your Slack group, be there or be square!"
 				},
 				{
 					"id":"46",
-					"title": "End of What The Hack 2019",
-					"startHour": "22:00",
-					"description": "Thanks for joining, see you next year!",
-					"category": "Group Activity"
+					"title": "<p class='titleblock'><i class='fas fa-eye'></i> Closing Ceremony</p>",
+					"startHour": "19:45",
+					"endHour": "21:15",
+					"locationName": "Max Weber",
+					"description": "The 6 challenge winners will compete to win the audience prize or be priced as overall winner by the jury!"
+				},
+				{
+					"id":"47",
+					"title": "<p class='titleblock'><i class='fas fa-hand-paper'></i> End of What The Hack 2019</p>",
+					"startHour": "21:30",
+					"description": "Thanks for joining, see you next year!"
 				}
 			]
 		}

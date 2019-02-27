@@ -35,6 +35,27 @@
 					padding:10px;
 					text-align: left;
 				}
+				.scheduletitle {
+					margin: 0;
+
+					.titleblock {
+						position: relative;
+						padding-left: 30px;
+						margin: 0;
+						display: inline-block;
+						vertical-align: middle;
+
+						i {
+							position: absolute;
+							left: 0;
+							top: 3px;
+							display: block;
+							width: 30px;
+							height: 100%;
+							text-align: center;
+						}
+					}
+				}
 				th {
 					font-family: 'Museo Sans Rounded 500', sans-serif;
 				}

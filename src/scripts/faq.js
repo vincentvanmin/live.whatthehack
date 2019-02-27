@@ -10,7 +10,8 @@ var question8 = document.getElementById("question8");
 var question9 = document.getElementById("question9");
 var question10 = document.getElementById("question10");
 var question11 = document.getElementById("question11");
-// var question12 = document.getElementById("question12");
+var question12 = document.getElementById("question12");
+var question13 = document.getElementById("question13");
 
 function openQuestion0() {
     question0.classList.add("readmore");
@@ -25,7 +26,8 @@ function openQuestion0() {
     question9.classList.remove("readmore");
     question10.classList.remove("readmore");
     question11.classList.remove("readmore");
-    // question12.classList.remove("readmore");
+    question12.classList.remove("readmore");
+    question13.classList.remove("readmore");
 }
 
 function openQuestion1() {
@@ -41,7 +43,8 @@ function openQuestion1() {
     question9.classList.remove("readmore");
     question10.classList.remove("readmore");
     question11.classList.remove("readmore");
-    // question12.classList.remove("readmore");
+    question12.classList.remove("readmore");
+    question13.classList.remove("readmore");
 }
 
 function openQuestion2() {
@@ -57,7 +60,8 @@ function openQuestion2() {
   question9.classList.remove("readmore");
   question10.classList.remove("readmore");
   question11.classList.remove("readmore");
-  // question12.classList.remove("readmore");
+  question12.classList.remove("readmore");
+  question13.classList.remove("readmore");
 }
 
 function openQuestion3() {
@@ -73,7 +77,8 @@ function openQuestion3() {
   question9.classList.remove("readmore");
   question10.classList.remove("readmore");
   question11.classList.remove("readmore");
-  // question12.classList.remove("readmore");
+  question12.classList.remove("readmore");
+  question13.classList.remove("readmore");
 }
 
 function openQuestion4() {
@@ -89,7 +94,8 @@ function openQuestion4() {
   question9.classList.remove("readmore");
   question10.classList.remove("readmore");
   question11.classList.remove("readmore");
-  // question12.classList.remove("readmore");
+  question12.classList.remove("readmore");
+  question13.classList.remove("readmore");
 }
 
 function openQuestion5() {
@@ -105,7 +111,8 @@ function openQuestion5() {
   question9.classList.remove("readmore");
   question10.classList.remove("readmore");
   question11.classList.remove("readmore");
-  // question12.classList.remove("readmore");
+  question12.classList.remove("readmore");
+  question13.classList.remove("readmore");
 }
 
 function openQuestion6() {
@@ -121,7 +128,8 @@ function openQuestion6() {
   question9.classList.remove("readmore");
   question10.classList.remove("readmore");
   question11.classList.remove("readmore");
-  // question12.classList.remove("readmore");
+  question12.classList.remove("readmore");
+  question13.classList.remove("readmore");
 }
 
 function openQuestion7() {
@@ -137,7 +145,8 @@ function openQuestion7() {
   question9.classList.remove("readmore");
   question10.classList.remove("readmore");
   question11.classList.remove("readmore");
-  // question12.classList.remove("readmore");
+  question12.classList.remove("readmore");
+  question13.classList.remove("readmore");
 }
 
 function openQuestion8() {
@@ -153,7 +162,8 @@ function openQuestion8() {
   question9.classList.remove("readmore");
   question10.classList.remove("readmore");
   question11.classList.remove("readmore");
-  // question12.classList.remove("readmore");
+  question12.classList.remove("readmore");
+  question13.classList.remove("readmore");
 }
 
 function openQuestion9() {
@@ -169,7 +179,8 @@ function openQuestion9() {
   question9.classList.add("readmore");
   question10.classList.remove("readmore");
   question11.classList.remove("readmore");
-  // question12.classList.remove("readmore");
+  question12.classList.remove("readmore");
+  question13.classList.remove("readmore");
 }
 
 function openQuestion10() {
@@ -185,7 +196,8 @@ function openQuestion10() {
   question9.classList.remove("readmore");
   question10.classList.add("readmore");
   question11.classList.remove("readmore");
-  // question12.classList.remove("readmore");
+  question12.classList.remove("readmore");
+  question13.classList.remove("readmore");
 }
 
 function openQuestion11() {
@@ -201,12 +213,40 @@ function openQuestion11() {
   question9.classList.remove("readmore");
   question10.classList.remove("readmore");
   question11.classList.add("readmore");
-  // question12.classList.remove("readmore");
+  question12.classList.remove("readmore");
+  question13.classList.remove("readmore");
 }
 
-/*
-function resizeBackground() {
-  var bg = document.body;
-  bg.height = window.innerHeight + 60;
+function openQuestion12() {
+  question0.classList.remove("readmore");
+  question1.classList.remove("readmore");
+  question2.classList.remove("readmore");
+  question3.classList.remove("readmore");
+  question4.classList.remove("readmore");
+  question5.classList.remove("readmore");
+  question6.classList.remove("readmore");
+  question7.classList.remove("readmore");
+  question8.classList.remove("readmore");
+  question9.classList.remove("readmore");
+  question10.classList.remove("readmore");
+  question11.classList.remove("readmore");
+  question12.classList.add("readmore");
+  question13.classList.remove("readmore");
 }
-*/
+
+function openQuestion13() {
+  question0.classList.remove("readmore");
+  question1.classList.remove("readmore");
+  question2.classList.remove("readmore");
+  question3.classList.remove("readmore");
+  question4.classList.remove("readmore");
+  question5.classList.remove("readmore");
+  question6.classList.remove("readmore");
+  question7.classList.remove("readmore");
+  question8.classList.remove("readmore");
+  question9.classList.remove("readmore");
+  question10.classList.remove("readmore");
+  question11.classList.remove("readmore");
+  question12.classList.remove("readmore");
+  question13.classList.add("readmore");
+}
