@@ -36,6 +36,22 @@
 
 		gtag('config', 'UA-134931208-1');
 	</script>
+	<script>
+			function startTime() {
+				var today = new Date();
+				var h = today.getHours();
+				var m = today.getMinutes();
+				var s = today.getSeconds();
+				m = checkTime(m);
+				s = checkTime(s);
+				document.getElementById('time').innerHTML = h + ":" + m;
+				var t = setTimeout(startTime, 500);
+			}
+			function checkTime(i) {
+				if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+				return i;
+			}
+			</script>
 
 	<!--Prompt-->
 	<template id="promptTemplate">
@@ -125,7 +141,7 @@
 		<li><b>{item_name}</b> ({available} / {quantity})</li>
 	</template>
 </head>
-<body>
+<body onload="startTime()">
 	<div class="cat">
 		<img src="assets/img/nyan-cat.gif" alt="Nyan Cat">
 	</div>
@@ -214,6 +230,7 @@
 	</header>
 	<main>
 		<article id="fullscreen">
+			<div id="time"></div>
 			<div class="fullscreentimer">
 				<div id="countdown-full" class="hide-when-small">
 					<div class="countdown">
@@ -975,11 +992,11 @@
 							<div class="flip-card">
 								<div class="flip-card-inner">
 									<div class="flip-card-front">
-										<img src="assets/img/jury/Ronald-Kenens.jpg" alt="Roland Kenens">
+										<img src="assets/img/jury/Ronald-Kenens.jpg" alt="Ronald Kenens">
 									</div>
 									<div class="flip-card-back">
 										<div class="content">
-											<h1>Roland Kenens</h1> 
+											<h1>Ronald Kenens</h1> 
 											<p>Director Mail Sorting</p> 
 											<img src="assets/img/partners/Bpost.svg" alt="Bpost">
 										</div>
@@ -1097,7 +1114,7 @@
 						<div class="mapdescription">
 							<div class="content">
 								<h1>Alma 2 - Hacking Area</h1>
-								<p>This is a plan of the whole hacking area. Other than only space for hacking, we also provided Food & Drinks, a R&R (rest and recuperation) area, an HR corner, a supersonic Gaming room, Lockers to keep your stuff safe, a DJ and a Rodeo attraction! Have fun experiencing this awesome venue.</p>
+								<p>This is a plan of the whole hacking area. Other than only space for hacking, we also provided Food & Drinks, a R&R (rest and recuperation) area, an HR corner, a supersonic Gaming room, Lockers to keep your stuff safe, a DJ and a Rodeo attraction! Have fun experiencing this awesome venue. There are some problems with the toilets, therefor you can use the toilets in Max Weber (day & night) and Agora (day).</p>
 							</div>
 						</div>
 					</div>
@@ -1105,7 +1122,7 @@
 						<div class="mapdescription">
 							<div class="content">
 								<h1>Alma 2 - Hacking Area</h1>
-								<p>This is a plan of the whole hacking area. Other than only space for hacking, we also provided Food & Drinks, a R&R (rest and recuperation) area, an HR corner, a supersonic Gaming room, Lockers to keep your stuff safe, a DJ and a Rodeo attraction! Have fun experiencing this awesome venue.</p>
+								<p>This is a plan of the whole hacking area. Other than only space for hacking, we also provided Food & Drinks, a R&R (rest and recuperation) area, an HR corner, a supersonic Gaming room, Lockers to keep your stuff safe, a DJ and a Rodeo attraction! Have fun experiencing this awesome venue. There are some problems with the toilets, therefor you can use the toilets in Max Weber (day & night) and Agora (day).</p>
 							</div>
 						</div>
 						<div class="mapimage">
@@ -2665,7 +2682,7 @@
 							<h2>Deadline for project submissions?</h2>
 						</button>
 						<div class="question-body">
-							<p>The hacking ends Saturday 2nd at 5:30 PM. You will have to sumbit using <a href="https://wetransfer.com/" target="_blank">WeTransfer</a>. Make sure to PASTE the link in a NEW EMAIL and send it to <a href="mailto:info@whatthehack.be">info@whatthehack.be</a></p>
+							<p>The hacking ends Saturday 2nd at 5:30 PM. You will have to sumbit using <a href="https://whatthehack2019.devpost.com/" target="_blank">this DevPost link</a>.</p>
 						</div>
 					</div>
 					<div id="question13" class="question">

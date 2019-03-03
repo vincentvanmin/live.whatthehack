@@ -2,6 +2,16 @@
 	position:relative;
 	height: 100vh;
 
+	#time {
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		color: #fff;
+		font-size: 25px;
+		z-index: 20;
+		font-family: "Museo Sans Rounded 500"
+	}
+
 	.fullscreentimer {
 		position:relative;
 		display:flex;
@@ -58,7 +68,7 @@
 			@media (max-width: 1024px) { max-height: 100vh }
 			ul {
 				max-height: 100%;
-				width: 60%;
+				width: 57%;
 				height: 100%;
 				margin-left: 40%;
 				@media (max-width: 720px) { margin-left: 5%; margin-right: 5%; width: 90%; }

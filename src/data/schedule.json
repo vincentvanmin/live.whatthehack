@@ -102,7 +102,7 @@
 					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Introduction to REST API's & Automatic API testing</p>",
 					"startHour": "19:30",
 					"endHour": "20:15",
-					"locationName": "Machu Picchu",
+					"locationName": "Paris",
 					"description": "By Domien Frederix (Technical)"
 				},
 				{
@@ -110,7 +110,7 @@
 					"title": "<p class='titleblock'><i class='fas fa-graduation-cap'></i> Angular vs. React</p>",
 					"startHour": "19:30",
 					"endHour": "20:15",
-					"locationName": "Paris",
+					"locationName": "Machu Picchu",
 					"description": "By Anton Kirschhock & Tim Neyens (Technical)"
 				},
 				{
@@ -147,7 +147,7 @@
 				},
 				{
 					"id":"18",
-					"title": "<p class='titleblock'><i class='fas fa-desktop'></i> Elevator Pitch</p>",
+					"title": "<p class='titleblock'><i class='fas fa-desktop'></i> Elevator Pitch at your table</p>",
 					"startHour": "21:00",
 					"endHour": "22:00",
 					"locationName": "Alma 2",
@@ -157,6 +157,7 @@
 					"id":"19",
 					"title": "<p class='titleblock'><i class='fas fa-utensils'></i> Snack buffet</p>",
 					"startHour": "22:00",
+					"endHour": "23:30",
 					"locationName": "Alma 2",
 					"description": "Feeling hungry? Come get some extra energy!"
 				}
@@ -300,11 +301,11 @@
 					"title": "<p class='titleblock'><i class='fas fa-hourglass-end'></i> Hacking ends</p>",
 					"startHour": "17:30",
 					"locationName": "Alma 2",
-					"description": "STOP. STOP. STOP! Hands up and go rock for the jury! <br> Please sumbit using <a href='https://wetransfer.com/' target='_blank' style='color: #000; text-decoration: underline;'>WeTransfer</a>. Make sure to PASTE the link in a NEW EMAIL and send it to <a href='mailto:info@whatthehack.be' style='color: #000; text-decoration: underline;'>info@whatthehack.be</a>"
+					"description": "STOP. STOP. STOP! Hands up and go rock for the jury! <br> Please sumbit using <a href='https://whatthehack2019.devpost.com/' target='_blank' style='color: #000; text-decoration: underline;'>this DevPost link</a>."
 				},
 				{
 					"id":"38",
-					"title": "<p class='titleblock'><i class='fas fa-broom'></i> Clean up you stuff</p>",
+					"title": "<p class='titleblock'><i class='fas fa-broom'></i> Clean up your stuff</p>",
 					"startHour": "17:30",
 					"endHour": "18:30",
 					"locationName": "Alma 2",
@@ -378,6 +379,7 @@
 					"id":"47",
 					"title": "<p class='titleblock'><i class='fas fa-hand-paper'></i> End of What The Hack 2019</p>",
 					"startHour": "21:30",
+					"endHour": "23:00",
 					"description": "Thanks for joining, see you next year!"
 				}
 			]

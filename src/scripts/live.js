@@ -302,39 +302,39 @@
 		}
 	}
 
-	// function prompt(title, message, acceptMsg, acceptCb, denyMsg, denyCb){
-	// 	var p = Util.inflateWith("promptTemplate", {
-	// 		title:title,
-	// 		message:message,
-	// 		accept:acceptMsg || "Ok",
-	// 		cancel:denyMsg || "Cancel",
+	function prompt(title, message, acceptMsg, acceptCb, denyMsg, denyCb){
+		var p = Util.inflateWith("promptTemplate", {
+			title:title,
+			message:message,
+			accept:acceptMsg || "Ok",
+			cancel:denyMsg || "Cancel",
 
-	// 	});
-	// 	body.appendChild(p);
+		});
+		body.appendChild(p);
 
-	// 	var c = document.querySelector(".prompt");
-	// 	document.getElementById("promptAccept").addEventListener("click",function(){
-	// 		if(acceptCb) acceptCb();
-	// 		Util.unveil(main);
-	// 		Util.fadeOut(c, function(){
-	// 			body.removeChild(c);
-	// 		});
-	// 	});
-	// 	document.getElementById("promptCancel").addEventListener("click",function(){
-	// 		if(denyCb) denyCb();
-	// 		Util.unveil(main);
-	// 		Util.fadeOut(c, function(){
-	// 			body.removeChild(c);
-	// 		});
-	// 	});
+		var c = document.querySelector(".prompt");
+		document.getElementById("promptAccept").addEventListener("click",function(){
+			if(acceptCb) acceptCb();
+			Util.unveil(main);
+			Util.fadeOut(c, function(){
+				body.removeChild(c);
+			});
+		});
+		document.getElementById("promptCancel").addEventListener("click",function(){
+			if(denyCb) denyCb();
+			Util.unveil(main);
+			Util.fadeOut(c, function(){
+				body.removeChild(c);
+			});
+		});
 
-	// 	Util.veil(main);
-	// 	Util.show(c);
-	// 	//Dom repaint
-	// 	setTimeout(function(){
-	// 		Util.fadeIn(c);
-	// 	}, 1);
-	// }
+		Util.veil(main);
+		Util.show(c);
+		//Dom repaint
+		setTimeout(function(){
+			Util.fadeIn(c);
+		}, 1);
+	}
 
 	function subscribeEvent(id){
 		var refs = Util.storageGet("eventSubscriptions");
@@ -386,29 +386,29 @@
 	* Prompts the user if they want to subscribe to all events.
 	* Result is stored in localStorage
 	*/
-	// function askSubscribeAll(cb){
-	// 	prompt("Don't miss anything!", "Do you want to get notified when a WhatTheHack workshop/food event starts?"+
-	// 		" You will receive a notification before something from the schedule happens. You can choose to subscribe/unsubscribe by clicking individually on an event on the live page (a flag will appear).",
-	// 		"Do it!", function(){
-	// 			if(cb) cb();
-	// 		},
-	// 		"No, thanks. I'll choose manually", function(){
-	// 			//Do nothing
-	// 		});
+	function askSubscribeAll(cb){
+		prompt("Don't miss anything!", "Do you want to get notified when a WhatTheHack workshop/food event starts?"+
+			" You will receive a notification before something from the schedule happens. You can choose to subscribe/unsubscribe by clicking individually on an event on the live page (a flag will appear).",
+			"Do it!", function(){
+				if(cb) cb();
+			},
+			"No, thanks. I'll choose manually", function(){
+				//Do nothing
+			});
 
-	// 	Util.storagePut("askedSubscribeAll", true);
-	// }
+		Util.storagePut("askedSubscribeAll", true);
+	}
 
 	/*
 	* Check if we asked the user
 	*/
-	// function checkSubscriptionQuestion(){
-	// 	if(!Util.storageGet("askedSubscribeAll")){
-	// 		askSubscribeAll(function(){
-	// 			subscribeAllEvents();
-	// 		});
-	// 	}
-	// }
+	function checkSubscriptionQuestion(){
+		if(!Util.storageGet("askedSubscribeAll")){
+			askSubscribeAll(function(){
+				subscribeAllEvents();
+			});
+		}
+	}
 
 	/*
 	* Generates events table to keep track of subscriptions (notifications)
