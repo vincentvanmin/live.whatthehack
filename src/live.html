@@ -1,0 +1,2745 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>WhatTheHack | Live-Schedule</title>
+	<meta name="description" content="Join us for Belgium's most epic student hackathon. 250 hackers. 24h. Mar 1st-2nd.">
+	<link rel="icon" href="favicon.png" type="image/png" data-finger-print>
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/app.min.css" data-finger-print>
+	<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script src="assets/js/app.min.js" data-finger-print></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta property="og:title" content="WhatTheHack" />
+	<meta property="og:description" content="WhatTheHack is Belgium’s most epic student hackathon. Gather with 250 students from engineering, business and beyond to bring your ideas to life in 24 hours." />
+	<meta property="og:url" content="https://live.whatthehack.be/" />
+	<meta property="og:site_name" content="WhatTheHack" />
+	<meta property="og:image" content="https://whatthehack.be/wp-content/uploads/2018/11/Screen-Shot-2018-11-22-at-08.00.56.png" />
+	<meta property="og:image:secure_url" content="https://whatthehack.be/wp-content/uploads/2018/11/Screen-Shot-2018-11-22-at-08.00.56.png" />
+	<meta name="theme-color" content="#332275">
+	<link rel="stylesheet" href="assets/css/app.min.css" data-finger-print>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="author" content="Tobania">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-134931208-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-134931208-1');
+	</script>
+	<script>
+			function startTime() {
+				var today = new Date();
+				var h = today.getHours();
+				var m = today.getMinutes();
+				var s = today.getSeconds();
+				m = checkTime(m);
+				s = checkTime(s);
+				document.getElementById('time').innerHTML = h + ":" + m;
+				var t = setTimeout(startTime, 500);
+			}
+			function checkTime(i) {
+				if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+				return i;
+			}
+			</script>
+
+	<!--Prompt-->
+	<template id="promptTemplate">
+		<div class="prompt">
+			<div class="box">
+				<h1>{title}</h1>
+				<p>{message}</p>
+				<div class="buttons">
+					<div id="promptCancel">{cancel}</div>
+					<div id="promptAccept">{accept}</div>
+				</div>
+			</div>
+		</div>
+	</template>
+	<!--Countdown-->
+	<template id="countdownTimerTemplate">
+		<div class="countdown-time">
+			<span class="big">{hours}</span><span class="little">{seconds}</span><div class="decimals {running}"></div>
+		</div>
+	</template>
+	<!--Schedule row-->
+	<template id="scheduleRow">
+		<tr data-start-timestamp="{startTmsp}" data-end-timestamp="{endTmsp}">
+			<td>
+				<a href="#/maps">{locationName}</a>
+			</td>
+			<td>
+				{startHour}
+			</td>
+			<td>
+				{endHour}
+			</td>
+			<td class="scheduletitle">
+				{title}
+			</td>
+			<td class="hide-when-small">
+				{description}
+			</td>
+		</tr>
+	</template>
+	<!--Schedule day table-->
+	<template id="scheduleDay">
+		<div class="table-container">
+			<h1>{name}</h1>
+			<table>
+				<thead>
+					<tr>
+						<th>Location</th>
+						<th>Start</th>
+						<th>End</th>
+						<th>Title</th>
+						<th class="hide-when-small">Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!--to be filled-->
+				</tbody>
+			</table>
+		</div>
+	</template>
+	<!--Fancy schedule item-->
+	<template id="fancyItem">
+		<li data-start-timestamp="{startTmsp}" data-end-timestamp="{endTmsp}" data-end-action="removeEmptyStep"></li>
+	</template>
+	<!--Fancy schedule title-->
+	<!--li is happening once day starts-->
+	<template id="fancyTitle">
+		<li data-end-timestamp="{startTmsp}">
+			<h1 data-start-timestamp="{startTmsp}" data-end-timestamp="{endTmsp}" data-end-action="removeEndedEvent">{name}</h1>
+		</li>
+	</template>
+	<!--Fancy schedule event-->
+	<template id="fancyEvent">
+		<div class="event" id="{id}" data-event-id="{id}" data-start-timestamp="{startTmsp}" data-end-timestamp="{endTmsp}" data-end-action="removeEndedEvent" data-update-action="updateFancyEvent">
+			<a href="#/maps"></a>
+			<div class='event-hour'>
+				<div>{startHour}</div>
+				<div class="end-hour">{endHour}</div>
+			</div>
+			<div class="title">
+				{title}
+			</div>
+		</div>
+	</template>
+	<!--Hardware Lab Element description-->
+	<template id="hardwareElem">
+		<li><b>{item_name}</b> ({available} / {quantity})</li>
+	</template>
+</head>
+<body onload="startTime()">
+	<div class="cat">
+		<img src="assets/img/nyan-cat.gif" alt="Nyan Cat">
+	</div>
+	<!--header for <720px-->
+	<header id="header-small" class="show-when-small">
+		<div class="bar">
+			<div id="open-aside-btn">
+				<img src="assets/img/menu.svg" alt="Menu">
+			</div>
+			<div class="title-container">
+				<img src="assets/img/long-logo.png" alt="WhatTheHack">
+			</div>
+		</div>
+	</header>
+	<!--Aside menu for small screens-->
+	<aside id="aside-small-menu" class="show-when-small closed hidden">
+		<div id="close-aside-btn">
+			<div>x</div>
+		</div>
+		<nav>
+			<ul>
+				<li data-bind-view="home">
+					<a href="#/home" onclick="scrollToTop()">Home</a>
+				</li>
+				<li data-bind-view="live">
+					<a href="#/live" onclick="scrollToTop()">Live</a>
+				</li>
+				<li data-bind-view="schedule">
+					<a href="#/schedule" onclick="scrollToTop()">Schedule</a>
+				</li>
+				<li data-bind-view="maps">
+					<a href="#/maps" onclick="scrollToTop()">Maps</a>
+				</li>
+				<li data-bind-view="coaches">
+					<a href="#/coaches" onclick="scrollToTop()">Coaches</a>
+				</li>
+				<li data-bind-view="jury">
+						<a href="#/jury" onclick="scrollToTop()">Jury</a>
+					</li>
+				<li data-bind-view="challenges">
+					<a href="#/challenges" onclick="scrollToTop()">Challenges</a>
+				</li>
+				<li data-bind-view="faq">
+					<a href="#/faq" onclick="scrollToTop()">FAQ & Rules</a>
+				</li>
+			</ul>
+		</nav>
+	</aside>
+	<!--header for >720px-->
+	<header id="header-nav-bar" class="hide-when-small">
+		<nav>
+			<ul>
+				<li data-bind-view="home">
+					<a href="#/home" onclick="scrollToTop()">Home</a>
+				</li>
+				<li data-bind-view="live">
+					<a href="#/live" onclick="scrollToTop()">Live</a>
+				</li>
+				<li data-bind-view="schedule">
+					<a href="#/schedule" onclick="scrollToTop()">Schedule</a>
+				</li>
+				<li data-bind-view="maps">
+					<a href="#/maps" onclick="scrollToTop()">Maps</a>
+				</li>
+				<li id="countdown-li">
+					<div>
+						<div id="countdown-time" class="countdown">
+						</div>
+						<img src="assets/img/ball.png" onclick="scrollToTop()"/>
+					</div>
+				</li>
+				<li data-bind-view="coaches">
+					<a href="#/coaches" onclick="scrollToTop()">Coaches</a>
+				</li>
+				<li data-bind-view="jury">
+						<a href="#/jury" onclick="scrollToTop()">Jury</a>
+					</li>
+				<li data-bind-view="challenges">
+					<a href="#/challenges" onclick="scrollToTop()">Challenges</a>
+				</li>
+				<li data-bind-view="faq">
+					<a href="#/faq" onclick="scrollToTop()">FAQ & Rules</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<article id="fullscreen">
+			<div id="time"></div>
+			<div class="fullscreentimer">
+				<div id="countdown-full" class="hide-when-small">
+					<div class="countdown">
+						<div>
+							<span>24:00</span>:00.00
+						</div>
+					</div>
+					<div class="bg"></div>
+				</div>
+				<div class="events-fancy">
+					<!--To be filled by js-->
+				</div>
+			</div>
+			<div class="slider">
+				<div class="slide-track">
+					<div class="slide">
+						<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Advelox.svg" class="big" alt="Advelox">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Atrias.svg" class="small" alt="Atrias">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Au-Flan-Breton.svg" alt="Au Flan Breton">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Bilzen.svg" alt="Bilzen">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/BMW.svg" alt="BMW">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Bpost.svg" class="big" alt="Bpost">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Business-Markers.svg" class="small" alt="Business-Markers">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Carglass.svg" class="big" alt="Carglass">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/CM.svg" class="small" alt="CM">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/CoolBlue.svg" alt="CoolBlue">
+					</div>	
+					<div class="slide">
+						<img src="assets/img/partners/Corporate-Coach.svg" alt="Corporate-Coach">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/De-Lijn.svg" class="small" alt="De-Lijn">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/De-Mensen.svg" class="small" alt="De-Mensen">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/De-Persgroep.svg" class="big" alt="De-Persgroep">
+					</div>
+					<div class="slide">
+							<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+						</div>
+					<div class="slide">
+						<img src="assets/img/partners/FruitSnacks.svg" class="big" alt="FruitSnacks">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Google.svg" class="big" alt="Google">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/IMEC.svg" class="big" alt="IMEC">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/KBC.svg" alt="KBC">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Leuven.svg" class="big" alt="Leuven">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Limecraft.svg" class="big" alt="Limecraft">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Loko.svg" class="big" alt="Loko">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/MasterVending.svg" alt="Mastervending">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Mediahuis.svg" class="big" alt="Mediahuis">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Mercedes.svg" alt="Mercedes">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/NMBS.svg" class="big" alt="NMBS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Quivr.svg" alt="Quivr">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/SSB.svg" alt="SSB">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Telenet.svg" alt="Telenet">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Total.svg" class="big" alt="Total">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Volvo.svg" alt="Volvo">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/VRT.svg" alt="VRT">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Worldline.svg" class="big" alt="Worldline">
+					</div>
+
+					<div class="slide">
+						<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Advelox.svg" class="big" alt="Advelox">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Atrias.svg" class="small" alt="Atrias">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Au-Flan-Breton.svg" alt="Au Flan Breton">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Bilzen.svg" alt="Bilzen">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/BMW.svg" alt="BMW">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Bpost.svg" class="big" alt="Bpost">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Business-Markers.svg" class="small" alt="Business-Markers">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Carglass.svg" class="big" alt="Carglass">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/CM.svg" class="small" alt="CM">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/CoolBlue.svg" alt="CoolBlue">
+					</div>	
+					<div class="slide">
+						<img src="assets/img/partners/Corporate-Coach.svg" alt="Corporate-Coach">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/De-Lijn.svg" class="small" alt="De-Lijn">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/De-Mensen.svg" class="small" alt="De-Mensen">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/De-Persgroep.svg" class="big" alt="De-Persgroep">
+					</div>
+					<div class="slide">
+							<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+						</div>
+					<div class="slide">
+						<img src="assets/img/partners/FruitSnacks.svg" class="big" alt="FruitSnacks">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Google.svg" class="big" alt="Google">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/IMEC.svg" class="big" alt="IMEC">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/KBC.svg" alt="KBC">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Leuven.svg" class="big" alt="Leuven">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Limecraft.svg" class="big" alt="Limecraft">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Loko.svg" class="big" alt="Loko">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/MasterVending.svg" alt="Mastervending">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Mediahuis.svg" class="big" alt="Mediahuis">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Mercedes.svg" alt="Mercedes">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/NMBS.svg" class="big" alt="NMBS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Quivr.svg" alt="Quivr">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/SSB.svg" alt="SSB">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Telenet.svg" alt="Telenet">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/GMS.svg" class="big" alt="GMS">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Total.svg" class="big" alt="Total">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Volvo.svg" alt="Volvo">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/VRT.svg" alt="VRT">
+					</div>
+					<div class="slide">
+						<img src="assets/img/partners/Worldline.svg" class="big" alt="Worldline">
+					</div>
+				</div>
+			</div>
+		</article>
+		<article id="live" class="under-header">
+			<div class="container-live">
+				<div class="countdown centered show-when-small">
+					<div>
+						<span>24:00</span>:00.00
+					</div>
+				</div>
+				<div class="events-fancy">
+					<!--To be filled by js-->
+				</div>
+			</div>
+		</article>
+		<article id="home" class="under-header padding-bottom">
+			<div class="container-small">
+				<div class="visualhome">	
+					<!-- <div id="particles-js"></div>-->
+					<div class="text">
+						<h1>
+							<div id="typed-strings">
+								<p>Build your ideas</p>
+								<p>Learn new skills</p>
+								<p>Get inspired</p>
+								<p>Have fun</p>
+							</div>
+							<span id="typed"></span>
+						</h1>
+						<h1>at WhatTheHack</h1>
+						<p class="info">MARCH 1-2 • ALMA 2 – LEUVEN</p>
+						<p class="description">WhatTheHack is Belgium’s most epic student hackathon. Gather with 250 students from engineering, business and beyond to bring your ideas to life in 24 hours.</p>
+						<div id="seeschedule">
+							<a href="#/schedule" onmouseleave="this.style.color='#ffffff';this.style.background='linear-gradient(to right , #26d7d4 , #0088fe)';" onmouseenter="this.style.color='#ffffff';this.style.background='linear-gradient(to right , #00fff2 , #0099ff)';">Check Schedule</a>
+						</div>
+					</div>
+					<div class="ball">
+						<img src="assets/img/ball.png" alt="WhatTheHack">
+					</div>
+					<div class="powered">
+						<p>Powered by Academics For Technology & Tobania</p>
+					</div>
+				</div>
+				<div class="bag">
+					<h1>What to bring with you?</h1>
+					<div class="listbox">
+						<form class="addfield" onsubmit="return false">
+							<input type="text" id="myInput" placeholder="Title...">
+							<input type="submit" value="Add" onclick="newElement()" class="addBtn">
+						</form>
+						<ul id="checklist">
+							<li class="item checked">Positive mental attitude :)</li>
+							<li class="item">Laptop & Charger</li>
+							<li class="item">Headphone or Earphones</li>
+							<li class="item">ID Card or Passport</li>
+							<li class="item">Sleeping bag & Airbed</li>
+							<li class="item">Comfortable clothing</li>
+							<li class="item">Yoga mat</li>
+							<li class="item">All needed software installed</li>
+						</ul>
+					</div>
+					<div class="hacker">
+						<img src="assets/img/hacker.png" alt="hacker">
+						<p id="timer"></p>
+					</div>
+					<!-- <div class="livestream">
+						<iframe src="https://www.youtube.com/embed/3nQNiWdeH2Q" frameborder='0' allowfullscreen></iframe>
+					</div> -->
+				</div>
+				<div class="findus">
+					<h1>Get in touch</h1>
+					<div class="slack">
+						<ul class="channels">
+							<h3>Slack Group Channels</h3>
+							<li class="channel"><a target="_blank" href="https://whatthehacksl-utu6570.slack.com/messages/CFRQT37V4/">General</a></li>
+							<li class="channel"><a target="_blank" href="https://whatthehacksl-utu6570.slack.com/messages/CFPQ3R1LZ/">Coaching</a></li>
+							<li class="channel"><a target="_blank" href="https://whatthehacksl-utu6570.slack.com/messages/CFPL6HJUQ/">Workshops</a></li>
+							<li class="channel"><a target="_blank" href="https://whatthehacksl-utu6570.slack.com/messages/CFQDXA6F6/">Challenges</a></li>
+							<li class="channel"><a target="_blank" href="https://whatthehacksl-utu6570.slack.com/messages/CFRQT39V4/">Communication</a></li>
+							<li class="channel"><a target="_blank" href="https://whatthehacksl-utu6570.slack.com/messages/CFQCDRGG2/">Random</a></li>
+						</ul>
+						<div class="divider"></div>
+						<div class="contactform">
+							<h3>Email us</h3>
+							<form method="post" name="contactform" action="assets/php/form.php">
+								<input type="text" name="name" placeholder="Name" required>
+								<input type="text" name="email" placeholder="Email" required>
+								<textarea name="message" id="message" cols="30" rows="7" placeholder="Ask us a question" required></textarea>
+								<input type="submit" value="Send">
+								<input id="reset" type="reset" value="X">
+							</form>
+						</div>
+					</div>
+					<div class="socials">
+						<ul>
+							<li class="hashtag">#whatthehack</li>
+							<li class="socials-item facebook-icon"><a target="_blank" href="https://www.facebook.com/whatthehackBelgium"></a></li>
+							<li class="socials-item linkedin-icon"><a target="_blank" href="https://www.linkedin.com/company/whatthehack2019/"></a></li>
+							<li class="socials-item instagram-icon"><a target="_blank" href="https://www.instagram.com/whatthehack_belgium"></a></li>
+							<li class="hashtag notonmobile">#whatthehack</li>
+						</ul>
+					</div>
+					<div class="address"><a target="_blank" href="https://www.google.be/maps/place/Alma+2/@50.8737268,4.7008207,17z/data=!3m1!4b1!4m5!3m4!1s0x47c1612861461a5d:0x5a3ef02572169028!8m2!3d50.8737268!4d4.7030094">Venue address: Parkstraat 45, 3000 Leuven</a></div>
+				</div>
+				<div class="prizes">
+					<img src="assets/img/Prizes.png" alt="Prizes">
+				</div>
+				<div class="sponsors">
+					<img src="assets/img/partners/GMS.svg" class="big" alt="GMS" data-aos="zoom-in">
+				</div>
+				<div class="sponsors">
+					<img src="assets/img/partners/Advelox.svg" class="big" alt="Advelox" data-aos="zoom-in">
+					<img src="assets/img/partners/Atrias.svg" class="small" alt="Atrias" data-aos="zoom-in">
+					<img src="assets/img/partners/Au-Flan-Breton.svg" alt="Au Flan Breton" data-aos="zoom-in">
+					<img src="assets/img/partners/Bilzen.svg" alt="Bilzen" data-aos="zoom-in">
+					<img src="assets/img/partners/BMW.svg" alt="BMW" data-aos="zoom-in">
+					<img src="assets/img/partners/Bpost.svg" class="big" alt="Bpost" data-aos="zoom-in">
+					<img src="assets/img/partners/Business-Markers.svg" class="small" alt="Business-Markers" data-aos="zoom-in">
+					<img src="assets/img/partners/Carglass.svg" class="big" alt="Carglass" data-aos="zoom-in">
+					<img src="assets/img/partners/CM.svg" class="small" alt="CM" data-aos="zoom-in">
+					<img src="assets/img/partners/CoolBlue.svg" alt="CoolBlue" data-aos="zoom-in">
+					<img src="assets/img/partners/Corporate-Coach.svg" alt="Corporate-Coach" data-aos="zoom-in">
+					<img src="assets/img/partners/De-Lijn.svg" class="small" alt="De-Lijn" data-aos="zoom-in">
+					<img src="assets/img/partners/De-Mensen.svg" class="small" alt="De-Mensen" data-aos="zoom-in">
+					<img src="assets/img/partners/De-Persgroep.svg" class="big" alt="De-Persgroep" data-aos="zoom-in">
+					<img src="assets/img/partners/FruitSnacks.svg" class="big" alt="FruitSnacks" data-aos="zoom-in">
+					<img src="assets/img/partners/Google.svg" class="big" alt="Google" data-aos="zoom-in">
+					<img src="assets/img/partners/IMEC.svg" class="big" alt="IMEC" data-aos="zoom-in">
+					<img src="assets/img/partners/KBC.svg" alt="KBC" data-aos="zoom-in">
+					<img src="assets/img/partners/Leuven.svg" class="big" alt="Leuven" data-aos="zoom-in">
+					<img src="assets/img/partners/Limecraft.svg" class="big" alt="Limecraft" data-aos="zoom-in">
+					<img src="assets/img/partners/Loko.svg" class="big" alt="Loko" data-aos="zoom-in">
+					<img src="assets/img/partners/MasterVending.svg" alt="Mastervending" data-aos="zoom-in">
+					<img src="assets/img/partners/Mediahuis.svg" class="big" alt="Mediahuis" data-aos="zoom-in">
+					<img src="assets/img/partners/Mercedes.svg" alt="Mercedes" data-aos="zoom-in">
+					<img src="assets/img/partners/NMBS.svg" class="big" alt="NMBS" data-aos="zoom-in">
+					<img src="assets/img/partners/Quivr.svg" alt="Quivr" data-aos="zoom-in">
+					<img src="assets/img/partners/SSB.svg" alt="SSB" data-aos="zoom-in">
+					<img src="assets/img/partners/Telenet.svg" alt="Telenet" data-aos="zoom-in">
+					<img src="assets/img/partners/Tobania.svg" alt="Tobania" data-aos="zoom-in">
+					<img src="assets/img/partners/Total.svg" class="big" alt="Total" data-aos="zoom-in">
+					<img src="assets/img/partners/Volvo.svg" alt="Volvo" data-aos="zoom-in">
+					<img src="assets/img/partners/VRT.svg" alt="VRT" data-aos="zoom-in">
+					<img src="assets/img/partners/Worldline.svg" class="big" alt="Worldline" data-aos="zoom-in">
+				</div>
+			<div>
+		</article>
+		<article id="schedule" class="under-header padding-bottom">
+			<div class="container"></div>
+		</article>
+		<article id="jury" class="under-header padding-bottom">				  
+			<div class="jurytitle">
+				<div class="typewriter">
+					<h1>The WhatTheHack Jury</h1>
+				</div>
+				<div class="scrollarrows">
+					<div class="chevron"></div>
+					<div class="chevron"></div>
+					<div class="chevron"></div>
+				</div>
+			</div>
+			<div class="container-small">
+				<div class="jurybox">
+					<h2>Student Life</h2>
+					<ul class="studentlife">
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Jesse-Hoobergs.jpeg" alt="Jesse Hoobergs">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Jesse Hoobergs</h1> 
+											<p>President</p> 
+											<img src="assets/img/partners/Quivr.svg" alt="Quivr">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Guy-Gelaude.jpeg" alt="Guy Gelaude">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Guy Gelaude</h1> 
+											<p>Partner Lead - Google Marketing Platform</p> 
+											<img src="assets/img/partners/Google.svg" alt="Google">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Kenny-Van-Minsel.jpeg" alt="Kenny Van Minsel">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Kenny Van Minsel</h1> 
+											<p>President</p> 
+											<img src="assets/img/partners/Loko.svg" alt="Student Organisation LOKO">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<h2>Smart Cities</h2>
+					<ul class="smartcities">
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Thomas-Baerten.jpeg" alt="Thomas Baerten">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Thomas Baerten</h1> 
+											<p>Expert in digital communication</p> 
+											<img src="assets/img/partners/Bilzen.svg" alt="City Bilzen">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Frank-Desear.jpg" alt="Frank De Saer">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Frank De Saer</h1> 
+											<p>CEO</p> 
+											<img src="assets/img/partners/Atrias.svg" alt="Atrias">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Stefan-Costeur.jpg" alt="Stefan Costeur">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Stefan Costeur</h1> 
+											<p>Digital Sales and Marketing Manager</p> 
+											<img src="assets/img/partners/NMBS.svg" alt="NMBS">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Gregory-Wuurman.jpg" alt="Gregory Wuurman">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Gregory Wuurman</h1> 
+											<p>Digital Customer Experience Manager</p> 
+											<img src="assets/img/partners/NMBS.svg" alt="NMBS">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Leen-Tyrions.jpg" alt="Leen Tyrions">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Leen Tyrions</h1> 
+											<p>Advisor, tourism and citymarketing</p> 
+											<img src="assets/img/partners/Leuven.svg" alt="City Leuven">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Tim-Guily.jpg" alt="Tim Guily">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Tim Guily</h1> 
+											<p>Policy Advisor</p> 
+											<img src="assets/img/partners/Leuven.svg" alt="City Leuven">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/An-Van-Peteghem.jpg" alt="An Van Peteghem">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>An Van Peteghem</h1> 
+											<p>Head of Solution Delivery</p> 
+											<img src="assets/img/partners/De-Lijn.svg" alt="De Lijn">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<h2>Media</h2>
+					<ul class="media">
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Heino-Schaght.jpg" alt="Heino Schaght">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Heino Schaght</h1> 
+											<p>Innovation Coach</p> 
+											<img src="assets/img/partners/Mediahuis.svg" alt="Mediahuis">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Jonas-Keersmaekers.jpeg" alt="Jonas Keersmaekers">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Jonas Keersmaekers</h1> 
+											<p>Product Manager Marketing Entertainment</p> 
+											<img src="assets/img/partners/Telenet.svg" alt="Telenet">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Sven-Munaron.jpg" alt="Sven Munaron">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Sven Munaron</h1> 
+											<p>IT Delivery Manager Video</p> 
+											<img src="assets/img/partners/De-Persgroep.svg" alt="De Persgroep">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Maarten-Verwaest.png" alt="Maarten Verwaest">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Maarten Verwaest</h1> 
+											<p>Founder and CEO</p> 
+											<img src="assets/img/partners/Limecraft.svg" alt="LimeCraft">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Marijke-Celis.jpg" alt="Marijke Celis">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Marijke Celis</h1> 
+											<p>Manager Digitaal Productiecentrum</p> 
+											<img src="assets/img/partners/VRT.svg" alt="VRT">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Pieter-Maes.jpg" alt="Pieter Maes">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Pieter Maes</h1> 
+											<p>Creative Account</p> 
+											<img src="assets/img/partners/De-Mensen.svg" alt="De Mensen">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<h2>HealthTech</h2>
+					<ul class="healthtech">
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Serge-Haubourdin.jpg" alt="Serge Haubourdin">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Serge Haubourdin</h1> 
+											<p>Associate Professor at IE University</p> 
+											<img src="assets/img/partners/Corporate-Coach.svg" alt="Corporate Coach">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Jean-Sébastien-Struyf.jpg" alt="Serge Haubourdin">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Jean-Sébastien Struyf</h1> 
+											<p>Consultant and Entrepreneur in Life Sciences | CEO Advelox</p> 
+											<img src="assets/img/partners/Advelox.svg" alt="Advelox">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Roel-De-Spiegeleer.jpg" alt="Roel De Spiegeleer">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Roel De Spiegeleer</h1> 
+											<p>IT Service Delivery Manager</p> 
+											<img src="assets/img/partners/CM.svg" alt="CM">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Simon-De-Greef.jpg" alt="Simon De Greef">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Simon De Greef</h1> 
+											<p>Enterprise Architect</p> 
+											<img src="assets/img/partners/IMEC.svg" alt="IMEC">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<h2>Retail</h2>
+					<ul class="retail">
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Ides-Ticket.png" alt="Ides Ticket">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Ides Ticket</h1> 
+											<p>Founder at Business Markers</p> 
+											<img src="assets/img/partners/Business-Markers.svg" alt="Business Markers">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Ronald-Kenens.jpg" alt="Ronald Kenens">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Ronald Kenens</h1> 
+											<p>Director Mail Sorting</p> 
+											<img src="assets/img/partners/Bpost.svg" alt="Bpost">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<h2>Banking & Insurance</h2>
+					<ul class="banking">
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Peter-Croughs.jpg" alt="Peter Croughs">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Peter Croughs</h1> 
+											<p>Business/Startup & Fintech liaison | Innovation watcher</p> 
+											<img src="assets/img/partners/KBC.svg" alt="KBC">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Pascal-Cuppens.jpg" alt="Pascal Cuppens">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Pascal Cuppens</h1> 
+											<p>Head of the Surf Studio KBC Group Innovation Ecosystem</p> 
+											<img src="assets/img/partners/KBC.svg" alt="KBC">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Birgitta-Brys.jpeg" alt="Birgitta Brys">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Birgitta Brys</h1> 
+											<p>Chief Operating Officer Benelux</p> 
+											<img src="assets/img/partners/Worldline.svg" alt="Worldline">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li data-aos="fade-up">
+							<div class="flip-card">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<img src="assets/img/jury/Davy-Haesen.jpeg" alt="Davy Haesen">
+									</div>
+									<div class="flip-card-back">
+										<div class="content">
+											<h1>Davy Haesen</h1> 
+											<p>CIO SBB</p> 
+											<img src="assets/img/partners/SSB.svg" alt="SBB">
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</article>
+		<!-- <article id="streaming" class="under-header padding-bottom">
+			<div class="container">
+				<div class="panel large">
+					<h1>Streaming</h1>
+					<div>
+						<h2 style="text-align: center;">Live streaming will be available on Friday</h2>
+						<p style="text-align: center;">We thank you for your patience!</p>
+					</div>
+				</div>
+				<div class="panel large no-margin">
+					<h1>Streaming</h1>
+					<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+					<div class='embed-container'>
+						<iframe src='https://www.youtube.com/embed//qTijleLsync' frameborder='0' allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</article> -->
+		<article id="maps" class="under-header padding-bottom">
+			<div class="container-small">
+				<div class="maps">
+					<div class="map">
+						<div class="mapdescription">
+							<div class="content">
+								<h1>The Village</h1>
+								<p><a target="_blank" href="https://www.google.be/maps/place/Alma+2/@50.8737268,4.7008207,17z/data=!3m1!4b1!4m5!3m4!1s0x47c1612861461a5d:0x5a3ef02572169028!8m2!3d50.8737268!4d4.7030094">Find our village on Google maps!</a> You can find information about parking on the <a href="#/faq">faq page</a>. Our village contains 3 buildings. The opening and closing ceremony will take place in Max Weber, located on the bottom left of the map. Alma 2 (top left on the map) is the hacking area, this will be the location where you will spend most of your time. Entertainment, food and all information will be available here. You can find a detailed map of the inside below. All workshops will take place in our third location, Agora (top right on the map). We provided a detailed map of the different workshop rooms below.</p>
+							</div>
+						</div>
+						<div class="mapimage">
+							<img src="assets/img/Map-on-Ball.png" alt="WhatTheHack Planet" data-aos="fade-left">
+						</div>
+					</div>
+					<div class="map">
+						<div class="mapimage">
+							<img src="assets/img/Plan-Hacking-Area.png" alt="Hacking Area" data-aos="fade-right">
+						</div>
+						<div class="mapdescription">
+							<div class="content">
+								<h1>Alma 2 - Hacking Area</h1>
+								<p>This is a plan of the whole hacking area. Other than only space for hacking, we also provided Food & Drinks, a R&R (rest and recuperation) area, an HR corner, a supersonic Gaming room, Lockers to keep your stuff safe, a DJ and a Rodeo attraction! Have fun experiencing this awesome venue. There are some problems with the toilets, therefor you can use the toilets in Max Weber (day & night) and Agora (day).</p>
+							</div>
+						</div>
+					</div>
+					<div class="map mapmobile">
+						<div class="mapdescription">
+							<div class="content">
+								<h1>Alma 2 - Hacking Area</h1>
+								<p>This is a plan of the whole hacking area. Other than only space for hacking, we also provided Food & Drinks, a R&R (rest and recuperation) area, an HR corner, a supersonic Gaming room, Lockers to keep your stuff safe, a DJ and a Rodeo attraction! Have fun experiencing this awesome venue. There are some problems with the toilets, therefor you can use the toilets in Max Weber (day & night) and Agora (day).</p>
+							</div>
+						</div>
+						<div class="mapimage">
+							<img src="assets/img/Plan-Hacking-Area.png" alt="Hacking Area" data-aos="fade-left">
+						</div>
+					</div>
+					<div class="map">
+						<div class="mapdescription">
+							<div class="content">
+								<h1>Agora - Workshop Area</h1>
+								<p>All workshops will take place in the Agora building, which has 4 floors. Take a look at the <a href="#/schedule">schedule</a> to see the workshops given in the different rooms. You will find signs locating the room you are searching for! You can enter the building in the front, go through the door (and take the stairs) to get to the right workshop area.</p>
+							</div>
+						</div>
+						<div class="mapimage">
+							<img src="assets/img/Floorplan-Agora.png" alt="Workshop Area" data-aos="fade-left">
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+		<article id="coaches" class="under-header padding-bottom">
+			<div class="coachtitle">
+				<div class="typewriter">
+					<h1>Need coaching?</h1>
+				</div>
+				<div class="scrollarrows">
+					<div class="chevron"></div>
+					<div class="chevron"></div>
+					<div class="chevron"></div>
+				</div>
+			</div>
+			<div class="coachbox">
+				<ul class="coaches">
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Dirk-Depre.jpg" alt="Dirk Depré">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Dirk Depré</h1> 
+										<p>Service Delivery Manager</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Christophe-Soens.jpeg" alt="Christophe Soens">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Christophe Soens</h1> 
+										<p>Test Specialist</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Domien-Frederix.jpeg" alt="Domien Frederix">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Domien Frederix</h1> 
+										<p>Test Specialist</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Anton-Kirschhock.png" alt="Anton Kirschhock">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Anton Kirschhock</h1> 
+										<p>.NET Developer</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Chamberlain-Mbah.jpeg" alt="Chamberlain Mbah">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Chamberlain Mbah</h1> 
+										<p>Data Scientist</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Freddy-Schoeters.jpeg" alt="Freddy Schoeters">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Freddy Schoeters</h1> 
+										<p>Solution Architect Testing</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Phillippe-Michiels.jpeg" alt="Phillippe Michiels">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Phillippe Michiels</h1> 
+										<p>Subject Matter Expert Cyber Security</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Tim-Neyens.jpeg" alt="Tim Neyens">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Tim Neyens</h1> 
+										<p>.NET Developer</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Johan-Sevenants.jpeg" alt="Johan Sevenants">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Johan Sevenants</h1> 
+										<p>Strategy Consultant</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Leen-Veldeman.jpeg" alt="Leen Veldeman">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Leen Veldeman</h1> 
+										<p>Digital Marketing consultant</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Dries-Bovijn.jpeg" alt="Dries Bovijn">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Dries Bovijn</h1> 
+										<p>Head of Strategy & Innovation - Business Development</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Veerle-Hendrikx.jpeg" alt="Veerle Hendrikx">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Veerle Hendrikx</h1> 
+										<p>Corporate Talent & Development Manager</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Alexander-De-Meersman.jpeg" alt="Alexander De Meersman">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Alexander De Meersman</h1> 
+										<p>Functional Analist</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Shen-Sandele.jpeg" alt="Shen Sandelé">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Shen Sandelé</h1> 
+										<p>Business Manager</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Tom-Leers.jpeg" alt="Tom Leers">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Tom Leers</h1> 
+										<p>User Adoption Expert & Analist</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Valerie-Heylen.jpeg" alt="Valérie Heylen">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Valérie Heylen</h1> 
+										<p>Business coach</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Hans-Stevens.jpeg" alt="Hans Stevens">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Hans Stevens</h1> 
+										<p>Scrum Master</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Wouter-Bauchart.jpg" alt="Wouter Bauchart">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Wouter Bauchart</h1> 
+										<p>.NET Developer</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Ruaa-Al-Durry.jpeg" alt="Ruaa Al Durry">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Ruaa Al Durry</h1> 
+										<p>M&A and Strategic Projects Analyst</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Serge-Lens.jpeg" alt="Serge Lens">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Serge Lens</h1> 
+										<p>M&A and Strategic Projects Analyst</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Dean-Bodart.jpg" alt="Dean Bodart">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Dean Bodart</h1> 
+										<p>CTO at Lean Vertical</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Dennis-Devroey.jpeg" alt="Dennis Devroey">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Dennis Devroey</h1> 
+										<p>Legal Counsel</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Wes-Van-de-Ven.jpeg" alt="Wes Van de Ven">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Wes Van de Ven</h1> 
+										<p>Legal Counsel</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Sammy-De-Moor.jpg" alt="Sammy De Moor">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Sammy De Moor</h1> 
+										<p>COO at Lean Vertical</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Fabio-Ciaravola.jpg" alt="Fabio Ciaravola">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Fabio Ciaravola</h1> 
+										<p>Test Specialist</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Silke-Peeterman.jpg" alt="Silke Peeterman">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Silke Peeterman</h1> 
+										<p>Product Manager</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Curly-Van-Spaendonck.jpeg" alt="Curly Van Spaendonck">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Curly Van Spaendonck</h1> 
+										<p>Service Delivery Manager</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Maarten-Jacobs.jpeg" alt="Maarten Jacobs">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Maarten Jacobs</h1> 
+										<p>Analyst</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Jan-Van-Wassenhove.jpg" alt="Jan Van Wassenhove">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Jan Van Wassenhove</h1> 
+										<p>Java Chapter Lead</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Jan-Vanwezemael.jpeg" alt="Jan Vanwezemael">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Jan Vanwezemael</h1> 
+										<p>Developer</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Sander-Lesage.jpeg" alt="Sander Lesage">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Sander Lesage</h1> 
+										<p>Enterprise Architect</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Thomas-Nunes-da-Silva.jpeg" alt="Thomas Nunes da Silva">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Thomas Nunes da Silva</h1> 
+										<p>Test Specialist</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Laurent-Belbar.jpg" alt="Laurent Belbar">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Laurent Belbar</h1> 
+										<p>Analyst</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<div class="flip-card">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<img src="assets/img/coaches/Mante-Bos.jpg" alt="Mante Bos">
+								</div>
+								<div class="flip-card-back">
+									<div class="content">
+										<h1>Mante Bos</h1> 
+										<p>Test Specialist</p> 
+										<img src="assets/img/partners/Tobania.svg" alt="Tobania">
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</article>
+		<article id="challenges" class="under-header padding-bottom">
+			<div class="container-small">
+				<ul class="challenges">
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal1">#1 Student Life - Quivr</button>
+
+						<div class="modal fade" id="myModal1" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#1 Student Life - Quivr</h4>
+									</div>
+									<div class="modal-body">
+										<p>Being a student is an amazing experience. How can technology help to make this experience even better? Student life consists of two very different parts. <br><br>
+												The first part is the studying itself where you learn the skills that you will be using in your future professional career. What kind of applications could make this part easier? <br><br>
+												The second part is the student’s social life: meeting new people, getting to know yourself, developing yourself, partying... Which applications can add value to this social aspect of student life? <br><br>
+												If this is not challenging enough: How can you combine these two parts, which are very different at first sight, in a useful way in an application that offers an even greater added value to student life? Work out the best idea to make the student life of future students even more awesome!</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal2">#2 Student Life - Tobania</button>
+
+						<div class="modal fade" id="myModal2" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#2 Student Life - Tobania</h4>
+									</div>
+									<div class="modal-body">
+										<p>Chat application
+												You have probably used many different chat applications in the last decade or so, but now is your chance to ‘roll your own’. Develop a secure chat application with all of the features that you have always wanted. Try to stand out with one defining feature: what makes your chat application different from all the others? <br><br>
+												• Security: consider the user’s privacy, do not let your messages be easily intercepted. <br><br>
+												• Authentication: how will your users authenticate with your application? <br><br>
+												• Availability: on which devices will it work?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal3">#3 Student Life - Tobania</button>
+
+						<div class="modal fade" id="myModal3" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#3 Student Life - Tobania</h4>
+									</div>
+									<div class="modal-body">
+										<p>CV Platform <br><br>
+												• How can we setup a CV platform where everybody can upload it’s CV and where everybody easily can view, share and endorse on CV’s ?<br><br>
+												• Functionality: how much freedom would you give your users when building a CV website? Will you support forms? Fixed page templates? Something completely custom? Will you support end-user authentication?<br><br>
+												• How will you build your website?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal4">#4 Student Life - Tobania</button>
+
+						<div class="modal fade" id="myModal4" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#4 Student Life - Tobania</h4>
+									</div>
+									<div class="modal-body">
+										<p>Mass-communication system <br><br>
+												Do you use multiple channels (Facebook, Instagram, Twitter or email) to inform clients or potential clients (students, colleagues or community members?<br><br>
+												It might improve your performance and the reach of your message if there was a tool which optimized that process.<br><br>
+												Usage: how will the tool be used? Will there be a user interface? Will you write an API that developers can access from other applications?<br><br>
+												Storage: how will you store a client’s contact information? Do you follow the rules defined in the GDPR? How much information do you keep about the messages that were sent?<br><br>
+												Analytics: can your users see how many people they reached? How many people actually read your messages or took action because of them?<br><br>
+												How will you handle automatization and/or scheduling?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal5">#5 Student Life - LOKO</button>
+
+						<div class="modal fade" id="myModal5" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#5 Student Life - LOKO</h4>
+									</div>
+									<div class="modal-body">
+										<p>Social isolation is a major problem among students. How could we stimulate students to meet each other easily and in an accessible way? <br><br>
+												Local and international students have little contact with each other. How could we close the gap between these two groups? <br><br>
+												Being a student is not only about studying. There is a huge range of extracurricular activities that offer added value for students and the surrounding area. How could we convince more students to take additional commitments beside their studies?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal6">#6 Student Life - LOKO</button>
+
+						<div class="modal fade" id="myModal6" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#6 Student Life - LOKO</h4>
+									</div>
+									<div class="modal-body">
+										<p>How can sport and healthy food be used more efficiently for individual students to encourage better well-being? <br><br>
+												Students drink alcohol. That is a fact, but a significant group among students endure problematical drinking usage which lays the basis for later alcohol problems. How could we encourage students to have a responsible alcohol usage?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal7">#7 Smart Cities - NMBS</button>
+
+						<div class="modal fade" id="myModal7" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#7 Smart Cities - NMBS</h4>
+									</div>
+									<div class="modal-body">
+										<p>How to convince car users that other (soft) mobility solutions are possible alternatives to their needs? <br><br>
+												How can customers flows in stations be used to improve services: light, escalators, traveller information, position of information screens, ...? <br><br>
+												How can we enhance the orientation in public buildings? Using geo-localization to personalize and improve customer experience in Belgian railway stations. <br><br>
+												How can new megatrends such as IoT, Blockchain, M2M help making public transport more reliable, convenient, customer focussed, attractive,...? <br><br>
+												How would you handle the challenges of multimodal transportation in the new smart cities? <br><br>
+												What would the ideal transportation (mix) look like in the new smart and connected city?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal8">#8 Smart Cities - Leuven</button>
+
+						<div class="modal fade" id="myModal8" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#8 Smart Cities - Leuven</h4>
+									</div>
+									<div class="modal-body">
+										<p>How can you provide tourist with a unique city visit without needing thousands of tour guides and translators? Can we provide them a digital guide which enhances their experience and is tailored to their needs and available 24/7? How can we make it informative in a fun way without being insecure? <br><br>
+												We challenge you by using the tourist data management system.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal9">#9 Smart Cities - Bilzen</button>
+
+						<div class="modal fade" id="myModal9" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#9 Smart Cities - Bilzen</h4>
+									</div>
+									<div class="modal-body">
+										<p>How to tailor digital services to seniors? We noticed they sometimes have difficulties using reCaptcha or other log-in services. This results in frustrations for these people and prohibits us from transforming to a fully digital service provider. <br><br>
+												Use a creative approach to help us in this matter!</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal10">#10 Smart Cities - De Lijn</button>
+
+						<div class="modal fade" id="myModal10" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#10 Smart Cities - De Lijn</h4>
+									</div>
+									<div class="modal-body">
+										<p>Less is more and the best ideas are originating from personal experiences. This challenge is very broad and therefor very interesting: “Make transportation more accessible and flexible for everyone.” <br><br>
+												Customer satisfaction, multimodality and MaaS are important cornerstones, for instance a digital service to capture the needs of customers to enhance their satisfaction. <br><br>
+												Open Data De Lijn: <a href="https://data.delijn.be/">https://data.delijn.be/</a></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal11">#11 Smart Cities - Tobania</button>
+
+						<div class="modal fade" id="myModal11" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#11 Smart Cities - Tobania</h4>
+									</div>
+									<div class="modal-body">
+										<p>Cities spend huge amounts of money every year tracking down cars that are wrongly parked and cars that park without paying. Cities still want to impose proper parking to maintain order, however, the cost is growing as more city dwellers now own cars. <br><br>
+												Your task is to brainstorm how the current technology advances can help cities achieve their goal.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal12">#12 Media - De Persgroep</button>
+
+						<div class="modal fade" id="myModal12" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#12 Media - De Persgroep</h4>
+									</div>
+									<div class="modal-body">
+										<p>For any brand within media it is not only important to gain traffic towards the digital products, but most definitely gain engagement from your fans & 'spectators'. It seems easy, but it isn't. Go wild and astonish me and my colleagues. - Text, images and video are important within media, but don't forget audio. <br><br>
+												The possibilities with audio are broad, but what can help to boost the engagement and reach towards our fans?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal13">#13 Media - Limecraft</button>
+
+						<div class="modal fade" id="myModal13" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#13 Media - Limecraft</h4>
+									</div>
+									<div class="modal-body">
+										<p>We all know subtitling, but as of 2020 content producers will be obliged to provide as well versions with 'Audio Description' (describing the scene) and 'spoken subtitles' (translating non-domestic audio). To date, audio description and spoken subtitles rely on manual work, recording complementary audio in a voice booth and remixing the content, at a cost of € 2000 per hour of content. Using synthetic audio (text to speech) and artificial intelligence for mixing, it should be possible to produce Audio Description at marginal cost and thus on a much larger scale.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal14">#14 Media - Telenet</button>
+
+						<div class="modal fade" id="myModal14" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#14 Media - Telenet</h4>
+									</div>
+									<div class="modal-body">
+										<p>How should a media experience transform to a contextual & personal one in the future? <br><br>
+												With so many new devices and technology (voice-controlled, remote-management...), what should be the next-gen media controls to bring to consumers? <br><br>
+												How could we increase consumer engagement and focus of media when consumers are increasingly watching TV with a phone in their hands?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal15">#15 Media - De Mensen</button>
+
+						<div class="modal fade" id="myModal15" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#15 Media - De Mensen</h4>
+									</div>
+									<div class="modal-body">
+										<p>Video has become a successful element to build this emotional and visual connection between brands and customers. But video can be perceived easily as just an extra platform for pushing company - centric messages to users and customers. <br><br>
+												How do you think we can successfully insert interactive elements into brand communication video, to rebuild it from one-sided conversation into a true dialogue (think Q&A / hotspots /...)?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal16">#16 Media - VRT</button>
+
+						<div class="modal fade" id="myModal16" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#16 Media - VRT</h4>
+									</div>
+									<div class="modal-body">
+										<p>How can VRT engage young people in the 2019 elections? <br><br>
+												Context <br>
+												On May 26th 2019, the regional, federal and European elections are organized in Belgium. After 5 years citizens have to choose new regional, federal and European representatives. VRT NWS wants to cover all aspects of the elections (before, during and after election day). Both on their own channels as those of other VRT-related brands like Studio Brussel or MNM. <br><br>
+												Audience and purpose <br>
+												VRT NWS wants to engage young people (18-24 year) to actively participate in the voting process. In Belgium we have “compulsory voting” so we don’t need to convince young people to vote. The purpose of this challenge is to encourage debate and reflection on the reasons why your vote can make a difference. Government decisions impact the lives of all people. VRT NWS wants to create a conversation and debate between young people by suggesting possible topics.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal17">#17 Retail - Smart With Food</button>
+
+						<div class="modal fade" id="myModal17" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#17 Retail - Smart With Food</h4>
+									</div>
+									<div class="modal-body">
+										<p>Combine nutrition and healthcare to develop a preventive healthcare solution through nutrition. How can we use nutrition in a preventive approach both on an individual level as well as on a general population level. <br><br>
+												Solve this challenge through the eyes of the average consumer.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal18">#18 Retail - Fish Digital</button>
+
+						<div class="modal fade" id="myModal18" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#18 Retail - Fish Digital</h4>
+									</div>
+									<div class="modal-body">
+										<p>More than 80% of consumers searches for information online before entering a “brick & mortar” store. Sadly, the digital and physical world remain two separated entities and companies are unable to merge them into a full-fledged omnichannel approach. <br><br>
+												Even after purchase it remains a major challenge for a lot of companies to build a well founded cross-selling strategy. <br><br>
+												What does this future omnichannel model look like and how do companies succeed in delivering a seamless experience to their customers using this channel?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal19">#19 Retail - Tobania</button>
+
+						<div class="modal fade" id="myModal19" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#19 Retail - Tobania</h4>
+									</div>
+									<div class="modal-body">
+										<p>Freshness 2.0 <br><br>
+												Consumers are increasingly demanding fresher, healthier and natural tasting fruit, vegetables and meat. Therefore it’s of utmost importance for groceries to guarantee and market the freshness of their products to its customers. However, the crucial question remain: “How do I measure the freshness of my products and how do the customers experience this freshness?” <br><br>
+												An example could be a Tinder for grocery products where customers can (dis)like the freshness of products of the stores in their neighborhood.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal20">#20 Health Tech - CM</button>
+
+						<div class="modal fade" id="myModal20" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#20 Health Tech - CM</h4>
+									</div>
+									<div class="modal-body">
+										<p>How can we, CM, as a Belgian healthcare insurer interact in a digitale way with our customers, digitalize some manual processes like registrations? <br><br>
+												And what other potential is out there? <br><br>
+												What about Chatbots? Or maybe an app with the possibility to digitize documents, etc.. ? Be creative!</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal21">#21 Health Tech - The Corporate Wellbeing Coach</button>
+
+						<div class="modal fade" id="myModal21" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#21 Health Tech - The Corporate Wellbeing Coach</h4>
+									</div>
+									<div class="modal-body">
+										<p>Corporate wellbeing <br><br>
+												Most companies recognize the need for corporate wellbeing. However, how do you you capture the needs of your company, motivate your employees and create the right corporate wellbeing plan? When working on this challenge keep in mind a clear ROI and, of course, don’t forget GDPR.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal22">#22 Health Tech - The Corporate Wellbeing Coach</button>
+
+						<div class="modal fade" id="myModal22" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#22 Health Tech - The Corporate Wellbeing Coach</h4>
+									</div>
+									<div class="modal-body">
+										<p>Future learning and training in companies <br><br>
+												Due to increasing centralization and a relatively expensive job market it becomes more and more difficult to train employees in most European countries. However due to increasing digitalization and change in demand, job content is changing more rapidly than ever before. What does the future of company training look like and how is it implemented practically?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal23">#23 Health Tech - Advelox</button>
+
+						<div class="modal fade" id="myModal23" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#23 Health Tech - Advelox</h4>
+									</div>
+									<div class="modal-body">
+										<p>Caregivers are still working in a very conservative way. Most of the time they are paid in function of volume, i.e. number of patients seen. This leads to difficult situations: too tight agenda, delays, no private life, burn outs,... <br><br>
+												Imagine you would be developing a tool that could help them having a better management of their practice. What could this tool be? Ensure that the tool is showing the benefits to the healthcare provider. <br><br>
+												Imagine you have an secure app that allows you to ask questions to your own health care provider. What can we do to simplify the work of the caregiver when a question is sent to him by the patient, without of course taking away the formal responsibility of the caregiver?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal24">#24 Health Tech - Advelox</button>
+
+						<div class="modal fade" id="myModal24" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#24 Health Tech - Advelox</h4>
+									</div>
+									<div class="modal-body">
+										<p>Pharma companies are still lagging behind in terms of digital. This is mainly due to a slow internal decision taking process but also due to the fact that pharma employees were mostly born before 2000 which make them difficult to move from their comfort zones. The same with medical reps. Most of the time they are above the age of 45 and love to see their customers in a face to face setting. Digital is seen as not impactful enough or as a competitive channel. However, physicians are already into the digital world today. They consume a lot of content via various specialized digital channels. <br><br>
+												So, what can we do to get the medical reps on board of digital. What channels could they use, how could they smartly interact with physicians, without being afraid about digital ?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal25">#25 Banking & Insurance - SSB</button>
+
+						<div class="modal fade" id="myModal25" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#25 Banking & Insurance - SSB</h4>
+									</div>
+									<div class="modal-body">
+										<p>Financial Machine Learning <br><br>
+												Using only a database of XBRL files (which contain annual reports of companies) you are challenged to: <br><br>
+												• Use annual reports for classification of companies <br><br>
+												• Use annual reports for fraud detection <br><br>
+												• Use annual reports to predict financial performance of companies</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal26">#26 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal26" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#26 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Water damage under the Fire Insurance <br><br>
+												KBC offers fire insurances. This includes water damage. <br><br>
+												Water detection may be an interesting domain to respond to. More specifically, the (proactive) detection, analysis and resolution of water leaks. These leaks are often a hidden and silent problem in places that are not easily accessible. The speed of detection and repair largely determines the impact of the water damage. It is therefore important to detect and preferably prevent water leaks as soon as possible. <br><br>
+												The main focus here is on identifying water leaks and notifying actors.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal27">#27 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal27" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#27 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Contract management <br><br>
+												The central procurement office of KBC manages its purchase files in the SAP application (MDS). A purchase dossier results in one or more contracts after the award. We are looking for a driven partner who develops an intuitive tool for the management and access of these contracts. <br><br>
+												The tool <br>
+												• is integrated into (SAP) MDS so that the purchasing department employees experience the whole as intuitive and clear. The purchase file contains a lot of information that is simply reproduced in the contract (specifications/contract number, subject, starting date, topic, budget(s), supplier, etc.). The contract is therefore an integral part of the purchase file. <br><br>
+												• allows you to easily add and edit contracts. <br><br>
+												• provides access to the content of the contracts and articles (from SAP) that can be purchased for all employees of the Antwerp group via the current search screen. <br><br>
+												• gives the other employees of KBC the opportunity to score every contract for sustainability</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal28">#28 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal28" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#28 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>KBC provides 20 places for students in the KBC innovation labs on a structural base, every working day of the year. Students arrive as multi-disciplined teams to perform experiments/master theses, based on predefined new market trends. Provide a platform (for student organizations) which can be linked with our innovation labs. Additionally, what is needed to put student organizations in the lead of gathering 20 students in the labs on a structural base? Can it be part of their mission towards all students? How is cooperation between student organization possible, to support the students in constructing multi- disciplined teams. <br><br>
+												#peopleandorganisation #warfortalent</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal29">#29 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal29" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#29 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Within a few years all students will have a voice-device like Amazon Alexa in their student room. Build a financial voice assistant for students. Take all financial aspects of money into account: earn, spend, borrow, safeguard, growth, transaction (#6not4). Attention: Start from a voice centered design approach, not a traditional user menu centered approach. Interaction with these devices must feel as natural as possible. <br><br>
+												#all-in-one #voicerobotics #internetofthings #artificialintelligence <br><br>
+												What new possibilities do Voice Robotics & Augmented Reality offer for financial institutions to enter into relationship discussions (live or via skype) with the blind and/or deaf? <br><br>
+												#voicerobotics #artificialintelligence</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal30">#30 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal30" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#30 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Make a Augmented Reality based game where you touch all kind of financial aspects in a students journey. After a hard day in a students life, you provide a unique AR based visualization of the amount of money you have. Take all financial aspects of money into account: earn, spend, borrow, safeguard, growth, transaction (#6not4). Eg. ‘Earn’: scan Delhaize-logo, scan street- name, ... and you get all student job <br><br>
+												Make a Facial Recognition based entrance in a financial branch. After recognition, the customer gets an extremely warm (digital) welcome within the branch, with the most relevant, contextual & personalized news. It must be possible to integrate the solution with the CRM-tool of the bank-insurer. Design a journey for several personas. <br><br>
+												#artificialintelligence</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal31">#31 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal31" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#31 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>An RPA robot should be treated equally to a human employee. <br><br>
+												How should access rights for robots be managed? How can we avoid that fraud is implemented in deployed internal robots? <br><br>
+												#artificialintelligence #RPA <br><br>
+												Robots and Artificial Intelligence will help KBC against incoming cyber-attacks. Cyber risk is increasingly important within risk management. How could we apply new techniques to improve our defense against cyber-attacks and or hackers? <br><br>
+												#artificialintelligence</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal32">#32 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal32" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#32 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Bank & Insurance websites are build starting from their product & services, or in some cases by general needs like my mobility, my home, my pension. Create an attractive bank-insurer website for students based on their daily journeys. This website should be supported by a mobile bank & insurance app for master & bachelor students. Provide all needs in the journey of a student: before, during and after the years as student. Take all financial aspects of money into account: earn, spend, borrow, safeguard, growth, transaction (#6not4). Attention: to deliver customer-delight, search for integrated services with other companies, for e.g. in the area of health, mobility, sustainability, etc. Can your solution become the education-tool for financial literacy in schools? <br><br>
+												#all-in-one #internetofthings #privacyisthenewgreen #newdigitalintermediaries</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal33">#33 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal33" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#33 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Banks perform the housekeeping of your money, in a trusted and secure environment and where privacy is already key. This housekeeping is extended with a lot of services on top. What are the new assets and values of people in a digital world (energy-coins, passwords, photos, ...)? Propose a solution where these assets and values can have a good housekeeping, where privacy and good services on top are needed. Create a ‘New Value’ Bank-Insurer platform. <br><br>
+												#allbusinessisdatabusiness #privacyisthenewgreen #artificialintelligence <br><br>
+												How can a bank stay close to its customer as digitization increases? And be experienced as warm and personal? Is this possible in digital solutions of banks and insurers? <br><br>
+												#newdigitalintermediaries #all-in-one</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal34">#34 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal34" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#34 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>How Digital Twin Technology can be used to improve KBC processes in banking or insurance? Digital twins act as a bridge between physical and digital worlds by using sensors to collect real-time data about a physical item. This data is then used to create a digital duplicate of the item, allowing it to be understood, analyzed and optimized. As digital twins grow in complexity and move from being digital representations of single items to models of systems of interconnected things, more businesses are seeing the technology as an opportunity to optimize processes in a sophisticated way, integrating Iot, artificial intelligence and machine learning. It enables organizations to test new ideas, uncover problems before they happen, get answers to new questions and monitor items remotely. So how digital twin technology can be used to improve KBC processes in banking and insurance? <br><br>
+												#IoT #artificialintelligence</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal35">#35 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal35" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#35 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>All-in-One (#all-in-one) <br><br>
+												Customers expect a more complete solution. For financial institutions it could be very hard to meet the customer needs within the boundaries of their solid closed environment. It could be more challenging for financial institutions to reach new customers, especially in situations where financial products are only enablers. Ecosystems with a total ‘butler-service’ are to be expected in which financial services only play a secondary role. <br><br>
+												What is the relevance for banking & insurance? <br><br>
+												• Client-centricity is key: it could be increasingly difficult for financial institutions to stay relevant for customers. How to make sure that financial institutions are in the lead of ecosystems? <br><br>
+												• Banks could become white-label product factories as they typically provide secondary products. How to avoid becoming the invisible bank?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal36">#36 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal36" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#36 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Voice Robotic (#voicerobotic) <br><br>
+												Voice is the most natural way of communication and can lead to a more personalized interaction. The growing popularity of voice devices and customer- centric voice experiences in e-commerce raises expectations. Conversational interfaces are being explored as consumers increasingly look for speed, convenience and security. Voice assistants may become an important future gateway to end clients. <br><br>
+												What is the relevance for banking & insurance? <br><br>
+												Voice as new distribution channel impacts the interface with customers. Captive channels might lose impact and relevance. How long will the banks’ and insurers’ mobile app remain a differentiating access point to the customer? How to define “a voice of your brand” and trigger a sale on a voice platform.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal37">#37 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal37" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#37 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Privacy is the New Green (#privacyisthenewgreen) <br><br>
+												Customers start to realize that their “right to be forgotten’” has vanished in a digital world. Every piece of information committed to digital form is subject to instant and inevitable distribution over the internet. The concern is tilting towards frustration in clients’ minds, intensifying their expectation to get in control of their personal data disclosure and usage. <br><br>
+												What is the relevance for banking & insurance? <br><br>
+												• The rising privacy expectations of customers bring important challenges and opportunities for the banks and insurers <br><br>
+												• Will customers give consent to banks in return for receiving personalized offers? How will this affect the ability to provide personalized offers? <br><br>
+												• Protecting and securing customer data: banks and insurers sit atop a horde of digital gold, namely their customers’ personal information.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal38">#38 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal38" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#38 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>All Business is Data Business <br><br>
+												The data-explosion is exponential. Competitors and new entrants across sectors build their businesses around it turning data into the most important driver for profitability. Data has become a key asset: the new oil. A real 360° view is the new standard, making value out of it the differentiator. <br><br>
+												Banks and insurance companies sit on top of piles of data. Less than 10 % is readily accessible and less than 1 % is actually used for analytics: opportunity knocks for product and service improvement. New entrants are taking advantage of the pile of data available ‘out there’ potentially resulting in more insights into customers of traditional banks and insurers. The challenges for bank and insurance companies are two directional: <br><br>
+												OUT-IN: Fear of missing out data. Going from 180° to 360° view. IN-OUT: monetize internal data and contribute in data-sharing ecosystems to create more adding-value for customers</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal39">#39 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal39" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#39 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Internet of Things <br><br>
+												The Internet of Things (IoT) connects multiple devices to the internet which makes these devices accessible from a distance (for instance through mobile apps), and therefore makes it possible to monitor the status, behavior or performance of a property or person. Banks and insurers can use IoT and its data to offer more personalized services, for real-time monitoring of risks and risk prevention. <br><br>
+												Financial institutions will have a more vivid picture of the consumer (towards 360 degree view) allowing them to: <br><br>
+												• Make more accurate lending decisions <br><br>
+												• Deliver more real-time, personalized offers <br><br>
+												• Apply targeted insurance pricing: more risk exposure visibility. For example, connected cars can provide info regarding driving habits.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal40">#40 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal40" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#40 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Artificial Intelligence <br><br>
+												AI is the ability of a machine to perform cognitive functions associated with human minds, such as reasoning, learning, interacting with the environment and problem solving. Client-centricity: Move closer to clients’ expectations and anticipating them, by studying customer behavior. Create proactive, personalized complete offers. 24/7 client support via chatbots. <br><br>
+												• Cost savings: AI solutions to replace the repetitive cognitive tasks and decision making with machine intelligence in back- and front office. <br><br>
+												• Augmenting decision-making capabilities: building AI-based components enabling faster suggestions to employees, or automated decisions based on risk scoring and event prediction. <br><br>
+												• New workforce: integrating human intelligence with machine intelligence, to coexist in a two-way learning relationship. Will generate adding value via new products, services and/or innovations.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal41">#41 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal41" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#41 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>New Digital Intermediaries <br><br>
+												In the digital world, traditional intermediaries are marginalized. Contrary to expectations, the rise of digital did not only enable direct contact between producers and customers. It also brought new intermediaries operating different business models and disrupting the incumbents as contact with end-customers is at stake. Examples are Uber, Amazone, AirBnb, Spotify. <br><br>
+												• Value is created in keeping the contact with the end customer and bundling products from various suppliers to complete solutions. <br><br>
+												• New digital intermediaries could become the primary customer facing platform. Winning the battle for customers will be crucial. How many digital intermediaries will there be and can financial institutions compete? <br><br>
+												• Will the role of distribution and production be split in the future?</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li data-aos="fade-up">
+						<button type="button" class="challenge-name" data-toggle="modal" data-target="#myModal42">#42 Banking & Insurance - KBC</button>
+
+						<div class="modal fade" id="myModal42" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+											<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">#42 Banking & Insurance - KBC</h4>
+									</div>
+									<div class="modal-body">
+										<p>Quantum Technology <br><br>
+												As modern computers reach the limits of their processing power, quantum	computing is starting to offer hope for solving more specialized problems that require immensely robust computing. There are two prerequisites to practical business applications: 1) processors with enough qubits (=quantum bits) to run quantum simulations and 2) quantum algorithms that solve the mathematical problem underlying the application. Processors are still under active development while several algorithms already exist. The result will be enormous processing power and the ability to perform algorithms that normal computers can’t do. <br><br>
+												Quantum computing could create an asymmetry in the market between those who have access to the game changing technology and those who haven’t. As with other advanced technologies the companies that position themselves early to take advantage of quantum computing will establish a significant advantage.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</article>
+		<article id="faq" class="under-header padding-bottom">
+			<div class="container-small">
+				<div class="faqimage"></div>
+				<div id="questions">
+					<!-- <div class="question rulessection">
+						<button type="button" class="question-heading" data-toggle="modal" data-target="#myModal0">
+							<div class="open-icon"></div>
+							<h2>Where can I find the terms of participation?</h2>
+						</button>
+
+						<div class="modal fade" id="myModal0" role="dialog">
+							<div class="modal-dialog">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close-button" data-dismiss="modal">X</button>
+										<h4 class="modal-title">Terms of participation</h4>
+									</div>
+									<div class="modal-body">
+										<p>Please <strong>read</strong> the terms of participation for WhatTheHack 2019 carefully. You need to indicate that you <strong>accept</strong> them in the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWtCNehqLceD-qzsjAz9uLtL3YSLKZ0M0Zz1g6w1xDnGBWkA/viewform" target="_blank">Google Form</a>.</p>
+										<p>You can find the terms of participation <a href="assets/docs/WhatTheHack 2019 - Terms of Participation.pdf" download>here</a>.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> -->
+					<div id="question0" class="question readmore">
+						<button class="question-heading" onclick="openQuestion0()">
+							<div class="open-icon"></div>
+							<h2>Where can I find the terms of participation?</h2>
+						</button>
+						<div class="question-body">
+							<p>Please <strong>read</strong> the terms of participation for WhatTheHack 2019 carefully. You need to indicate that you <strong>accept</strong> them in the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeWtCNehqLceD-qzsjAz9uLtL3YSLKZ0M0Zz1g6w1xDnGBWkA/viewform" target="_blank">Google Form</a>.</p>
+							<p>You can find the terms of participation <a href="assets/docs/WhatTheHack 2019 - Terms of Participation.pdf" download>here</a>.</p>
+						</div>
+					</div>
+					<div id="question1" class="question">
+						<button class="question-heading" onclick="openQuestion1()">
+							<div class="open-icon"></div>
+							<h2>When shall I arrive?</h2>
+						</button>
+						<div class="question-body">
+							<p>Registration will start at 4:30 PM on Friday. The opening ceremony is at 5:30 PM. Make sure to follow the schedule for more information about all the events.</p>
+						</div>
+					</div>
+					<div id="question2" class="question">
+						<button class="question-heading" onclick="openQuestion2()">
+							<div class="open-icon"></div>
+							<h2>How do I get to WhatTheHack?</h2>
+						</button>
+						<div class="question-body">
+							<p>You can find the address <a href="https://goo.gl/maps/oezU7KCTWWm" target="_blank">here</a>. Some different ways to get to our <a href="#/maps">village</a>:</p>
+							<ul>
+								<li>Train: Arrival at Leuven Station (15min walk)</li>
+								<li>Bike: Bicycle stands are provided in the village</li>
+								<li>Car: You can park on <a href="https://www.leuven.be/parkings/wagens/parking-bodart" target="_blank">parking Bodart</a> for free (Max 10hrs with parking disc between 7:00 AM and 7:00 PM. You can change your disc during the hackathon) 
+									<p>&rarr; <a href="https://www.google.be/maps/dir//Koning+Boudewijnlaan,+3001+Leuven/@50.8666291,4.6630755,15z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x47c16105be1b6eff:0x66476fea4bfcdca2!2m2!1d4.6718303!2d50.8666294" target="_blank">Directions to parking</a></p>
+									<p>&rarr; <a href="https://www.google.com/maps/dir/Parking+Bodart,+Veilingweg,+3001+Leuven/Parkstraat+45,+Leuven/@50.8714339,4.6919066,16z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x47c16121e15e3d2b:0xce70fbb044dbb6e7!2m2!1d4.6891477!2d50.8725342!1m5!1m1!1s0x47c161285e1acc5b:0xe946495ef058437b!2m2!1d4.7034418!2d50.8738338!3e2" target="_blank">How to get to the village on foot</a></p>
+								</li>
+								<li>Car: For <a href="https://www.leuven.be/parkings/wagens/parking-bodart" target="_blank">parking Teken</a> you have to pay €3.00 (Unlimited duration)
+									<p>&rarr; <a href="https://www.google.be/maps/dir//Mgr.+van+Waeyenberghlaan,+3000+Leuven/@50.879041,4.679053,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x47c160e17e886d1d:0xdbaa6b32ffab26cf!2m2!1d4.683721!2d50.8798711" target="_blank">Directions to parking</a></p>
+									<p>&rarr; <a href="https://www.google.com/maps/dir/50.8794611,4.6796388/Parkstraat+45,+Leuven/@50.8770356,4.6876754,16z/data=!3m1!4b1!4m9!4m8!1m0!1m5!1m1!1s0x47c161285e1acc5b:0xe946495ef058437b!2m2!1d4.7034418!2d50.8738338!3e3" target="_blank">How to get to the village by bus</a></p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id="question3" class="question">
+						<button class="question-heading" onclick="openQuestion3()">
+							<div class="open-icon"></div>
+							<h2>When is WhatTheHack ending?</h2>
+						</button>
+						<div class="question-body">
+							<p>The closing ceremony is expected to end on Saturday 2nd at 9:15 PM.</p>
+						</div>
+					</div>
+					<div id="question4" class="question">
+						<button class="question-heading" onclick="openQuestion4()">
+							<div class="open-icon"></div>
+							<h2>What if I cannot make it in time?</h2>
+						</button>
+						<div class="question-body">
+							<p>No problem. Be there at 6:00 PM, so your team doesn't lag behind the others. Just come to our Infodesk for a late check-in. Ask your team for any important information you may have missed. If you are confused, please reach out to any crew member (purple t-shirts).</p>
+						</div>
+					</div>
+					<div id="question5" class="question">
+						<button class="question-heading" onclick="openQuestion5()">
+							<div class="open-icon"></div>
+							<h2>How do I sign up for a workshop?</h2>
+						</button>
+						<div class="question-body">
+							<p>You can sign up at the Infodesk! If you go to the Agora building, you have to wear your WhatThehack T-shirt or Lanyard to get in.</p>
+						</div>
+					</div>
+					<div id="question6" class="question">
+						<button class="question-heading" onclick="openQuestion6()">
+							<div class="open-icon"></div>
+							<h2>I'm not in Slack, how do I get in?</h2>
+						</button>
+						<div class="question-body">
+							<p>Come to the Infodesk during the event or send us an email to <a href="mailto:info@whatthehack.be" target="_blank">info@whatthehack.be</a></p>
+						</div>
+					</div>
+					<div id="question7" class="question">
+						<button class="question-heading" onclick="openQuestion7()">
+							<div class="open-icon"></div>
+							<h2>Can I leave WhatTheHack?</h2>
+						</button>
+						<div class="question-body">
+							<p>Yes. However make sure you have your T-shirt or Lanyard with you, otherwise we might not let you in when you come back.</p>
+						</div>
+					</div>
+					<div id="question8" class="question">
+						<button class="question-heading" onclick="openQuestion8()">
+							<div class="open-icon"></div>
+							<h2>Is food provided?</h2>
+						</button>
+						<div class="question-body">
+							<p>Of course! In the <a href="#/schedule">schedule</a> you can find a few moments where food is served.</p>
+						</div>
+					</div>
+					<div id="question9" class="question">
+						<button class="question-heading" onclick="openQuestion9()">
+							<div class="open-icon"></div>
+							<h2>Can I sleep now?</h2>
+						</button>
+						<div class="question-body">
+							<p>Yes, sure. We have provided a resting area. Make sure to bring your own matress & sleeping bag.</p>
+						</div>
+					</div>
+					<div id="question10" class="question">
+						<button class="question-heading" onclick="openQuestion10()">
+							<div class="open-icon"></div>
+							<h2>Something isn’t working!</h2>
+						</button>
+						<div class="question-body">
+							<p>If something is not working, please ask your questing in slack or come to our Infodesk and meet our awesome crew. They'll love to help you!</p>
+						</div>
+					</div>
+					<div id="question11" class="question">
+						<button class="question-heading" onclick="openQuestion11()">
+							<div class="open-icon"></div>
+							<h2>How does judging work?</h2>
+						</button>
+						<div class="question-body">
+							<p>We will have a judging expo on Saturday from 6:00 PM - 7:30 PM. Depening on your challenge or subject, you will get assigned a specific jury. All information can be found in the <a href="#/schedule">schedule</a>.</p>
+						</div>
+					</div>
+					<div id="question12" class="question">
+						<button class="question-heading" onclick="openQuestion12()">
+							<div class="open-icon"></div>
+							<h2>Deadline for project submissions?</h2>
+						</button>
+						<div class="question-body">
+							<p>The hacking ends Saturday 2nd at 5:30 PM. You will have to sumbit using <a href="https://whatthehack2019.devpost.com/" target="_blank">this DevPost link</a>.</p>
+						</div>
+					</div>
+					<div id="question13" class="question">
+						<button class="question-heading" onclick="openQuestion13()">
+							<div class="open-icon"></div>
+							<h2>I have another question... Okay?</h2>
+						</button>
+						<div class="question-body">
+							<p>If you have any other questions and you can't find it here, make sure to pay us a visit at our Infodesk.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+	</main>
+
+	<div id="cookie-notice" style="display:none">
+		<p>This website uses cookies of its own and of third parties to improve your browsing experience and show you personalized content based on your interests. If you continue browsing, we consider that you accept its use. You can obtain more information in our <a id="cookies-a" href="https://www.tobania.be/en-gb/cookies/" target="_blank">Cookies Policy</a>.</p>
+		<div id="cookie-notice-button">
+			OK!
+		</div>
+	</div>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", ()=>{
+			if(window.localStorage.getItem("cookies"))
+				return
+			var cne = document.getElementById("cookie-notice")
+			cne.style.display = "block"
+			document.getElementById("cookie-notice-button").addEventListener("click", ()=>{
+				window.localStorage.setItem("cookies", "1")
+				cne.style.bottom = "-250px"
+				setTimeout(()=>{
+					cne.parentNode.removeChild(cne)
+				}, 1010)
+			})
+		})
+	</script>
+	<script>
+		var typed = new Typed('#typed', {
+			stringsElement: '#typed-strings',
+			typeSpeed: 30,
+			startDelay: 700,
+			backSpeed: 20,
+			backDelay: 700,
+			loopCount: 999,
+			loop: 1
+		});
+	</script>
+	<script src="assets/js/whatthehack.min.js"></script>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
+	
+	<!-- <script src="assets/js/particles.js"></script> -->
+	<!-- <script src="assets/js/particles2.js"></script> -->
+	<!-- <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
+</body>
+</html>
